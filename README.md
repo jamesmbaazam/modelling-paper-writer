@@ -4,6 +4,8 @@ A [Claude Code](https://claude.com/claude-code) skill for writing infectious dis
 mathematical, statistical and machine learning modelling papers, distilled from the writing
 style of 37 well-written papers in the field.
 
+**Developed by [James Azam](https://github.com/jamesmbaazam).**
+
 The skill does not generate claims or results. It encodes *how* good papers in this field are
 put together: how they structure sections, present models and assumptions, report estimates and
 uncertainty, position themselves against prior work, and write limitations.
@@ -16,6 +18,7 @@ uncertainty, position themselves against prior work, and write limitations.
 | `writing_styles/*.md` | One style analysis per paper (37 files), with verbatim quotations |
 | `writing_styles/papers.csv` | Index: title, DOI, authors, methodological type, source URL, style file |
 | `prompt.md` | The original brief the skill was built from |
+| `CITATION.cff` | Machine-readable citation metadata |
 
 ## The corpus
 
@@ -85,6 +88,17 @@ revising a modelling manuscript. You can also invoke it explicitly with
    Quote verbatim wherever possible, and link related files with `[[wikilinks]]`.
 2. Add a row to `writing_styles/papers.csv`.
 3. Fold any genuinely new convention into `SKILL.md` and add the paper to its index table.
+
+## Author
+
+**James Azam** ([@jamesmbaazam](https://github.com/jamesmbaazam)) — designed the skill, selected
+and curated the 37-paper corpus, defined the analytical framework the style summaries follow,
+and directed its development.
+
+If you use this skill in your work, please cite it — see [CITATION.cff](CITATION.cff), or:
+
+> Azam, J. (2026). *modelling-paper-writing-skill: a Claude Code skill for writing infectious
+> disease modelling papers.* https://github.com/jamesmbaazam/modelling-paper-writing-skill
 
 ## Licence
 

@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+title: >-
+  modelling-paper-writing-skill: a Claude Code skill for writing
+  infectious disease modelling papers
+message: If you use this skill, please cite it as below.
+type: software
+authors:
+  - given-names: James
+    family-names: Azam
+    alias: jamesmbaazam
+repository-code: https://github.com/jamesmbaazam/modelling-paper-writing-skill
+abstract: >-
+  A Claude Code skill for writing infectious disease mathematical,
+  statistical and machine learning modelling papers, distilled from the
+  writing style of 37 well-written papers published between 2000 and 2024.
+  Encodes conventions for paper structure, presentation of models and
+  assumptions, reporting of estimates and uncertainty, literature
+  positioning, voice, machine learning practice, and limitations.
+keywords:
+  - infectious disease modelling
+  - epidemiology
+  - scientific writing
+  - mathematical modelling
+  - machine learning
+  - claude code
+license: MIT
+version: 1.0.0
+date-released: '2026-09-10'

@@ -5,6 +5,8 @@ description: Write, structure, or revise infectious disease mathematical and sta
 
 # Writing infectious disease modelling papers
 
+*Developed by James Azam (https://github.com/jamesmbaazam). Licensed MIT.*
+
 This skill distils the writing style of 37 well-written infectious disease modelling,
 statistical and machine learning papers, from *Nature*, *Science*, *PNAS*, the *Lancet*
 family, *BMJ*, *Nature Machine Intelligence*, *npj Digital Medicine*, *PLoS Computational
