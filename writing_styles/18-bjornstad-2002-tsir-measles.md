@@ -43,4 +43,4 @@ This abstract is effectively a miniature paper, and its ordering is the ordering
 - Quotation marks used to flag terms being used in a technical or slightly figurative sense: 'true mass action', 'regulating', 'deterministic'.
 
 ## Related files
-The TSIR model is applied in [[02-ferrari-2008-measles-sub-saharan-africa]]; the same dataset yields the spatial results in [[17-grenfell-2001-travelling-waves]]; the dynamical regimes it fits are the subject of [[04-earn-2000-simple-model-complex-transitions]].
+The TSIR model is applied in [02-ferrari-2008-measles-sub-saharan-africa](02-ferrari-2008-measles-sub-saharan-africa.md); the same dataset yields the spatial results in [17-grenfell-2001-travelling-waves](17-grenfell-2001-travelling-waves.md); the dynamical regimes it fits are the subject of [04-earn-2000-simple-model-complex-transitions](04-earn-2000-simple-model-complex-transitions.md).

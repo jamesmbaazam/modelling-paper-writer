@@ -17,7 +17,7 @@ uncertainty, position themselves against prior work, and write limitations.
 | `SKILL.md` | The skill itself — 12 sections consolidating the conventions, plus worked example passages |
 | `writing_styles/*.md` | One style analysis per paper (37 files), with verbatim quotations |
 | `writing_styles/papers.csv` | Index: title, DOI, authors, methodological type, source URL, style file |
-| `prompt.md` | The original brief the skill was built from |
+| `docs/prompt.md` | The original brief the skill was built from |
 | `CITATION.cff` | Machine-readable citation metadata |
 
 ## The corpus
@@ -27,8 +27,14 @@ uncertainty, position themselves against prior work, and write limitations.
 *Statistics in Medicine*, *Ecology Letters*, *Ecological Monographs*, *Annals of Internal
 Medicine*, *J. R. Soc. Interface* and *Wellcome Open Research*.
 
-Diseases covered: COVID-19, influenza, measles, dengue, malaria, Ebola, foot-and-mouth,
-tuberculosis, rodent-borne and other zoonoses, and antimicrobial resistance.
+Diseases covered: COVID-19 (11 of 37 papers), influenza, measles, dengue, Ebola,
+foot-and-mouth, and rodent-borne and other zoonoses. Malaria, tuberculosis and antimicrobial
+resistance are mentioned in passing in two review papers but no corpus paper models them.
+
+**Selection basis.** The papers are landmark, highly cited work from a narrow set of research
+groups, chosen for writing quality rather than sampled systematically across venues or
+subfields. Conventions derived from the 2000–2008 papers may not match current reviewer
+expectations (e.g. citation density).
 
 | Methodological type | Papers |
 |---|---:|

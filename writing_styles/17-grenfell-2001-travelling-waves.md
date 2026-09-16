@@ -27,4 +27,4 @@ Seven sentences, and the shape is the classic Nature abstract for an empirical-p
 - **Escalate the final sentence to a structural claim** about what the system requires, not just what it does.
 
 ## Related files
-The same team's dataset and modelling framework appear in [[18-bjornstad-2002-tsir-measles]]; the contrasting high-birth-rate, weakly coupled regime is [[02-ferrari-2008-measles-sub-saharan-africa]]; the coupling formalism is [[06-keeling-rohani-2002-spatial-coupling]]; the unifying dynamical account is [[04-earn-2000-simple-model-complex-transitions]].
+The same team's dataset and modelling framework appear in [18-bjornstad-2002-tsir-measles](18-bjornstad-2002-tsir-measles.md); the contrasting high-birth-rate, weakly coupled regime is [02-ferrari-2008-measles-sub-saharan-africa](02-ferrari-2008-measles-sub-saharan-africa.md); the coupling formalism is [06-keeling-rohani-2002-spatial-coupling](06-keeling-rohani-2002-spatial-coupling.md); the unifying dynamical account is [04-earn-2000-simple-model-complex-transitions](04-earn-2000-simple-model-complex-transitions.md).

@@ -26,4 +26,4 @@ The six sentences form a **methods-paper skeleton** that is unusually clean:
 - **Signal the weight of each analysis.** "a brief study of" is an honest register marker; use it instead of letting a secondary analysis masquerade as a main result.
 
 ## Related files
-The mechanistic/phenomenological tension recurs in [[10-reich-2019-flusight-multiyear]] (statistical vs. compartmental forecasting models) and in [[21-weitz-2015-post-death-transmission-ebola]] (what model structure does to an inferred parameter). Spatial coupling as a substantive result appears in [[17-grenfell-2001-travelling-waves]] and [[03-keeling-2001-uk-foot-and-mouth]].
+The mechanistic/phenomenological tension recurs in [10-reich-2019-flusight-multiyear](10-reich-2019-flusight-multiyear.md) (statistical vs. compartmental forecasting models) and in [21-weitz-2015-post-death-transmission-ebola](21-weitz-2015-post-death-transmission-ebola.md) (what model structure does to an inferred parameter). Spatial coupling as a substantive result appears in [17-grenfell-2001-travelling-waves](17-grenfell-2001-travelling-waves.md) and [03-keeling-2001-uk-foot-and-mouth](03-keeling-2001-uk-foot-and-mouth.md).

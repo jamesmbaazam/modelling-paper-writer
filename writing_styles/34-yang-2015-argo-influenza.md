@@ -29,7 +29,7 @@ Note: the failure is attributed to *the discrepancies*, and the reputational dam
 - **Robustness against the specific ways this class of model fails**: tested against unrevised CDC reports (to avoid forward-looking bias), and against 25 different Google Trends snapshots — "ARGO is threefold more stable than the method of ref. 16."
 
 ## The three fixes, stated as design responses
-Each GFT failure identified by [[31-lazer-2014-parable-of-google-flu]] gets a mechanism:
+Each GFT failure identified by [31-lazer-2014-parable-of-google-flu](31-lazer-2014-parable-of-google-flu.md) gets a mechanism:
 1. *Model drift* → dynamic retraining on a rolling window.
 2. *Changing search behaviour* → L1 regularisation reselects terms over time.
 3. *Ignoring time-series structure* → 52 autoregressive lags capture seasonality.

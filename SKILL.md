@@ -1,6 +1,6 @@
 ---
 name: modelling-paper-writer
-description: Write, structure, or revise infectious disease mathematical and statistical modelling papers in the style of the field's best-written work. Use when drafting or editing any section of a modelling manuscript (abstract, introduction, methods, results, discussion, limitations, data/code availability), when choosing how to report estimates and uncertainty, when positioning work against prior literature, or when the user asks for help with an epidemiological modelling paper, preprint, or report. Covers transmission models, forecasting and forecast evaluation, parameter estimation, intervention and scenario analysis, decision analysis, reviews, best-practice guidance or reporting-standard papers, and machine learning / predictive modelling papers (risk mapping, digital surveillance, clinical prediction). Includes worked example passages for compartmental model definitions, abstracts, methods, results, limitations and availability statements.
+description: Write, structure, or revise infectious disease mathematical and statistical modelling papers in the style of the field's best-written work. Use when drafting or editing any section of a modelling manuscript (abstract, introduction, methods, results, discussion, limitations, data/code availability), when choosing how to report estimates and uncertainty, when positioning work against prior literature, or when the user asks for help with an epidemiological modelling paper, preprint, or report. Covers transmission models, forecasting and forecast evaluation, parameter estimation, intervention and scenario analysis, decision analysis, reviews, best-practice guidance or reporting-standard papers, and machine learning / predictive modelling papers (risk mapping, digital surveillance, clinical prediction). Includes worked examples for model definitions, abstracts, methods, results, limitations and availability statements. Not for empirical or observational studies without a modelling component.
 ---
 
 # Writing infectious disease modelling papers
@@ -12,13 +12,32 @@ statistical and machine learning papers, from *Nature*, *Science*, *PNAS*, the *
 family, *BMJ*, *Nature Machine Intelligence*, *npj Digital Medicine*, *PLoS Computational
 Biology*, *Statistics in Medicine*, *Ecology Letters*, *Ecological Monographs*, *Annals of
 Internal Medicine*, *J. R. Soc. Interface* and *Wellcome Open Research*, spanning 2000–2024.
-They cover COVID-19, influenza, measles, dengue, malaria, Ebola, foot-and-mouth,
-tuberculosis and zoonotic spillover. Per-paper analyses with verbatim quotations live in
+They cover COVID-19 (11 of 37), influenza, measles, dengue, Ebola, foot-and-mouth and
+zoonotic spillover. The corpus is landmark, highly cited work from a narrow set of research
+groups, chosen for writing quality rather than sampled systematically; conventions derived
+from the 2000–2008 papers may predate current reviewer expectations. Per-paper analyses with verbatim quotations live in
 `writing_styles/`; `writing_styles/papers.csv` indexes them with title, DOI, authors and
 methodological type (see also the index at the end of this file).
 
 Use it to draft, restructure or revise. When a specific paper in `writing_styles/` matches
 the manuscript's archetype, read that file too — it has the sentence-level detail.
+
+## Hard rules
+
+These override everything below.
+
+- **Never invent a citation, DOI or author.** Use `[ref]` or `[Author YEAR]` placeholders and
+  list, at the end, every claim that still needs a source.
+- **Never invent a number.** If the user has not supplied a result, write a placeholder in the
+  shape the sentence needs — `[X% (95% CrI [a–b])]` — not a plausible value.
+- **Never reuse corpus sentences verbatim** in the user's manuscript. The quotations in this
+  file and in `writing_styles/` show the *move*; write the user's version of it.
+- **In revision mode, preserve the author's voice**, spelling variant (UK/US) and tense.
+  Show edits (before/after or tracked-change style) rather than silently rewriting, and do
+  not expand beyond the section you were asked to touch.
+- **Journal typography is not a style rule.** Middle-dot decimals (`2·5`) and "to" instead of
+  an en dash in intervals are *Lancet* house style, reproduced here in quotations from Lancet
+  papers; use ordinary decimal points and en dashes unless the target journal says otherwise.
 
 **§12 holds worked example passages** for every convention below — how to define an SIR or SEIR
 model at three levels of formality, an annotated abstract, before/after repairs for gap
@@ -116,7 +135,11 @@ whole manuscript.
 **PLoS / methods journals.** Numbered sections and subsections (`2.1`, `2.2`) are appropriate
 and normal when the contribution is methodological. PLoS also wants an **Author Summary**
 written for the practitioner alongside the technical abstract.
-→ `11`, `01`
+→ `11`
+
+**Royal Society journals (*J R Soc Interface*, *Proc B*).** Conventional IMRaD with
+unnumbered subsections; the Methods can carry the full model specification in the main text.
+→ `01`
 
 **Clinical journals (Annals, etc.).** Fully labelled abstract including a mandated
 single-sentence **`Limitation:`** field, plus a **Reproducible Research Statement**.
@@ -458,7 +481,7 @@ Never "little is known about X". State a **checkable claim**:
 
 More weak-to-strong gap statements are worked in §12.3; a worked positioning paragraph is §12.7.
 
-### 4.3 Six ways to position against prior work
+### 4.3 Seven ways to position against prior work
 
 1. **Adjudicate a disagreement.** "Some previous studies suggest that reactive vaccination will
    not stop epidemics…; other analyses, however, point to the potential benefits…" (`01`)
@@ -678,7 +701,7 @@ Rules:
 For papers whose contribution is a fitted predictive model rather than a mechanistic one. The
 corpus covers three ML sub-archetypes — risk mapping and trait-based prediction (`29` Bhatt,
 `32` Olival, `33` Han), digital surveillance and nowcasting (`30` Ginsberg, `34` Yang), and
-clinical prediction (`37` Zoabi, `08` Lee) — plus two appraisals of the field's failures
+clinical prediction (`37` Zoabi, `08` Lee) — plus three appraisals of the field's failures
 (`31` Lazer, `35` Wynants, `36` Roberts). Everything in §1–§6 still applies; this section adds
 what is specific to learning from data.
 
@@ -909,7 +932,7 @@ through them. Six categories, and the corpus's best framings for each:
    reliably modelling transmission in … residential institutions" (fixable) versus "it will be
    impossible to predict the exact characteristics of any future pandemic virus" (not) (`12`).
 
-Four rules for writing them:
+Six rules for writing them:
 
 - **Name the specific question the limitation prevents you answering**, not just "the model is a
   simplification": "Because the model does not explicitly structure individuals by household, we
@@ -1056,7 +1079,9 @@ Trace the error forward to the thing people actually use. "Knock-on impacts" (`2
 Absent from every paper in this corpus. Do not write them.
 
 - "Little is known about X" — state a checkable claim about what you searched for and did not find.
-- "To the best of our knowledge, this is the first study to…" — claim scope or rigour instead.
+- "This is the first study to…" — the *first-study* claim is the problem, not the hedge. Claim
+  scope or rigour instead; "none, to our knowledge, has…" attached to a checkable claim is fine
+  (see §12.3).
 - A number without a comparator, a unit, or an interval.
 - "Recently", "many countries", "a large dataset", "informs policy" — all replaceable with a
   number, a date, or a name.

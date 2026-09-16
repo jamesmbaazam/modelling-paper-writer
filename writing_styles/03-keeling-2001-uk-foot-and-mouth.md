@@ -27,4 +27,4 @@ Two verbs are doing careful work: **"assess"** (not "predict") for duration and 
 - **Working on a live epidemic is stated, not hidden.** "the current UK epidemic" dates the work and sets expectations about data completeness.
 
 ## Related files
-For the same group's approach to spatial measles dynamics see [[17-grenfell-2001-travelling-waves]] and [[18-bjornstad-2002-tsir-measles]]; for large individual-based policy simulation written up in the same journal family see [[13-ferguson-2005-containing-pandemic-sea]] and [[12-ferguson-2006-mitigating-pandemic]].
+For the same group's approach to spatial measles dynamics see [17-grenfell-2001-travelling-waves](17-grenfell-2001-travelling-waves.md) and [18-bjornstad-2002-tsir-measles](18-bjornstad-2002-tsir-measles.md); for large individual-based policy simulation written up in the same journal family see [13-ferguson-2005-containing-pandemic-sea](13-ferguson-2005-containing-pandemic-sea.md) and [12-ferguson-2006-mitigating-pandemic](12-ferguson-2006-mitigating-pandemic.md).

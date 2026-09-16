@@ -62,7 +62,7 @@ Plus adherence to TRIPOD, with translations linked.
 
 ## Living-review mechanism
 > "This article is a living systematic review that will be updated to reflect emerging evidence. Updates may occur for up to two years from the date of original publication."
-Protocol and registration on OSF; superseded versions retained as data supplements. Compare the versioning approach of [[26-abbott-2020-rt-estimation-tool]].
+Protocol and registration on OSF; superseded versions retained as data supplements. Compare the versioning approach of [26-abbott-2020-rt-estimation-tool](26-abbott-2020-rt-estimation-tool.md).
 
 ## Distinctive moves to borrow
 1. **Use a named, published appraisal instrument** and report by domain, so criticism is auditable rather than personal.
@@ -73,4 +73,4 @@ Protocol and registration on OSF; superseded versions retained as data supplemen
 6. Treat code and equation availability as a measurable quality attribute.
 
 ## Related files
-The imaging-specific counterpart is [[36-roberts-2021-ml-covid-imaging-pitfalls]]; the single-model critique is [[31-lazer-2014-parable-of-google-flu]]; for a paper that satisfies most of these criteria, see [[37-zoabi-2021-covid-symptom-prediction]].
+The imaging-specific counterpart is [36-roberts-2021-ml-covid-imaging-pitfalls](36-roberts-2021-ml-covid-imaging-pitfalls.md); the single-model critique is [31-lazer-2014-parable-of-google-flu](31-lazer-2014-parable-of-google-flu.md); for a paper that satisfies most of these criteria, see [37-zoabi-2021-covid-symptom-prediction](37-zoabi-2021-covid-symptom-prediction.md).

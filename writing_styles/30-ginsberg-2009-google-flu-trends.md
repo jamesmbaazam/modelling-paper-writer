@@ -3,7 +3,7 @@
 Ginsberg J, Mohebbi MH, Patel RS, Brammer L, Smolinski MS, Brilliant L. *Nature* 457:1012–1014. doi:10.1038/nature07634.
 **Citations:** ~4,400 (OpenAlex, Sept 2026).
 
-**Archetype:** the *digital surveillance / data-driven nowcasting* paper — a purely correlational model over an enormous feature space, validated out of sample and sold on timeliness. Read together with [[31-lazer-2014-parable-of-google-flu]], which is its post-mortem; the pair is the best teaching object in this corpus.
+**Archetype:** the *digital surveillance / data-driven nowcasting* paper — a purely correlational model over an enormous feature space, validated out of sample and sold on timeliness. Read together with [31-lazer-2014-parable-of-google-flu](31-lazer-2014-parable-of-google-flu.md), which is its post-mortem; the pair is the best teaching object in this corpus.
 
 ## Structure
 A *Nature* Letter: one abstract paragraph, then ~2,500 words of continuous text with no headings at all, two figures, one table. Methods folded into the narrative; details in Supplementary Information.
@@ -44,4 +44,4 @@ The claim is carefully limited to **estimating a CDC quantity faster**, not to f
 **Do not copy:** fitting 50 million candidate features to ~1,100 weekly observations; treating a validated correlation with a target as evidence the relationship is structural; publishing without the search terms, which made replication impossible (see `31`); assuming the data-generating process is stationary when it is a commercial product under continuous modification.
 
 ## Related files
-[[31-lazer-2014-parable-of-google-flu]] is the critique; [[34-yang-2015-argo-influenza]] is the successor that fixes the identified flaws and is explicit about doing so.
+[31-lazer-2014-parable-of-google-flu](31-lazer-2014-parable-of-google-flu.md) is the critique; [34-yang-2015-argo-influenza](34-yang-2015-argo-influenza.md) is the successor that fixes the identified flaws and is explicit about doing so.

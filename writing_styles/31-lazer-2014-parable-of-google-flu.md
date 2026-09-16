@@ -69,4 +69,4 @@ Replicability is raised as a community standard rather than a personal failing:
 8. **End constructively**, with the fix, so the piece reads as method-building rather than score-settling.
 
 ## Related files
-Critiques the method of [[30-ginsberg-2009-google-flu-trends]]; the constructive successor is [[34-yang-2015-argo-influenza]]. For the same critical function performed on a whole literature rather than one model, see [[35-wynants-2020-covid-prediction-models-review]] and [[36-roberts-2021-ml-covid-imaging-pitfalls]].
+Critiques the method of [30-ginsberg-2009-google-flu-trends](30-ginsberg-2009-google-flu-trends.md); the constructive successor is [34-yang-2015-argo-influenza](34-yang-2015-argo-influenza.md). For the same critical function performed on a whole literature rather than one model, see [35-wynants-2020-covid-prediction-models-review](35-wynants-2020-covid-prediction-models-review.md) and [36-roberts-2021-ml-covid-imaging-pitfalls](36-roberts-2021-ml-covid-imaging-pitfalls.md).

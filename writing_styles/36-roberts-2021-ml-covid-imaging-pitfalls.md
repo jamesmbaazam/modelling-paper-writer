@@ -66,4 +66,4 @@ First-person plural, measured, and scrupulously fair to the papers being critici
 7. Put the constructive turn in the abstract, immediately after the negative verdict.
 
 ## Related files
-Companion to [[35-wynants-2020-covid-prediction-models-review]]; shares the guidance architecture of [[27-gostic-2020-practical-considerations-rt]] and [[28-charniga-2024-delay-distributions-best-practices]].
+Companion to [35-wynants-2020-covid-prediction-models-review](35-wynants-2020-covid-prediction-models-review.md); shares the guidance architecture of [27-gostic-2020-practical-considerations-rt](27-gostic-2020-practical-considerations-rt.md) and [28-charniga-2024-delay-distributions-best-practices](28-charniga-2024-delay-distributions-best-practices.md).

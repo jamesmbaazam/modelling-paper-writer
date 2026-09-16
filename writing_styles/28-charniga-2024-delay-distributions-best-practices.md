@@ -3,7 +3,7 @@
 Charniga K, Park SW, Akhmetzhanov AR, Cori A, Dushoff J, Funk S, Gostic KM, Linton NM, Lison A, Overton CE, Pulliam JRC, Ward T, Cauchemez S, Abbott S.
 *PLoS Comput Biol* 20(10):e1012520. doi:10.1371/journal.pcbi.1012520.
 
-**Archetype:** the **checklist and reporting-standard paper** — the guidance archetype taken one step further than [[27-gostic-2020-practical-considerations-rt]]: the deliverables are two adoptable checklists and a decision flowchart, and the technical derivations are deliberately outsourced to a companion paper.
+**Archetype:** the **checklist and reporting-standard paper** — the guidance archetype taken one step further than [27-gostic-2020-practical-considerations-rt](27-gostic-2020-practical-considerations-rt.md): the deliverables are two adoptable checklists and a decision flowchart, and the technical derivations are deliberately outsourced to a companion paper.
 
 ## Structure
 Sections are **tasks in a workflow**, in the order a practitioner performs them:
@@ -97,4 +97,4 @@ Also present, and worth copying where authors sit in government agencies:
 8. **Specify the minimum shareable artefact** when raw data cannot be released.
 
 ## Related files
-Direct companion to [[27-gostic-2020-practical-considerations-rt]], and cites it for downstream consequences. Delay distributions are an input to [[19-kucharski-2020-early-dynamics-covid]], [[26-abbott-2020-rt-estimation-tool]] and [[07-lauer-2020-incubation-period]] — the last of which is the kind of primary estimation paper these standards are written to improve.
+Direct companion to [27-gostic-2020-practical-considerations-rt](27-gostic-2020-practical-considerations-rt.md), and cites it for downstream consequences. Delay distributions are an input to [19-kucharski-2020-early-dynamics-covid](19-kucharski-2020-early-dynamics-covid.md), [26-abbott-2020-rt-estimation-tool](26-abbott-2020-rt-estimation-tool.md) and [07-lauer-2020-incubation-period](07-lauer-2020-incubation-period.md) — the last of which is the kind of primary estimation paper these standards are written to improve.
