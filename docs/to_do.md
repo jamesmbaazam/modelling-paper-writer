@@ -68,12 +68,12 @@ None of these exist in SKILL.md today; each is a one-liner.
 
 ## 5. Missing content
 
-- [ ] Title craft — nothing currently; corpus has good examples.
-- [ ] Abstract word limits and structured-abstract field budgets per journal (§1.2 names
+- [x] Title craft — nothing currently; corpus has good examples.
+- [x] Abstract word limits and structured-abstract field budgets per journal (§1.2 names
       fields, not budgets).
 - [x] Parameter table template (referenced repeatedly in §11, never shown).
 - [x] Scenario-definition table template (§2.4 calls it "the most reusable artefact").
-- [ ] Figures and tables beyond §3.6's six bullets; main text vs supplementary split.
+- [x] Figures and tables beyond §3.6's six bullets; main text vs supplementary split.
 - [x] Complete the reporting-guideline list: CHEERS, ODD, PRISMA (review archetype),
       modelling-specific checklists (e.g. Bennett et al. 2012), alongside EPIFORGE / TRIPOD.
 - [x] Equations in real toolchains: §12.1 uses `&nbsp;` + markdown italics. Provide LaTeX

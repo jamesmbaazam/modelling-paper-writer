@@ -90,6 +90,44 @@ The archetype determines the shape of the headline claim:
 
 ## 1. Structural patterns
 
+### 1.0 Titles
+
+The corpus titles fall into four shapes. Pick the shape by archetype, then apply the rules.
+
+| Shape | Pattern | Corpus examples |
+|---|---|---|
+| **Claim** | The finding as a declarative sentence | *Host and viral traits predict zoonotic spillover from mammals* (`32`); *Improving propensity score weighting using machine learning* (`08`) |
+| **Object + verb phrase** | *Estimating / Evaluating / Detecting* + the quantity + the data or setting | *Estimating the time-varying reproduction number of SARS-CoV-2 using national and subnational case counts* (`26`); *Detecting influenza epidemics using search engine query data* (`30`); *Evaluating epidemic forecasts in an interval format* (`11`) |
+| **Quantity, pathogen, place** | The estimand and its scope, no verb | *The incubation period of coronavirus disease 2019 (COVID-19) from publicly reported confirmed cases* (`07`); *The global distribution and burden of dengue* (`29`); *Estimated transmissibility and impact of SARS-CoV-2 lineage B.1.1.7 in England* (`24`) |
+| **Question or strategy** | *Strategies for…* / *Feasibility of…* / *The role of…* | *Strategies for containing an emerging influenza pandemic in Southeast Asia* (`13`); *Feasibility of controlling COVID-19 outbreaks by isolation of cases and contacts* (`22`); *The role of rapid diagnostics in managing Ebola epidemics* (`20`) |
+
+Rules:
+
+- **Name the pathogen and the place or population** unless the paper is general theory (`04`,
+  `05`, `14`). Two of the four shapes carry them by construction.
+- **Name the estimand, not the model.** *Estimating the time-varying reproduction number*
+  (`26`), not *A Bayesian semi-mechanistic model for…*. The method goes in the subtitle if
+  anywhere. The exception is a methods paper, where the method *is* the object (`11`, `18`).
+- **A claim title needs a claim you will defend in the Discussion.** `32` can say *predict*
+  because the paper reports out-of-sample performance; do not use the shape for a projection
+  under assumptions.
+- **Lancet family appends a genre label**: *: a mathematical modelling study* (`19`, `25`).
+  Use it; the editors will add it if you do not. *BMJ* and *Annals* use *: systematic review*
+  and similar (`35`).
+- **Colon subtitles carry one of three things**: the method or data (`07`: *estimation and
+  application*; `18`: *estimating scaling of transmission rates using a time series SIR model*),
+  the mechanism (`03`: *stochastic dispersal in a heterogeneous landscape*), or the payoff
+  (`21`: *challenges for inference and opportunities for control*). Not a restatement of the
+  main title.
+- **A hook before the colon is allowed once per career** and only when it is exact: *Time is
+  of the essence* (`01`) is about the timing of a vaccination campaign; *The parable of Google
+  Flu* (`31`) announces a cautionary tale. If the hook could sit on any paper, cut it.
+- **Length**: 10–18 words for the corpus; under 15 for *Nature*/*Science*. Every word should
+  be one a reader would search for. Cut *A study of*, *An analysis of*, *Insights into*,
+  *Towards*, *Novel*.
+- **Do not put a number in the title** unless it is the finding (*the first 50 days* in `16`
+  is scope, and fine; *R₀ = 2·5* is not).
+
 ### 1.1 The universal spine
 
 Every paper in the corpus, whatever its journal, is built on the same six moves. Journal
@@ -106,6 +144,32 @@ format only changes where the moves live.
 An annotated abstract built on these six moves is worked in §12.2.
 
 ### 1.2 Journal templates
+
+**Abstract and main-text budgets.** Typical limits for the venues in the corpus and the
+modelling venues users most often target. These drift; **verify against the current author
+guidelines before drafting**, and ask the user for the target if it is not inferable. Write
+to the budget from the first draft — an abstract cut from 400 words to 250 loses its
+uncertainty statements first, which is the wrong thing to lose.
+
+| Venue | Abstract | Fields | Main text | Other constraints |
+|---|---|---|---|---|
+| *Nature* | ≤150 words, unreferenced, one paragraph | Unstructured, but built on the §1.1 spine | ~3,000 words (Articles) | ≤6 display items; Methods separate, ≤3,000 words |
+| *Science* | ≤125 words | Unstructured | ~2,500 (Reports) / ~4,500 (Research Articles) | Editor's summary written by the journal; supplementary materials carry the model |
+| *PNAS* | ≤250 words | Unstructured | ~4,500 words | *Significance* ≤120 words, no jargon; Methods last |
+| *Lancet* family (incl. *Lancet ID*, *Lancet Public Health*) | ≤300 words | Background / Methods / Findings / Interpretation / Funding | 3,500 words | *Research in context* panel; ≤30 refs; ≤5 tables + figures; *Role of the funding source* |
+| *BMJ* | ≤400 words | Objectives / Design / Setting / Participants / Interventions / Main outcome measures / Results / Conclusions (adapt for modelling: Design → model type) | 4,000 words | *What is already known / What this study adds* box, ≤3 bullets each |
+| *Annals of Internal Medicine* | ≤275 words | Background / Objective / Design / Setting / Participants / Measurements / Results / **Limitation** (one sentence) / Conclusion / Primary Funding Source | ~3,500 words | Reproducible Research Statement |
+| *PLoS Computational Biology*, *PLoS Medicine* | ≤300 words | Unstructured (*PLoS Med*: Background / Methods and findings / Conclusions) | No limit (*PLoS Med* ~3,500–4,500) | *Author Summary* ~150–200 words; *PLoS Med* also wants a three-question *Author summary* box |
+| *Nature Machine Intelligence*, *npj Digital Medicine* | ≤150 words | Unstructured | ~3,000 / no firm limit | TRIPOD+AI checklist expected |
+| *J R Soc Interface*, *Proc B* | ≤200 words | Unstructured | ~5,000 (*Interface*) / ~5,000 (*Proc B*) | Electronic supplementary material referenced inline |
+| *Epidemics* | ≤250 words | Unstructured | No firm limit | Highlights (3–5 bullets, ≤85 chars each) |
+| *Eurosurveillance* | ≤250 words | Background / Aim / Methods / Results / Conclusion | 3,500 words | Rapid communications: ≤1,500 words, ≤150-word abstract |
+| *Wellcome Open Research* | ≤300 words | Optional structure | No limit | Versioning; separate Data and Software availability |
+
+Field budgets inside a 300-word Lancet-style abstract, from `19`, `22`, `25`: **Background**
+50–70 words (moves 1–2 of §1.1), **Methods** 70–90 (move 3, plus data, period, scenarios),
+**Findings** 100–130 (moves 4–5, with intervals), **Interpretation** 40–60 (move 6),
+**Funding** one line. Findings is the field to protect when cutting.
 
 **Nature / Science (Articles, Reports).** No `Introduction`/`Results` headings. A dense
 one-paragraph abstract, then continuous text broken by **short topic subheadings**
@@ -436,7 +500,33 @@ The most trust-building habit in the corpus:
 
 Put these in Results, not buried in Discussion.
 
-### 3.6 Figures
+### 3.6 Figures and tables
+
+**Which display items, and where.** Main-text slots are scarce (≤5 in the *Lancet* family,
+≤6 in *Nature*), so decide the split before drafting:
+
+- **Main text** carries one item per headline claim, plus the parameter table (§12.12) and,
+  for intervention papers, the scenario table (§12.13). The corpus norm is one *model fit or
+  validation* figure (data overlaid on simulation), one *headline result* figure (the
+  estimate, threshold, ranking or projection), and one *what governs it* figure (sensitivity
+  or mechanism). A schematic of the model structure is worth a slot only when the structure is
+  the contribution or unfamiliar (`21`, `23`).
+- **Supplementary material** carries the full equations if the journal does not want them in
+  Methods (§2.1), every sensitivity analysis not summarised in a main figure, convergence
+  diagnostics, per-region or per-model breakdowns, and the completed reporting checklist.
+  Reference each supplementary item from the exact sentence it supports; a supplement that
+  is never cited in the main text is not evidence.
+- **Figure or table?** A table when the reader will look up a value or compare across a
+  labelled set of scenarios or models (`09`, `25`); a figure when the shape — a trajectory, a
+  threshold, a distribution — is the finding. Never both for the same numbers.
+
+**Captions.** A caption must let the figure be read without the text: what is plotted (and
+what the interval or band is — §3.1), under which scenario or parameter values (`04`), and
+what the reader should see. Start with a declarative sentence where the journal allows it
+(*Contact tracing controls most outbreaks when R₀ = 1.5 but few when R₀ = 3.5*), then the
+panel-by-panel key.
+
+**Design rules from the corpus:**
 
 - Overlay observed data on simulated trajectories so validation is visual and immediate (`01`).
 - Put the fixed parameter values in the caption of the figure they generated (`04`).
@@ -447,6 +537,18 @@ Put these in Results, not buried in Discussion.
   (`26`).
 - Show a bifurcation diagram with your system's parameters *and* the canonical system's marked on
   the same axis (`02`, `04`).
+- Put the baseline or reference scenario in every panel so each comparison is visible without
+  flipping between panels (`22`, `25`).
+- Use one colour or line style per scenario or model *across the whole paper*, keyed to the
+  scenario labels (§12.13), and do not reassign it between figures.
+- Log-scale the y-axis for growth-phase incidence and say so in the caption; linear for
+  cumulative or peak quantities readers will want to compare in absolute terms.
+- Label axes with the quantity and its unit, not the variable name (*Daily reported cases*,
+  not *I(t)*).
+- **Tables**: one row per scenario or model, one column per outcome, the baseline row first,
+  intervals in the same cell as the point estimate — `2,340 (95% CrI 1,810–2,910)` — and the
+  unit in the column header. Round to the precision the data support; a table full of
+  four-significant-figure posterior medians overstates what the model knows.
 
 ---
 
