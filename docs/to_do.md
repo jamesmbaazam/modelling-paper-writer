@@ -85,7 +85,7 @@ None of these exist in SKILL.md today; each is a one-liner.
 - [x] Description is 963 chars (limit ~1024) with no negative trigger; add e.g. "not for
       empirical or observational studies without a modelling component".
 - [x] Move `prompt.md` to `docs/` — it is provenance, not skill content.
-- [ ] Add `evals/` with ~a dozen prompts and a rubric drawn from §11 (e.g. "write a
+- [x] Add `evals/` with ~a dozen prompts and a rubric drawn from §11 (e.g. "write a
       limitations paragraph for this branching-process model", "rewrite this abstract for
       Lancet ID", "critique my methods section") so the restructure in §1 can be checked for
       regressions with `claude plugin eval` / `/skill-doctor`.
