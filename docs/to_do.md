@@ -1,26 +1,26 @@
 # To do
 
 Working list from the 2026-09-13 critique of the skill. Ordered by priority; tick items off as
-they are done. Line references are to `SKILL.md` as of commit `43f3359` (before the 2026-09-15 edits, which
-added a *Hard rules* block near the top and shifted later lines down).
+they are done. Line references were to `SKILL.md` as of commit `43f3359`; the 2026-09-16 restructure moved
+the detailed sections to `references/evidence.md`, so use section numbers rather than lines.
 
 ## 1. Restructure: procedure first, progressive disclosure for the rest
 
 SKILL.md is ~1,420 lines / ~13,700 words (~22k tokens), loaded in full on every invocation.
 It describes what good papers look like but never tells Claude what to do.
 
-- [ ] Add an explicit procedure at the top of SKILL.md:
+- [x] Add an explicit procedure at the top of SKILL.md:
   1. Determine mode — draft from scratch / revise a pasted draft / critique only.
   2. Establish archetype (§0), target venue and word limit; ask if not inferable.
   3. Read the matching `writing_styles/NN-*.md` file (make this a required step, not a suggestion).
   4. Draft or edit the requested section only.
   5. Self-review against the §11 checklist before returning.
-- [ ] Cut SKILL.md to ~300–400 lines: procedure, archetype table, rules as bolded imperatives,
+- [x] Cut SKILL.md to ~300–400 lines: procedure, archetype table, rules as bolded imperatives,
       anti-patterns, checklist.
-- [ ] Move corpus quotations that *justify* each rule into `references/evidence.md`
+- [x] Move corpus quotations that *justify* each rule into `references/evidence.md`
       (mirror the section numbering so rules and evidence stay linked).
-- [ ] Move §12 worked examples into `references/examples.md` (or one file per archetype).
-- [ ] Replace `NN` code references (`01`, `22`…, 225 occurrences) with `Author YEAR` inline so
+- [x] Move §12 worked examples into `references/examples.md` (or one file per archetype).
+- [x] Replace `NN` code references (`01`, `22`…, 225 occurrences) with `Author YEAR` inline so
       Claude does not need the index table to interpret them.
 
 ## 2. Guardrails for the failure modes that matter most

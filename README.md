@@ -1,4 +1,4 @@
-# modelling-paper-writing-skill
+# modelling-paper-writer
 
 A [Claude Code](https://claude.com/claude-code) skill for writing infectious disease
 mathematical, statistical and machine learning modelling papers, distilled from the writing
@@ -14,7 +14,11 @@ uncertainty, position themselves against prior work, and write limitations.
 
 | Path | Contents |
 |---|---|
-| `SKILL.md` | The skill itself — 12 sections consolidating the conventions, plus worked example passages |
+| `SKILL.md` | The skill itself: a six-step procedure, hard rules, the archetype table, the conventions as one-line imperatives, anti-patterns and the working checklist (~450 lines, loaded on every invocation) |
+| `references/evidence.md` | The corpus quotations behind each rule, with the same section numbering as `SKILL.md` |
+| `references/examples.md` | Worked template passages (§12.1–§12.13): model definitions, abstract, gap statements, results sentences, limitations, methods paragraphs, parameter and scenario tables, availability statement |
+| `references/corpus-index.md` | Author YEAR → `writing_styles/` file, with venue and archetype |
+| `evals/` | Regression suite for `claude plugin eval` (see `evals/README.md`) |
 | `writing_styles/*.md` | One style analysis per paper (37 files), with verbatim quotations |
 | `writing_styles/papers.csv` | Index: title, DOI, authors, methodological type, source URL, style file |
 | `docs/prompt.md` | The original brief the skill was built from |
@@ -45,12 +49,18 @@ expectations (e.g. citation density).
 | Hybrid (statistical–mathematical) | 5 |
 | Machine learning | 4 |
 
-Five papers (`03`, `05`, `06`, `17`, `18`) have no reachable open-access full text; those style
+Five papers (Keeling 2001, Altizer 2006, Keeling & Rohani 2002, Grenfell 2001, Bjørnstad 2002) have no reachable open-access full text; those style
 files are built on the verbatim abstract and bibliographic record, and say so at the top.
 
 ## What the skill covers
 
-`SKILL.md` is organised as:
+`SKILL.md` opens with a **procedure** (determine mode → establish archetype, venue and budget →
+read the matching style file → draft or edit only the requested section → self-review against
+the checklist → return text plus a note of placeholders and assumptions) and a block of **hard
+rules** (never invent citations or numbers; never reuse corpus sentences; preserve the author's
+voice in revision; journal typography is not a style rule). The conventions then follow this
+structure, with the corpus evidence for each in `references/evidence.md` under the same
+section numbers:
 
 0. **Choosing the archetype** — fourteen paper types, each with a canonical exemplar and the
    shape its headline claim should take
@@ -72,13 +82,14 @@ files are built on the verbatim abstract and bibliographic record, and say so at
 9. **Best-practice and guidance papers** — a distinct archetype with its own rules
 10. **Anti-patterns**
 11. **Working checklist**
-12. **Worked examples** — SIR/SEIR model definitions at three levels of formality, an annotated
-    abstract, weak→strong repairs, and template methods and availability sections
+12. **Worked examples** (in `references/examples.md`) — SIR/SEIR model definitions at three
+    levels of formality with LaTeX and Word variants, an annotated abstract, weak→strong
+    repairs, template methods and availability sections, and parameter and scenario tables
 
 ## Installing
 
 ```sh
-git clone https://github.com/jamesmbaazam/modelling-paper-writing-skill \
+git clone https://github.com/jamesmbaazam/modelling-paper-writer \
   ~/.claude/skills/modelling-paper-writer
 ```
 
@@ -91,9 +102,11 @@ revising a modelling manuscript. You can also invoke it explicitly with
 1. Write a style analysis as `writing_styles/NN-firstauthor-year-slug.md`, following the shape
    of the existing files: archetype, structure, opening move, methodology conventions, results
    storytelling, literature integration, voice, limitations, distinctive moves to borrow.
-   Quote verbatim wherever possible, and link related files with `[[wikilinks]]`.
-2. Add a row to `writing_styles/papers.csv`.
-3. Fold any genuinely new convention into `SKILL.md` and add the paper to its index table.
+   Quote verbatim wherever possible, and link related files with relative markdown links.
+2. Add a row to `writing_styles/papers.csv` and to `references/corpus-index.md`.
+3. Fold any genuinely new convention into `SKILL.md` as a one-line imperative, with the
+   supporting quotation in `references/evidence.md` under the same section number.
+4. Run `claude plugin eval .` to check nothing regressed.
 
 ## Author
 
@@ -103,8 +116,8 @@ and directed its development.
 
 If you use this skill in your work, please cite it — see [CITATION.cff](CITATION.cff), or:
 
-> Azam, J. (2026). *modelling-paper-writing-skill: a Claude Code skill for writing infectious
-> disease modelling papers.* https://github.com/jamesmbaazam/modelling-paper-writing-skill
+> Azam, J. (2026). *modelling-paper-writer: a Claude Code skill for writing infectious
+> disease modelling papers.* https://github.com/jamesmbaazam/modelling-paper-writer
 
 ## Licence
 
