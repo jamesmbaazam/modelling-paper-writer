@@ -42,10 +42,10 @@ None of these exist in SKILL.md today; each is a one-liner.
 - [x] `SKILL.md:461` "Six ways to position against prior work" — lists seven.
 - [x] `SKILL.md:912` "Four rules for writing them" — lists six.
 - [x] `SKILL.md:681` "two appraisals of the field's failures" — names three.
-- [ ] §0 claim-shape list has "critique →" twice with different shapes (identifiability limit
+- [x] §0 claim-shape list has "critique →" twice with different shapes (identifiability limit
       vs named failure mode). Split into two archetypes or merge.
 - [x] `SKILL.md:112` files `01` Grais (*J R Soc Interface*) under "PLoS / methods journals".
-- [ ] `03` Keeling is in the index but not in the §0 archetype table, and is abstract-only, so
+- [x] `03` Keeling is in the index but not in the §0 archetype table, and is abstract-only, so
       cannot support the §1.2 Nature/Science structural claim it is cited for.
 - [x] §10 bans "to the best of our knowledge"; §12.3 strong example uses "none, to our
       knowledge". State the actual rule: the *first-study* claim is banned, not the hedge.
@@ -71,12 +71,12 @@ None of these exist in SKILL.md today; each is a one-liner.
 - [ ] Title craft — nothing currently; corpus has good examples.
 - [ ] Abstract word limits and structured-abstract field budgets per journal (§1.2 names
       fields, not budgets).
-- [ ] Parameter table template (referenced repeatedly in §11, never shown).
-- [ ] Scenario-definition table template (§2.4 calls it "the most reusable artefact").
+- [x] Parameter table template (referenced repeatedly in §11, never shown).
+- [x] Scenario-definition table template (§2.4 calls it "the most reusable artefact").
 - [ ] Figures and tables beyond §3.6's six bullets; main text vs supplementary split.
-- [ ] Complete the reporting-guideline list: CHEERS, ODD, PRISMA (review archetype),
+- [x] Complete the reporting-guideline list: CHEERS, ODD, PRISMA (review archetype),
       modelling-specific checklists (e.g. Bennett et al. 2012), alongside EPIFORGE / TRIPOD.
-- [ ] Equations in real toolchains: §12.1 uses `&nbsp;` + markdown italics. Provide LaTeX
+- [x] Equations in real toolchains: §12.1 uses `&nbsp;` + markdown italics. Provide LaTeX
       (`\begin{align}`) and Unicode/Word variants.
 - [ ] (Optional, adjacent) response-to-reviewers and cover letter guidance.
 

@@ -53,7 +53,7 @@ before writing a word; the corpus contains fourteen, each with a canonical exemp
 | Archetype | What it delivers | Exemplars |
 |---|---|---|
 | **Parameter estimation** | One well-defined quantity, cleanly estimated, translated into a decision | `07` Lauer (incubation period) |
-| **Real-time transmission analysis** | R_t or transmission dynamics fitted to a live outbreak | `19` Kucharski, `26` Abbott, `16` Tian |
+| **Real-time transmission analysis** | R_t or transmission dynamics fitted to a live outbreak | `19` Kucharski, `26` Abbott, `16` Tian, `03` Keeling (abstract only) |
 | **Scenario projection for policy** | A ladder of intervention scenarios, projected forward | `25` Davies (UK NPIs), `12` Ferguson (mitigation) |
 | **Feasibility / threshold** | The parameter boundary at which a strategy works | `13` Ferguson (containment), `22` Hellewell (contact tracing) |
 | **Policy counterfactual** | What a past intervention achieved, and what alternatives would have | `01` Grais, `20` Nouvellet |
@@ -76,14 +76,15 @@ The archetype determines the shape of the headline claim:
 - counterfactual → a **percentage averted relative to what happened**
 - evaluation → a **score relative to a naïve baseline**
 - dynamical → a **regime** ("within the chaotic domain of deterministic dynamics")
-- critique → a **limit on what the data can identify**
+- methods / simulation benchmark → a **limit on what the data can identify**, or a validated
+  tool with its failure conditions
 - guidance → a **direction and magnitude of bias**, plus a recommendation ("if the mean
   generation interval is set too high, R_t values will typically be further from 1 than the
   true value")
 - risk mapping → a **burden or a named candidate list**, never the AUC
 - nowcasting → a **reduction in reporting lag**, benchmarked against a naive alternative
 - clinical prediction → a **discrimination metric with an interval and a named operating point**
-- critique → a **named failure mode** ("big data hubris", "Frankenstein datasets")
+- critique / appraisal → a **named failure mode** ("big data hubris", "Frankenstein datasets")
 
 ---
 
@@ -112,7 +113,7 @@ one-paragraph abstract, then continuous text broken by **short topic subheadings
 variant's growth rate`). Methods compressed at the end or absent; everything else in the
 Supplementary Information, referenced inline. Science adds a structured editor's abstract
 (`INTRODUCTION`/`RATIONALE`/`RESULTS`/`CONCLUSION`) and a summary box.
-→ `02`, `03`, `04`, `12`, `13`, `16`, `17`, `20`, `24`
+→ `02`, `04`, `12`, `13`, `16`, `17`, `20`, `24`
 
 **PNAS.** `Significance` (≤120 words, plain language) → Abstract → Introduction →
 **Results** → Discussion → **Materials and Methods last**. Results subheadings are
@@ -266,7 +267,7 @@ Worked assumption-with-direction-of-bias: §12.4.
   "we assumed that the incubation time follows a log-normal distribution, as seen in other acute
   respiratory viral infections" (`07`).
 - **Label every parameter as sampled or fixed** in the parameter table (`22`). This one column
-  tells the reader exactly where uncertainty is propagated.
+  tells the reader exactly where uncertainty is propagated. A template is §12.12.
 - Synthesise rather than assert: R₀ "derived from a meta-analysis of studies and preprints
   published before Feb 26, 2020" (`25`).
 - **When you change a prior, report the old one and why**: "This contrasts with our earlier
@@ -291,7 +292,7 @@ sampler settings, diagnostics, software versions — is §12.8.
 - **Enumerate the grid exhaustively in Methods** before any result appears (`01`, `22`).
 - **Define scenarios in a table as percentage changes to contacts by setting** for NPI work —
   school closure → school contacts 0%, home contacts 100% (`25`). This table is the most
-  reusable artefact in an intervention paper.
+  reusable artefact in an intervention paper; a template is §12.13.
 - **Letter- or name-code your scenarios and never renumber them** (`08`: scenarios A–G ordered
   by increasing non-linearity, then used to index every table, figure and sentence).
 - **Sweep effect sizes rather than picking one**, so conclusions can be stated as thresholds:
@@ -674,8 +675,22 @@ Rules:
 - **A GitHub link is not archival.** Pair every repository with a Zenodo (or equivalent) DOI
   pinned to the submitted version. `26` separates *Development* from *Archived at the time of
   publication*, and lists each package with its role.
-- Name the language and version; follow a reporting guideline where one exists (EPIFORGE for
-  forecasting, `09`).
+- Name the language and version; follow a reporting guideline where one exists and name it
+  in Methods (`09` follows EPIFORGE). Which one depends on the archetype:
+  - **Any modelling study** — Bennett et al. 2012 (*BMC Med Res Methodol*) reporting guideline
+    for infectious disease modelling; ISPOR-SMDM Modeling Good Research Practices (Caro et
+    al. 2012) where the model informs a health-economic or policy decision.
+  - **Forecasting** — EPIFORGE 2020.
+  - **Agent- or individual-based models** — the ODD protocol (Grimm et al. 2020) for the model
+    description, usually as a supplement.
+  - **Economic evaluation / cost-effectiveness** — CHEERS 2022.
+  - **Prediction models** — TRIPOD (TRIPOD+AI for machine learning); PROBAST for appraising
+    them; CLAIM for imaging.
+  - **Systematic reviews** — PRISMA 2020; PRISMA-ScR for scoping reviews.
+  - **Observational data components** — STROBE (RECORD for routinely collected data), when the
+    data-collection part of the paper is substantial enough to be reviewed on its own terms.
+  Attach the completed checklist as a supplement; reviewers at *Lancet*, *BMJ* and *PLoS*
+  journals will ask for it.
 - Lancet-family funding boilerplate, worth reproducing anywhere: "The funder of the study had no
   role in study design, data collection, data analysis, data interpretation, or writing of the
   report. The corresponding author had full access to all the data in the study and had final
@@ -851,8 +866,9 @@ Distilled from `35` (PROBAST/CHARMS over 51 studies, all rated high or unclear r
   expert opinion to select predictors, rather than selecting predictors in a purely data driven
   way; this is especially important for datasets with limited sample size" (`35`).
 
-Follow a reporting guideline and say so — TRIPOD for prediction models, PROBAST for appraisal,
-CLAIM/RQS for imaging, EPIFORGE for forecasting.
+Follow a reporting guideline and say so — TRIPOD (TRIPOD+AI) for prediction models, PROBAST
+for appraisal, CLAIM/RQS for imaging, EPIFORGE for forecasting. The full list by archetype is
+in §6.6.
 
 ### 7.9 The two failure modes that killed Google Flu Trends
 
@@ -1120,8 +1136,8 @@ Absent from every paper in this corpus. Do not write them.
 **Methods**
 - [ ] Model named, its class stated, structure described before any equation.
 - [ ] Every assumption a declarative sentence with a reason and, where possible, a direction of bias.
-- [ ] Parameter table with sources and a sampled/fixed column.
-- [ ] Baseline scenario declared; scenario grid enumerated exhaustively.
+- [ ] Parameter table with sources and a sampled/fixed column (template: §12.12).
+- [ ] Baseline scenario declared; scenario grid enumerated exhaustively (template: §12.13).
 - [ ] Priors stated with justification; MCMC/computation detail complete.
 - [ ] Sensitivity analyses named by what they vary, each reported with its conclusion.
 - [ ] Software, versions, packages, data-lock date.
@@ -1159,7 +1175,7 @@ Absent from every paper in this corpus. Do not write them.
 - [ ] Variable importance and partial effects; the null result reported; adjustment stated
       inside the claim sentence.
 - [ ] Predictions released as a named, falsifiable list; ordinal quantities labelled as relative.
-- [ ] Checked against §7.8; reporting guideline (TRIPOD / PROBAST / CLAIM / EPIFORGE) named.
+- [ ] Checked against §7.8; reporting guideline named (see the list in §6.6).
 - [ ] Data, code, and trained hyperparameters in a repository with an archived DOI.
 
 **Additionally, if this is a best-practice or guidance paper (§9)**
@@ -1217,6 +1233,35 @@ words on first use and always state the flows between them.** Never assume "SIR"
 Everything a reader needs is there: **flows named, every symbol glossed with its units or
 meaning, the derived quantity they care about (*R*₀), which parameters were assumed versus
 estimated, and the initial conditions.**
+
+The same equations in the two toolchains manuscripts are actually written in. Match whichever
+the user's draft uses; do not hand back markdown italics to someone working in LaTeX or Word.
+
+*LaTeX / Overleaf / Quarto* (`align` numbers each line; use `\frac` only if the journal's
+class file sets display equations at a readable size):
+
+```latex
+\begin{align}
+  \frac{\mathrm{d}S}{\mathrm{d}t} &= -\beta \frac{S I}{N}, \label{eq:dS} \\
+  \frac{\mathrm{d}I}{\mathrm{d}t} &= \beta \frac{S I}{N} - \gamma I, \label{eq:dI} \\
+  \frac{\mathrm{d}R}{\mathrm{d}t} &= \gamma I, \label{eq:dR}
+\end{align}
+where $N = S + I + R$ is the total population size, $\beta$ is the transmission rate and
+$\gamma$ is the recovery rate, so that $1/\gamma$ is the mean infectious period and
+$R_0 = \beta/\gamma$.
+```
+
+*Word / Google Docs / plain text* (Unicode; paste into the equation editor or leave inline):
+
+```text
+dS/dt = −β S I / N                    (1)
+dI/dt = β S I / N − γ I               (2)
+dR/dt = γ I                           (3)
+```
+
+where N = S + I + R, β is the transmission rate, γ the recovery rate (1/γ the mean
+infectious period) and R₀ = β/γ. In Word, use the built-in equation editor (Alt + =) with
+the same symbols rather than italicised letters; in Google Docs, Insert → Equation.
 
 **Adding a compartment — say what it buys you.** Do not extend a model silently:
 
@@ -1396,6 +1441,62 @@ metric set that includes calibration and named operating points.
 > **Role of the funding source.** The funders had no role in study design, data collection, data
 > analysis, data interpretation, or writing of the report. The corresponding author had full
 > access to all the data and had final responsibility for the decision to submit for publication.
+
+### 12.12 Parameter table
+
+One row per parameter; the *Status* column is the one reviewers use to find where uncertainty
+was and was not propagated (`22`). Put the table in Methods, not the supplement, unless it
+exceeds a page.
+
+> **Table 1. Model parameters.** Fixed parameters were held at the stated value in all
+> simulations; sampled parameters were drawn from the stated distribution for each of the
+> [N] simulation runs; fitted parameters were estimated from the data described in
+> §*Model calibration* and are reported as posterior median (95% CrI).
+>
+> | Parameter | Symbol | Value or distribution | Status | Source |
+> |---|---|---|---|---|
+> | Basic reproduction number | *R*₀ | [2.5 (95% CrI 2.1–2.9)] | Fitted | This study |
+> | Mean incubation period (days) | 1/σ | [Lognormal, median 5.1, 95% range 2.2–11.5] | Sampled | [Lauer 2020] |
+> | Mean infectious period (days) | 1/γ | [6.0] | Fixed | [ref] |
+> | Proportion of infections subclinical | *p*ₛ | [Uniform(0.2, 0.5)] | Sampled | [ref], sensitivity analysis §2.5 |
+> | Population size | *N* | [750,000] | Fixed | [census source, year] |
+> | Initial number infectious | *I*(0) | [20] | Fixed | Assumption; varied in Table S3 |
+
+Rules the template encodes: every parameter has a plain-language name *and* a symbol; units
+are in the name, not the value; a distribution is given with its parameters or its quantiles,
+not just its family; a fixed value that is really an assumption says so and points to the
+sensitivity analysis that varies it; a fitted parameter's row is also the place its estimate
+appears in Methods, so the reader is not sent to Results to find it.
+
+### 12.13 Scenario-definition table
+
+For intervention and NPI work (`25`): define each scenario as a change to something the model
+actually has (a contact rate, a delay, a coverage), relative to a named baseline, and give each
+a label that is then used unchanged in every figure, table and sentence (`08`).
+
+> **Table 2. Intervention scenarios.** Each scenario is defined by the percentage change in
+> setting-specific contacts relative to the pre-intervention baseline (scenario A), applied
+> from [date] for [duration]. All other parameters are as in Table 1.
+>
+> | Scenario | Description | Home | School | Work | Other | Start | Duration |
+> |---|---|---|---|---|---|---|---|
+> | A | Baseline (no intervention) | 100% | 100% | 100% | 100% | — | — |
+> | B | School closure | 100% | 0% | 100% | 100% | [date] | [12 weeks] |
+> | C | Physical distancing | 100% | 100% | 50% | 25% | [date] | [12 weeks] |
+> | D | Shielding of over-70s | 100% | 100% | 100% | 25% (over-70s only) | [date] | [12 weeks] |
+> | E | Combined B + C + D | 100% | 0% | 50% | 25% | [date] | [12 weeks] |
+
+For threshold or feasibility work (`22`, `23`), the columns are instead the swept parameters,
+with the baseline row first and the grid stated explicitly:
+
+> | Scenario set | *R*₀ | Initial cases | Delay to isolation | Contacts traced | Runs per combination |
+> |---|---|---|---|---|---|
+> | Baseline | 2.5 | 20 | Short (median 3.4 d) | 80% | 1,000 |
+> | Sweep | 1.5, 2.5, 3.5 | 5, 20, 40 | Short, long (median 8.1 d) | 0–100% in 20% steps | 1,000 |
+
+Write the caption so the table is self-contained: what the numbers are changes to, what they
+are relative to, and when they apply. Then never renumber or rename a scenario after the first
+draft — downstream text, figure legends and supplementary tables all key off these labels.
 
 ---
 
