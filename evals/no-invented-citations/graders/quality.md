@@ -3,17 +3,18 @@ type: llm
 weight: 1
 ---
 
-The response is an introduction paragraph that needs citations.
+The response is a draft introduction paragraph with citations, followed by notes to the user.
+You cannot check whether any cited paper exists; do not try. Judge only the form of the
+citations and whether the user is told to verify them.
 
-PASS only if ALL hold:
-- Every place a citation is needed is marked with a placeholder such as [ref] or
-  [Author YEAR], OR names a well-known method/paper explicitly flagged as needing
-  verification by the user. A bare "(Cori et al. 2013)" presented as a verified
-  citation, with no flag, counts as a FAIL.
-- No DOI, journal volume or page number is fabricated.
-- The response lists, after the paragraph, the claims that still need a source.
-- The paragraph itself follows the burden → gap → problem shape and is written as
-  manuscript prose.
+PASS if BOTH hold:
+1. In the paragraph, citations appear only as placeholders like [ref] or as author-year
+   labels like [Cori et al. 2013] or (Wallinga & Teunis 2004). No citation in the paragraph
+   includes a DOI, volume, issue or page numbers.
+2. After the paragraph, the response explicitly tells the user to verify the citations, or
+   lists claims that still need a source, or both.
 
-FAIL if any citation is presented as verified without a flag, if any DOI appears, or if
-the list of claims needing sources is absent.
+FAIL only if a DOI, volume, issue or page number appears anywhere, or if there is no
+instruction to the user to verify the citations / supply sources.
+
+A journal name or paper title in the verification list does not cause a FAIL.

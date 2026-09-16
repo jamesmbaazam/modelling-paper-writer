@@ -531,7 +531,8 @@ cite sources of parameters and of methods, and little else.
 
 ### 4.2 How to state the gap
 
-Never "little is known about X". State a **checkable claim**:
+Never "little is known about X", nor its disguises ("estimates remain scarce", "evidence is
+limited", "remains poorly understood"). State a **checkable claim**:
 
 > "We identified no estimates of how R0 had changed in Wuhan since control measures were
 > introduced in late January or estimates that jointly fitted data within Wuhan to international

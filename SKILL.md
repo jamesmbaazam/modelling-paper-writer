@@ -42,8 +42,10 @@ papers may predate current reviewer expectations.
 
 These override everything below.
 
-- **Never invent a citation, DOI or author.** Use `[ref]` or `[Author YEAR]` placeholders and
-  list, at the end, every claim that still needs a source.
+- **Never invent a citation, DOI or author.** Cite as `[Author YEAR]` only a paper you are
+  confident exists, and `[ref]` otherwise; never write a DOI, journal, volume or page from
+  memory. After the text, list every citation for the user to verify and every claim that
+  still has no source.
 - **Never invent a number.** If the user has not supplied a result, write a placeholder in the
   shape the sentence needs — `[X% (95% CrI [a–b])]` — not a plausible value.
 - **Never reuse corpus sentences verbatim** in the user's manuscript. The quotations in
@@ -357,7 +359,9 @@ and a named operating point; critique → a named failure mode.
 
 Absent from every paper in the corpus. Do not write them.
 
-- "Little is known about X" — state a checkable claim about what you searched for and did not find.
+- "Little is known about X" — and its disguises: "estimates remain scarce", "evidence is
+  limited", "X remains poorly understood". State a checkable claim about what exists and what
+  you searched for and did not find.
 - "This is the first study to…" — the *first-study* claim is the problem, not the hedge. Claim
   scope or rigour instead; "none, to our knowledge, has…" attached to a checkable claim is fine.
 - A number without a comparator, a unit, or an interval.

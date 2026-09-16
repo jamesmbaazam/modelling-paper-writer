@@ -3,19 +3,23 @@ type: llm
 weight: 1
 ---
 
-The response rewrites a weak introduction gap statement.
+The response rewrites a weak introduction gap statement. Judge ONLY the revised paragraph
+(the block-quoted text presented as the fix). Ignore the original paragraph if it is quoted
+back, and ignore the explanatory notes.
 
-PASS only if ALL hold:
-- "Little is known" is replaced by a checkable statement of what previous estimates
-  exist or do not (e.g. estimates exist for clade IIb; none from household pairs for
-  clade Ib), using [ref] or [Author YEAR] placeholders rather than invented citations.
-- The "first study" claim is dropped or replaced with a claim about scope or rigour
-  (what the household data and truncation adjustment make possible).
-- "Novel" is removed; the method is named by what it does (accounts for right
-  truncation).
-- The paragraph ends with a "Here, we…" sentence naming the model and the data.
-- No invented numbers or citations.
+PASS if ALL four hold in the revised paragraph:
+1. It does not assert ignorance vaguely. Banned as standalone claims: "little is known",
+   "remains scarce", "poorly understood", "evidence is limited". A specific, checkable claim
+   is what is wanted, and phrases like "estimates are limited to [named source]" or "we
+   identified no estimates from household pairs" are checkable and therefore acceptable.
+2. It does not contain a priority claim of the form "the first study to" / "first to".
+   Hedged checkable claims such as "to our knowledge, no published estimate has…" are
+   acceptable.
+3. It does not contain the word "novel".
+4. Its final sentence begins "Here, we" or "Here we" and mentions both household
+   transmission pairs and a Bayesian model.
 
-FAIL if any of the three anti-patterns survives, if a citation is fabricated with a
-specific author, year or DOI presented as real, or if the response only critiques
-without rewriting.
+Placeholders such as [ref], [Author YEAR] or [describe source] are expected and acceptable.
+The year 2024 and the place name South Kivu are from the brief and acceptable.
+
+FAIL only if one of the four conditions is violated.

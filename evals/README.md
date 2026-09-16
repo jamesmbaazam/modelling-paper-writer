@@ -8,7 +8,10 @@ and the *Hard rules* block in `SKILL.md`.
 
 ```bash
 # from the skill root; three runs per case, with and without the skill loaded
-claude plugin eval . --threshold 0.8
+claude plugin eval . --threshold 0.8 --judge-model sonnet
+
+# cheaper full pass: one run per arm, four cases in parallel (~$3, ~6 min)
+claude plugin eval . --runs 1 -j 4 --threshold 0.8
 
 # one case, one run, cheap smoke test
 claude plugin eval . --case abstract-lancet-id --runs 1
@@ -50,6 +53,15 @@ runner treats as a plugin-fired indicator rather than part of the score.
 - `llm` graders carry the judgement calls, written as explicit PASS / FAIL conditions so a
   small judge model does not decide on formatting. If a case scores low with `skill-fired`
   passing, re-run with `--judge-model sonnet` before changing the skill.
+- Rubrics must only ask for what a sandboxed judge can see. It cannot verify that a cited
+  paper exists, so `no-invented-citations` checks the *form* of citations (placeholder or
+  Author YEAR, no DOI/volume/page) and the presence of a verify-this list, not their truth.
+- Rubrics must not contradict themselves or the skill. The first `gap-statement-rewrite`
+  rubric forbade "specific numbers" while requiring "2024", and treated "to our
+  knowledge, no estimate has…" as a first-study claim when `SKILL.md` §10 explicitly allows
+  it. Four conditions, each observable, is the right size.
+- Use `--judge-model sonnet` when a case fails: the haiku default splits votes on long
+  rubrics even when the output is compliant.
 - A `not_contains` regex must never target text that appears in the prompt. A good
   response quotes the original to show what it changed (the skill's revision rule asks for
   visible edits), so the phrase is present for the right reason. The first smoke test of
