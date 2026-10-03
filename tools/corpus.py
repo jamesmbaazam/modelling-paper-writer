@@ -21,6 +21,7 @@ CSV_PATH = CORPUS / "papers.csv"
 INDEX_PATH = ROOT / "references" / "corpus-index.md"
 SKILL_PATH = ROOT / "SKILL.md"
 PLUGIN_PATH = ROOT / ".claude-plugin" / "plugin.json"
+MARKETPLACE_PATH = ROOT / ".claude-plugin" / "marketplace.json"
 CFF_PATH = ROOT / "CITATION.cff"
 CHANGELOG_PATH = ROOT / "CHANGELOG.md"
 README_PATH = ROOT / "README.md"
@@ -279,10 +280,51 @@ def check():
     if n_lines > 500:
         errors.append(f"SKILL.md is {n_lines} lines (keep under 500)")
 
+    # Plugin manifests
+    plugin = {}
+    if not PLUGIN_PATH.exists():
+        errors.append(".claude-plugin/plugin.json is missing")
+    else:
+        try:
+            plugin = json.loads(PLUGIN_PATH.read_text(encoding="utf-8"))
+        except json.JSONDecodeError as exc:
+            errors.append(f"plugin.json is not valid JSON: {exc}")
+        for field in ("name", "version", "description", "license", "author"):
+            if not plugin.get(field):
+                errors.append(f"plugin.json has no {field}")
+        if plugin.get("name") and plugin["name"] != name:
+            errors.append(f"plugin.json name '{plugin['name']}' differs from "
+                          f"SKILL.md name '{name}'")
+        if plugin.get("skills") != ["./"]:
+            errors.append(f"plugin.json skills is {plugin.get('skills')!r}, expected ['./'] "
+                          "(SKILL.md sits at the repo root)")
+
+    if not MARKETPLACE_PATH.exists():
+        errors.append(".claude-plugin/marketplace.json is missing")
+    else:
+        try:
+            market = json.loads(MARKETPLACE_PATH.read_text(encoding="utf-8"))
+        except json.JSONDecodeError as exc:
+            errors.append(f"marketplace.json is not valid JSON: {exc}")
+            market = {}
+        if not market.get("name"):
+            errors.append("marketplace.json has no name")
+        if not (market.get("owner") or {}).get("name"):
+            errors.append("marketplace.json has no owner.name")
+        listed = market.get("plugins") or []
+        if not listed:
+            errors.append("marketplace.json lists no plugins")
+        for entry in listed:
+            for field in ("name", "source", "description"):
+                if not entry.get(field):
+                    errors.append(f"marketplace.json plugin entry has no {field}")
+        if plugin.get("name") and plugin["name"] not in {e.get("name") for e in listed}:
+            errors.append(f"marketplace.json does not list the plugin '{plugin['name']}'")
+
     # Versions agree, and the version has a CHANGELOG section
     versions = {"SKILL.md metadata.version": fm.get("metadata", {}).get("version")}
-    if PLUGIN_PATH.exists():
-        versions["plugin.json"] = json.loads(PLUGIN_PATH.read_text())["version"]
+    if plugin.get("version"):
+        versions["plugin.json"] = plugin["version"]
     m = re.search(r"^version:\s*['\"]?([^'\"\n]+)", CFF_PATH.read_text(), re.M)
     versions["CITATION.cff"] = m.group(1) if m else None
     if len(set(versions.values())) != 1:

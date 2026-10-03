@@ -28,6 +28,7 @@ uncertainty, position themselves against prior work, and write limitations.
 | `docs/quote-verification.md`    | Every corpus quotation checked against the published paper, per paper and per rule file                                                                                                                            |
 | `tools/`                        | `corpus.py` (regenerate the index and the README block; check the repo for drift) and `verify_quotes.py`                                                                                                            |
 | `CHANGELOG.md`                  | What changed in each version, and the versioning rules                                                                                                                                                             |
+| `CONTRIBUTING.md`               | How to add a paper to the corpus, change a rule, and run the checks                                                                                                                                                |
 | `CITATION.cff`                  | Machine-readable citation metadata                                                                                                                                                                                 |
 
 ## The corpus
@@ -105,25 +106,43 @@ scenario tables.
 
 ## Installing
 
+Three routes, depending on where you use Claude.
+
+**As a Claude Code plugin** (recommended — you get updates with `/plugin`):
+
+```sh
+/plugin marketplace add jamesmbaazam/modelling-paper-writer
+/plugin install modelling-paper-writer@jamesmbaazam
+```
+
+**By cloning into your skills directory:**
+
 ```sh
 git clone https://github.com/jamesmbaazam/modelling-paper-writer \
   ~/.claude/skills/modelling-paper-writer
 ```
 
+Use `.claude/skills/` inside a project instead if you want it available only there.
+
+**On claude.ai** (Settings → Capabilities → Skills → upload): build the archive with
+
+```sh
+python3 tools/package.py     # writes dist/modelling-paper-writer-<version>.zip
+```
+
+The zip holds the skill and what it reads at runtime — no tooling, evals or CI.
+
 Claude Code picks the skill up automatically and invokes it when you ask for help drafting or
 revising a modelling manuscript. You can also invoke it explicitly with
 `/modelling-paper-writer`.
 
-## Adding a paper to the corpus
+## Contributing
 
-1. Write a style analysis as `references/corpus/NN-firstauthor-year-slug.md`, following the shape
-   of the existing files: archetype, structure, opening move, methodology conventions, results
-   storytelling, literature integration, voice, limitations, distinctive moves to borrow.
-   Quote verbatim wherever possible, and link related files with relative markdown links.
-2. Add a row to `references/corpus/papers.csv` and to `references/corpus-index.md`.
-3. Fold any genuinely new convention into `SKILL.md` as a one-line imperative, with the
-   supporting quotation in `references/evidence.md` under the same section number.
-4. Run `claude plugin eval .` to check nothing regressed.
+A new paper for the corpus, a correction to a rule the corpus does not support, or a failing eval
+case are all welcome — see [CONTRIBUTING.md](CONTRIBUTING.md) for the corpus file format, the
+`papers.csv` columns, and the checks to run. In short: every rule must be traceable to a corpus
+quotation or marked ◆ as coming from outside the corpus, and `python3 tools/corpus.py check` must
+pass.
 
 ## Author
 

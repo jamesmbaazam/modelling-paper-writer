@@ -1,0 +1,41 @@
+name: quotations
+
+# Checks every corpus quotation against the published paper. Separate from `check` because it
+# fetches from Europe PMC and PubMed Central: too slow for every push, and a network failure
+# should not fail an unrelated pull request.
+on:
+  schedule:
+    - cron: "0 4 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  quotations:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # Exits non-zero if any quotation is absent from a source whose full text was
+      # reachable — that is a misquote, not an unreachable paper.
+      - name: Verify quotations
+        run: python3 tools/verify_quotes.py
+
+      - name: Flag a stale committed report
+        if: always()
+        run: |
+          if ! git diff --quiet docs/quote-verification.md; then
+            echo "::warning::docs/quote-verification.md is out of date — regenerate and commit"
+            git diff -- docs/quote-verification.md
+          fi
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: quote-verification
+          path: docs/quote-verification.md

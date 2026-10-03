@@ -261,7 +261,9 @@ def main():
     else:
         REPORT.write_text(out, encoding="utf-8")
         print(f"wrote {REPORT.relative_to(ROOT)}: {totals}", file=sys.stderr)
+    # A quotation the source does not contain is a misquote: fail so CI catches it.
+    return 1 if totals["not found"] else 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

@@ -101,8 +101,14 @@ Sections 1–6 are the 2026-09-13 critique, kept as a record; line references th
 - [ ] E4. Run the suite and commit a baseline summary.
 
 **Public release (Agent Skills spec + Claude Code plugin standards)**
-- [ ] F1. Frontmatter: third-person description ≤1024 chars, `license`, `metadata`.
-- [ ] F2. `.claude-plugin/plugin.json` and `marketplace.json`; pass `claude plugin validate`.
+- [x] F1. Done: third-person `description` at 938 of 1,024 characters, ending in a negative
+      trigger, plus `license` and `metadata`. `corpus.py check` enforces the name pattern, the
+      description length and the presence of `license`.
+- [x] F2. Both manifests exist and `claude plugin validate .` passes. Manifest validation is
+      now also in `corpus.py check` — required fields, `plugin.json` name matching the skill
+      name, `skills: ["./"]`, and `marketplace.json` actually listing the plugin — so CI does
+      not depend on the Claude CLI being installed. Verified by deleting `license` and renaming
+      the plugin and watching all three errors fire.
 - [~] F3. Versioning: nothing has been released, so the skill stays at **1.0.0** —
       `SKILL.md`, `plugin.json` and `CITATION.cff` now agree on it, and `CITATION.cff` no longer
       claims a `date-released` for a release that never happened. `CHANGELOG.md` added, stating
@@ -110,12 +116,27 @@ Sections 1–6 are the 2026-09-13 critique, kept as a record; line references th
       section; pre-release development stays in the git history and in this file.
       `corpus.py check` fails if the three version strings drift, if the current version has no
       `## [version]` section, or if the changelog is not newest-first. **Remaining:** tag 1.0.0
-      and date it in both files, once C–F are done.
-- [ ] F4. CI: validate manifests, frontmatter, links and index on every push.
-- [ ] F5. README: install routes (marketplace, git clone, claude.ai upload), corpus
-      verification status.
-- [ ] F6. `CONTRIBUTING.md` for adding papers.
-- [ ] F7. Packaging script that builds the upload zip without the dev files.
+      and date it in both files, once the evals (E) are done.
+- [x] F4. Two workflows. `.github/workflows/check.yml` runs `corpus.py check` plus
+      `claude plugin validate` on every push to main, every pull request and on demand.
+      `.github/workflows/quotes.yml` runs `verify_quotes.py` monthly and on demand, kept
+      separate because it fetches from Europe PMC and PMC — too slow for every push, and a
+      network failure should not fail an unrelated PR. `verify_quotes.py` now exits non-zero
+      when a quotation is absent from a full text it could reach, so CI catches a misquote.
+- [x] F5. README now gives all three install routes — plugin marketplace (recommended), git
+      clone into `~/.claude/skills/`, and the claude.ai upload zip — and states the quotation
+      verification coverage, generated from the report. The stale "add a row to
+      `corpus-index.md`" instruction is gone; that file is generated.
+- [x] F6. `CONTRIBUTING.md`: setup and the five commands, which files are generated and must
+      not be hand-edited, how to add a paper (canonical headings, required sections,
+      `papers.csv` columns, the abstract-only requirements, regenerating, new archetypes), the
+      rule that every rule is attributable or ◆, the instruction to count corpus claims that
+      are countable, the eval convention, and the versioning rules.
+- [x] F7. `tools/package.py` builds `dist/<skill>-<version>.zip` — 49 files, 202 KB, nested
+      under one top-level directory — containing `SKILL.md`, `references/`, the licence,
+      citation, README and changelog, and excluding `tools/`, `evals/`, `docs/`, `.github/`
+      and `.claude-plugin/`. It refuses to build if `corpus.py check` fails, and `--list`
+      prints the contents without building. `dist/` is gitignored.
 
 ## 1. Restructure: procedure first, progressive disclosure for the rest
 
@@ -208,4 +229,5 @@ All five are now in the *Hard rules* block of `SKILL.md`.
       Lancet ID", "critique my methods section") so the restructure in §1 can be checked for
       regressions with `claude plugin eval` / `/skill-doctor`.
 - [x] Replace `[[wikilinks]]` in `writing_styles/*.md` with relative paths Claude can open.
-- [ ] Add a script or make target that regenerates the index table from `papers.csv`.
+- [x] Add a script or make target that regenerates the index table from `papers.csv` —
+      `tools/corpus.py index`, which also writes the README corpus block (see C1).

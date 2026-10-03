@@ -1,0 +1,34 @@
+name: check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # Standard library only, so there is nothing to install.
+      # Checks the generated index and README block are current, the corpus files carry the
+      # canonical headings SKILL.md greps for, papers.csv agrees with the SKILL.md archetype
+      # table and preamble counts, every Author YEAR citation names a real corpus paper, the
+      # frontmatter and plugin manifests are valid, the three version strings agree with the
+      # changelog, and no markdown link is broken.
+      - name: Check the skill for drift
+        run: python3 tools/corpus.py check
+
+      - name: Validate the plugin manifests with the Claude CLI
+        run: |
+          npm install -g @anthropic-ai/claude-code
+          claude plugin validate .

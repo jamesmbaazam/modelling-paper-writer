@@ -5,3 +5,4 @@ __pycache__/
 .venv/
 evals/results/
 tools/.cache/
+dist/
