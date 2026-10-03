@@ -6,45 +6,45 @@ The 37 papers in `references/corpus/`, keyed by the Author YEAR label used throu
 
 | Label | File | Venue | Archetype | Role | Full text |
 |---|---|---|---|---|---|
-| Grais 2008 | `references/corpus/01-grais-2008-measles-orv-niamey.md` | *J R Soc Interface* | Policy counterfactual | Policy counterfactual | yes |
-| Ferrari 2008 | `references/corpus/02-ferrari-2008-measles-sub-saharan-africa.md` | *Nature* | Dynamical systems | Dynamical systems | yes |
-| Keeling 2001 | `references/corpus/03-keeling-2001-uk-foot-and-mouth.md` | *Science* | Real-time transmission analysis | Real-time outbreak analysis | abstract only † |
-| Earn 2000 | `references/corpus/04-earn-2000-simple-model-complex-transitions.md` | *Science* | Dynamical systems | Theoretical unification | yes |
-| Altizer 2006 | `references/corpus/05-altizer-2006-seasonality-review.md` | *Ecol Lett* | Review | Review | abstract only † |
-| Keeling & Rohani 2002 | `references/corpus/06-keeling-rohani-2002-spatial-coupling.md` | *Ecol Lett* | Methods / simulation benchmark | Methods (validate a shortcut) | abstract only † |
-| Lauer 2020 | `references/corpus/07-lauer-2020-incubation-period.md` | *Ann Intern Med* | Parameter estimation | Parameter estimation | yes |
-| Lee 2010 | `references/corpus/08-lee-2010-ml-propensity-scores.md` | *Stat Med* | Methods / simulation benchmark | Simulation benchmark | yes |
-| Cramer 2022 | `references/corpus/09-cramer-2022-covid-forecast-hub-evaluation.md` | *PNAS* | Forecast evaluation | Forecast evaluation | yes |
-| Reich 2019 | `references/corpus/10-reich-2019-flusight-multiyear.md` | *PNAS* | Forecast evaluation | Forecast evaluation | yes |
-| Bracher 2021 | `references/corpus/11-bracher-2021-weighted-interval-score.md` | *PLoS Comput Biol* | Forecast evaluation; Methods / simulation benchmark | Pedagogical methods | yes |
-| Ferguson 2006 | `references/corpus/12-ferguson-2006-mitigating-pandemic.md` | *Nature* | Scenario projection for policy | Scenario projection | yes |
-| Ferguson 2005 | `references/corpus/13-ferguson-2005-containing-pandemic-sea.md` | *Nature* | Feasibility / threshold | Feasibility threshold | yes |
-| Baker 2021 | `references/corpus/14-baker-2021-infectious-disease-global-change.md` | *Nat Rev Microbiol* | Review | Synthesis review | yes |
-| Heesterbeek 2015 | `references/corpus/15-heesterbeek-2015-models-global-health.md` | *Science* | Review | Field-defining review | yes |
-| Tian 2020 | `references/corpus/16-tian-2020-china-transmission-control.md` | *Science* | Real-time transmission analysis | Natural-experiment evaluation | yes |
-| Grenfell 2001 | `references/corpus/17-grenfell-2001-travelling-waves.md` | *Nature* | Dynamical systems | Pattern + mechanism | abstract only † |
-| Bjørnstad 2002 | `references/corpus/18-bjornstad-2002-tsir-measles.md` | *Ecol Monogr* | Dynamical systems | Long-form estimation | abstract only † |
-| Kucharski 2020 | `references/corpus/19-kucharski-2020-early-dynamics-covid.md` | *Lancet Infect Dis* | Real-time transmission analysis | Real-time Bayesian model | yes |
-| Nouvellet 2015 | `references/corpus/20-nouvellet-2015-rapid-diagnostics-ebola.md` | *Nature* | Policy counterfactual | Strategy comparison | yes |
-| Weitz 2015 | `references/corpus/21-weitz-2015-post-death-transmission-ebola.md` | *Sci Rep* | Methods / simulation benchmark | Identifiability critique | yes |
-| Hellewell 2020 | `references/corpus/22-hellewell-2020-contact-tracing-feasibility.md` | *Lancet Glob Health* | Feasibility / threshold | Feasibility | yes |
-| Li 2017 | `references/corpus/23-li-2017-essential-information-ebola.md` | *PNAS* | Methods / simulation benchmark | Decision analysis / VoI | yes |
-| Davies 2021 | `references/corpus/24-davies-2021-b117-transmissibility.md` | *Science* | Competing hypotheses | Competing hypotheses | yes |
-| Davies 2020 | `references/corpus/25-davies-2020-npi-uk.md` | *Lancet Public Health* | Scenario projection for policy | Scenario projection | yes |
-| Abbott 2020 | `references/corpus/26-abbott-2020-rt-estimation-tool.md` | *Wellcome Open Res* | Real-time transmission analysis | Living methods + tool | yes |
-| Gostic 2020 | `references/corpus/27-gostic-2020-practical-considerations-rt.md` | *PLoS Comput Biol* | Best-practice guidance | Best-practice guidance | yes |
-| Charniga 2024 | `references/corpus/28-charniga-2024-delay-distributions-best-practices.md` | *PLoS Comput Biol* | Best-practice guidance | Checklist / reporting standard | yes |
-| Bhatt 2013 | `references/corpus/29-bhatt-2013-global-dengue-distribution.md` | *Nature* | Risk mapping / trait prediction | Risk mapping (BRT) — dengue | yes |
-| Ginsberg 2009 | `references/corpus/30-ginsberg-2009-google-flu-trends.md` | *Nature* | Digital surveillance / nowcasting | Digital surveillance — influenza | yes |
-| Lazer 2014 | `references/corpus/31-lazer-2014-parable-of-google-flu.md` | *Science* | Critique / appraisal | Critique — influenza | yes |
-| Olival 2017 | `references/corpus/32-olival-2017-zoonotic-spillover-traits.md` | *Nature* | Risk mapping / trait prediction | Trait prediction — spillover | yes |
-| Han 2015 | `references/corpus/33-han-2015-rodent-reservoirs.md` | *PNAS* | Risk mapping / trait prediction | Trait prediction (BRT) — rodent zoonoses | yes |
-| Yang 2015 | `references/corpus/34-yang-2015-argo-influenza.md` | *PNAS* | Digital surveillance / nowcasting | Nowcasting (LASSO) — influenza | yes |
-| Wynants 2020 | `references/corpus/35-wynants-2020-covid-prediction-models-review.md` | *BMJ* | Critique / appraisal | Critical appraisal — COVID-19 | yes |
-| Roberts 2021 | `references/corpus/36-roberts-2021-ml-covid-imaging-pitfalls.md` | *Nat Mach Intell* | Critique / appraisal | Appraisal + guidance — COVID-19 | yes |
-| Zoabi 2021 | `references/corpus/37-zoabi-2021-covid-symptom-prediction.md` | *npj Digit Med* | Clinical prediction model | Clinical prediction — COVID-19 | yes |
+| Grais 2008 | `references/corpus/01-grais-2008-measles-orv-niamey.md` | *J R Soc Interface* | Policy counterfactual | Policy counterfactual | open access |
+| Ferrari 2008 | `references/corpus/02-ferrari-2008-measles-sub-saharan-africa.md` | *Nature* | Dynamical systems | Dynamical systems | open access |
+| Keeling 2001 | `references/corpus/03-keeling-2001-uk-foot-and-mouth.md` | *Science* | Real-time transmission analysis | Real-time outbreak analysis | publisher PDF |
+| Earn 2000 | `references/corpus/04-earn-2000-simple-model-complex-transitions.md` | *Science* | Dynamical systems | Theoretical unification | open access |
+| Altizer 2006 | `references/corpus/05-altizer-2006-seasonality-review.md` | *Ecol Lett* | Review | Review | publisher PDF |
+| Keeling & Rohani 2002 | `references/corpus/06-keeling-rohani-2002-spatial-coupling.md` | *Ecol Lett* | Methods / simulation benchmark | Methods (validate a shortcut) | publisher PDF |
+| Lauer 2020 | `references/corpus/07-lauer-2020-incubation-period.md` | *Ann Intern Med* | Parameter estimation | Parameter estimation | open access |
+| Lee 2010 | `references/corpus/08-lee-2010-ml-propensity-scores.md` | *Stat Med* | Methods / simulation benchmark | Simulation benchmark | open access |
+| Cramer 2022 | `references/corpus/09-cramer-2022-covid-forecast-hub-evaluation.md` | *PNAS* | Forecast evaluation | Forecast evaluation | open access |
+| Reich 2019 | `references/corpus/10-reich-2019-flusight-multiyear.md` | *PNAS* | Forecast evaluation | Forecast evaluation | open access |
+| Bracher 2021 | `references/corpus/11-bracher-2021-weighted-interval-score.md` | *PLoS Comput Biol* | Forecast evaluation; Methods / simulation benchmark | Pedagogical methods | open access |
+| Ferguson 2006 | `references/corpus/12-ferguson-2006-mitigating-pandemic.md` | *Nature* | Scenario projection for policy | Scenario projection | open access |
+| Ferguson 2005 | `references/corpus/13-ferguson-2005-containing-pandemic-sea.md` | *Nature* | Feasibility / threshold | Feasibility threshold | open access |
+| Baker 2021 | `references/corpus/14-baker-2021-infectious-disease-global-change.md` | *Nat Rev Microbiol* | Review | Synthesis review | open access |
+| Heesterbeek 2015 | `references/corpus/15-heesterbeek-2015-models-global-health.md` | *Science* | Review | Field-defining review | open access |
+| Tian 2020 | `references/corpus/16-tian-2020-china-transmission-control.md` | *Science* | Real-time transmission analysis | Natural-experiment evaluation | open access |
+| Grenfell 2001 | `references/corpus/17-grenfell-2001-travelling-waves.md` | *Nature* | Dynamical systems | Pattern + mechanism | publisher PDF |
+| Bjørnstad 2002 | `references/corpus/18-bjornstad-2002-tsir-measles.md` | *Ecol Monogr* | Dynamical systems | Long-form estimation | publisher PDF |
+| Kucharski 2020 | `references/corpus/19-kucharski-2020-early-dynamics-covid.md` | *Lancet Infect Dis* | Real-time transmission analysis | Real-time Bayesian model | open access |
+| Nouvellet 2015 | `references/corpus/20-nouvellet-2015-rapid-diagnostics-ebola.md` | *Nature* | Policy counterfactual | Strategy comparison | open access |
+| Weitz 2015 | `references/corpus/21-weitz-2015-post-death-transmission-ebola.md` | *Sci Rep* | Methods / simulation benchmark | Identifiability critique | open access |
+| Hellewell 2020 | `references/corpus/22-hellewell-2020-contact-tracing-feasibility.md` | *Lancet Glob Health* | Feasibility / threshold | Feasibility | open access |
+| Li 2017 | `references/corpus/23-li-2017-essential-information-ebola.md` | *PNAS* | Methods / simulation benchmark | Decision analysis / VoI | open access |
+| Davies 2021 | `references/corpus/24-davies-2021-b117-transmissibility.md` | *Science* | Competing hypotheses | Competing hypotheses | open access |
+| Davies 2020 | `references/corpus/25-davies-2020-npi-uk.md` | *Lancet Public Health* | Scenario projection for policy | Scenario projection | open access |
+| Abbott 2020 | `references/corpus/26-abbott-2020-rt-estimation-tool.md` | *Wellcome Open Res* | Real-time transmission analysis | Living methods + tool | open access |
+| Gostic 2020 | `references/corpus/27-gostic-2020-practical-considerations-rt.md` | *PLoS Comput Biol* | Best-practice guidance | Best-practice guidance | open access |
+| Charniga 2024 | `references/corpus/28-charniga-2024-delay-distributions-best-practices.md` | *PLoS Comput Biol* | Best-practice guidance | Checklist / reporting standard | open access |
+| Bhatt 2013 | `references/corpus/29-bhatt-2013-global-dengue-distribution.md` | *Nature* | Risk mapping / trait prediction | Risk mapping (BRT) — dengue | open access |
+| Ginsberg 2009 | `references/corpus/30-ginsberg-2009-google-flu-trends.md` | *Nature* | Digital surveillance / nowcasting | Digital surveillance — influenza | open access |
+| Lazer 2014 | `references/corpus/31-lazer-2014-parable-of-google-flu.md` | *Science* | Critique / appraisal | Critique — influenza | open access |
+| Olival 2017 | `references/corpus/32-olival-2017-zoonotic-spillover-traits.md` | *Nature* | Risk mapping / trait prediction | Trait prediction — spillover | open access |
+| Han 2015 | `references/corpus/33-han-2015-rodent-reservoirs.md` | *PNAS* | Risk mapping / trait prediction | Trait prediction (BRT) — rodent zoonoses | open access |
+| Yang 2015 | `references/corpus/34-yang-2015-argo-influenza.md` | *PNAS* | Digital surveillance / nowcasting | Nowcasting (LASSO) — influenza | open access |
+| Wynants 2020 | `references/corpus/35-wynants-2020-covid-prediction-models-review.md` | *BMJ* | Critique / appraisal | Critical appraisal — COVID-19 | open access |
+| Roberts 2021 | `references/corpus/36-roberts-2021-ml-covid-imaging-pitfalls.md` | *Nat Mach Intell* | Critique / appraisal | Appraisal + guidance — COVID-19 | open access |
+| Zoabi 2021 | `references/corpus/37-zoabi-2021-covid-symptom-prediction.md` | *npj Digit Med* | Clinical prediction model | Clinical prediction — COVID-19 | open access |
 
-† The full text is paywalled with no reachable open-access copy. These 5 files are built on the verbatim abstract and the bibliographic record, and say so at the top. Use them for titles, abstracts and framing; they make no claims about section structure or results prose.
+Every paper is analysed from its full text. For 5 of them the full text is paywalled: the analysis was written from the publisher's PDF and its quotations were checked against it at the time of writing, so `tools/verify_quotes.py` reports them as *reviewed* rather than re-checking them on every run (see CONTRIBUTING.md).
 
 ## Methodological type
 

@@ -32,7 +32,7 @@ README_END = "<!-- corpus:end -->"
 
 COLUMNS = ["id", "label", "year", "venue", "archetype", "role", "full_text",
            "method_type", "title", "authors", "doi", "url", "file"]
-ABSTRACT_ONLY = "abstract only"
+PUBLISHER_PDF = "publisher pdf"
 
 # SKILL.md step 3 greps for these. A file may append a " — gloss" to any of them, and may add
 # topical sections of its own, but the canonical prefix must be there for the grep to land.
@@ -42,8 +42,7 @@ CANONICAL = ["Structure", "Opening move", "Methods", "Results", "Literature", "V
 # Required of every full-text file. Literature, Voice and the availability section are absent
 # from some papers' analyses, so they are reported as notes rather than errors.
 CORE = ["Structure", "Opening move", "Methods", "Results", "Distinctive moves to borrow"]
-# Abstract-only files carry this instead, routing to a full-text exemplar.
-ABSTRACT_ROUTE = "Section analysis unavailable"
+
 
 # Files whose "Author YEAR" citations must name a corpus paper, and the exceptions: works cited
 # as the source of a rule marked ◆ in SKILL.md, which come from reporting guidelines rather
@@ -66,7 +65,7 @@ def load_rows():
 
 def render_index(rows):
     types = Counter(r["method_type"] for r in rows)
-    n_abstract = sum(r["full_text"] == ABSTRACT_ONLY for r in rows)
+    n_pdf = sum(r["full_text"] == PUBLISHER_PDF for r in rows)
     out = [
         "# Corpus index",
         "",
@@ -82,15 +81,15 @@ def render_index(rows):
         "|---|---|---|---|---|---|",
     ]
     for r in rows:
-        full = "abstract only †" if r["full_text"] == ABSTRACT_ONLY else "yes"
+        full = "publisher PDF" if r["full_text"] == PUBLISHER_PDF else "open access"
         out.append(f"| {r['label']} | `references/corpus/{r['file']}` | *{r['venue']}* | "
                    f"{r['archetype']} | {r['role']} | {full} |")
     out += [
         "",
-        f"† The full text is paywalled with no reachable open-access copy. These {n_abstract} "
-        "files are built on the verbatim abstract and the bibliographic record, and say so at "
-        "the top. Use them for titles, abstracts and framing; they make no claims about section "
-        "structure or results prose.",
+        f"Every paper is analysed from its full text. For {n_pdf} of them the full text is "
+        "paywalled: the analysis was written from the publisher's PDF and its quotations were "
+        "checked against it at the time of writing, so `tools/verify_quotes.py` reports them as "
+        "*reviewed* rather than re-checking them on every run (see CONTRIBUTING.md).",
         "",
         "## Methodological type",
         "",
@@ -104,7 +103,7 @@ def render_index(rows):
 def render_readme_block(rows):
     """The facts about the corpus that papers.csv already knows."""
     types = Counter(r["method_type"] for r in rows)
-    abstract = [r["label"] for r in rows if r["full_text"] == ABSTRACT_ONLY]
+    pdf = [r["label"] for r in rows if r["full_text"] == PUBLISHER_PDF]
     covid = [r for r in rows
              if "covid" in r["title"].lower() or "sars-cov-2" in r["title"].lower()]
     years = sorted(r["year"] for r in rows)
@@ -120,9 +119,9 @@ def render_readme_block(rows):
     out += [f"| {ty} | {n} |" for ty, n in types.most_common()]
     out += [
         "",
-        f"{len(abstract)} papers ({', '.join(abstract)}) have no reachable open-access full "
-        "text; those style files are built on the verbatim abstract and the bibliographic "
-        "record, say so at the top, and point to a full-text substitute for the same archetype.",
+        f"Every paper is analysed from its full text. For {len(pdf)} of them "
+        f"({', '.join(pdf)}) that full text is paywalled, so the analysis was written from the "
+        "publisher's PDF and its quotations checked against it then rather than on every run.",
     ]
     if QUOTES_PATH.exists():
         m = re.search(r"^\*\*Totals:\*\* (.+?)\.$", QUOTES_PATH.read_text(encoding="utf-8"),
@@ -173,7 +172,7 @@ def archetype_table(skill_body):
         m = re.match(r"^\| \*\*(.+?)\*\* \| .+? \| (.+?) \|$", line)
         if m:
             table[m.group(1)] = {
-                e.replace("†", "").strip(): "†" in e for e in m.group(2).split(",")
+                e.strip(): False for e in m.group(2).split(",")
             }
     return table
 
@@ -202,21 +201,15 @@ def check():
         if not r["file"].startswith(r["id"] + "-"):
             errors.append(f"{r['file']}: id {r['id']} does not match the filename")
         text = path.read_text(encoding="utf-8")
-        if (r["full_text"] == ABSTRACT_ONLY) != ("Basis of this analysis" in text):
-            errors.append(f"{r['file']}: full_text={r['full_text']} disagrees with the file's basis note")
-
         # Canonical headings: SKILL.md step 3 greps for them
         headings = re.findall(r"^## (.+)$", text, re.M)
-        abstract_only = r["full_text"] == ABSTRACT_ONLY
-        required = [ABSTRACT_ROUTE, "Distinctive moves to borrow"] if abstract_only else CORE
-        for want in required:
+        for want in CORE:
             if not any(h == want or h.startswith(want + " — ") for h in headings):
                 errors.append(f"{r['file']}: no '## {want}' heading (SKILL.md step 3 greps for it)")
-        if not abstract_only:
-            absent = [c for c in CANONICAL if c not in CORE and c != "Related files"
-                      and not any(h == c or h.startswith(c + " — ") for h in headings)]
-            if absent:
-                notes.append(f"{r['file']}: no section analysis for {', '.join(absent)}")
+        absent = [c for c in CANONICAL if c not in CORE and c != "Related files"
+                  and not any(h == c or h.startswith(c + " — ") for h in headings)]
+        if absent:
+            notes.append(f"{r['file']}: no section analysis for {', '.join(absent)}")
 
     skill = SKILL_PATH.read_text(encoding="utf-8")
 
@@ -355,12 +348,9 @@ def check():
         if set(exemplars) != csv_arch.get(arch, set()):
             errors.append(f"§0 '{arch}' lists {sorted(exemplars)}, "
                           f"papers.csv has {sorted(csv_arch.get(arch, set()))}")
-        for label, dagger in exemplars.items():
-            r = by_label.get(label)
-            if r and dagger != (r["full_text"] == ABSTRACT_ONLY):
-                errors.append(f"§0 '{arch}': {label} † flag disagrees with papers.csv full_text")
-        if exemplars and all(exemplars.values()):
-            errors.append(f"§0 '{arch}' has no full-text exemplar")
+        for label in exemplars:
+            if label not in by_label:
+                errors.append(f"§0 '{arch}' lists unknown label {label!r}")
 
     # Paths named in SKILL.md and links in markdown files resolve
     for p in sorted(set(re.findall(r"`(references/[^`*]+?)`", body))):

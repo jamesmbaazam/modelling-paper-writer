@@ -35,9 +35,8 @@ Both come from `references/corpus/papers.csv` via `python3 tools/corpus.py index
 
 The corpus is chosen for **writing quality**, not for citation count or importance. A paper earns
 a place if it does something with prose, structure or the handling of uncertainty that is worth
-copying. Papers with reachable open-access full text are much more useful than paywalled ones:
-five of the current 37 could only be analysed from their abstracts, and those files cannot
-support any claim about section structure or results prose.
+copying. Prefer papers with reachable open-access full text: their quotations are re-checked on
+every run, while a paywalled paper's can only be checked once, by whoever holds the PDF.
 
 1. **Write the style analysis** as `references/corpus/NN-firstauthor-year-slug.md`, following an
    existing file. Use the canonical `##` headings, which match the `SKILL.md` rule sections:
@@ -56,9 +55,19 @@ support any claim about section structure or results prose.
    `venue`, `archetype`, `role`, `full_text`, `method_type`, `title`, `authors`, `doi`, `url`,
    `file`. `label` is the `Author YEAR` form used throughout the rule files and must be unique;
    `archetype` must be one of the `SKILL.md` §0 categories (semicolon-separated if more than
-   one); `full_text` is `yes` or `abstract only`. If it is `abstract only`, the file must carry
-   a **Basis of this analysis** note and a `## Section analysis unavailable` section pointing to
-   a full-text exemplar for the same archetype.
+   one); `full_text` is `yes` when the full text is openly reachable, or `publisher pdf` when it
+   is paywalled and the analysis was written from the publisher's PDF.
+
+   A `publisher pdf` paper cannot be re-checked automatically, because
+   `tools/verify_quotes.py` can only reach its abstract. Check its quotations **before you lose
+   access to the PDF**: extract the text to `tools/.cache/local_<id>.txt`
+   (`pdftotext paper.pdf tools/.cache/local_07.txt`) and run
+   `python3 tools/verify_quotes.py --local-text <id>`. Every quotation must come back
+   *verified*; anything *not found* is a transcription error to fix. Afterwards the paper's
+   quotations are reported as *reviewed* on normal runs. Pre-Unicode PDFs mangle ligatures,
+   Greek letters and minus signs, and running heads land inside sentences that span a page
+   break — the tool compensates for the common cases, and the handful it cannot are listed with
+   their reasons in `REVIEWED` in that script.
 
 3. **Regenerate** with `python3 tools/corpus.py index`.
 

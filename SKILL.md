@@ -39,9 +39,8 @@ or journal instructions rather than the corpus; check them against the current s
    different text.
 3. **Read one `references/corpus/` file — never the folder.** Pick it from §0 (the exemplar
    closest to the user's venue and design) or `references/corpus-index.md`. This is not
-   optional: it holds the sentence-level moves this file only names. Exemplars marked † are
-   built from the abstract only; use them for titles, abstracts and framing, and pick a
-   full-text exemplar for any other section — the † file names a substitute. For one section,
+   optional: it holds the sentence-level moves this file only names. Every corpus file is now
+   built on the paper's full text. For one section,
    `grep -n '^## '` the file and read only the heading that matches, plus `## Distinctive
    moves to borrow`. Every full-text file uses the same canonical headings, which match the
    rule sections below: `Structure`, `Opening move`, `Methods`, `Results`, `Literature`,
@@ -101,23 +100,20 @@ the shape of the headline claim. Identify it before writing a word. → `evidenc
 | Archetype | Headline claim shape | Exemplars (`references/corpus/`) |
 |---|---|---|
 | **Parameter estimation** | A number with an interval, translated into a decision | Lauer 2020 |
-| **Real-time transmission analysis** | A dated R_t or growth estimate with an interval | Kucharski 2020, Abbott 2020, Tian 2020, Keeling 2001 † |
+| **Real-time transmission analysis** | A dated R_t or growth estimate with an interval | Kucharski 2020, Abbott 2020, Tian 2020, Keeling 2001 |
 | **Scenario projection for policy** | A comparison against a named reference scenario | Davies 2020, Ferguson 2006 |
 | **Feasibility / threshold** | The parameter threshold at which a strategy works | Ferguson 2005, Hellewell 2020 |
 | **Policy counterfactual** | A percentage averted relative to what happened | Grais 2008, Nouvellet 2015 |
 | **Competing hypotheses** | The best-supported mechanism, with the runners-up | Davies 2021 |
 | **Forecast evaluation** | A score relative to a naïve baseline | Cramer 2022, Reich 2019, Bracher 2021 |
-| **Dynamical systems** | A regime, different from the one assumed | Ferrari 2008, Earn 2000, Bjørnstad 2002 †, Grenfell 2001 † |
-| **Methods / simulation benchmark** | A limit on what the data can identify | Lee 2010, Bracher 2021, Keeling & Rohani 2002 †, Weitz 2015, Li 2017 |
-| **Review** | A framework that organises a scattered literature | Baker 2021, Heesterbeek 2015, Altizer 2006 † |
+| **Dynamical systems** | A regime, different from the one assumed | Ferrari 2008, Earn 2000, Bjørnstad 2002, Grenfell 2001 |
+| **Methods / simulation benchmark** | A limit on what the data can identify | Lee 2010, Bracher 2021, Keeling & Rohani 2002, Weitz 2015, Li 2017 |
+| **Review** | A framework that organises a scattered literature | Baker 2021, Heesterbeek 2015, Altizer 2006 |
 | **Best-practice guidance** | A direction and magnitude of bias, plus a recommendation | Gostic 2020, Charniga 2024 |
 | **Risk mapping / trait prediction** | A burden or a named candidate list, never the AUC | Bhatt 2013, Olival 2017, Han 2015 |
 | **Digital surveillance / nowcasting** | A reduction in reporting lag against a naive alternative | Ginsberg 2009, Yang 2015 |
 | **Clinical prediction model** | A discrimination metric with an interval and a named operating point | Zoabi 2021 |
 | **Critique / appraisal** | A named failure mode | Lazer 2014, Wynants 2020, Roberts 2021 |
-
-† Abstract only: the full text is paywalled, so the file analyses the abstract and framing.
-Every archetype has at least one full-text exemplar; use that for section-level work.
 
 ---
 

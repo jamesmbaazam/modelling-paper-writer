@@ -200,8 +200,14 @@ All five are now in the *Hard rules* block of `SKILL.md`.
 - [ ] Add missing archetypes: vaccine impact / cost-effectiveness, phylodynamics / genomic
       epi, serological inference, within-host, agent-based model documentation, reporting-delay
       nowcasting, rapid-response technical reports.
-- [ ] Consider replacing the 5 abstract-only files (`03`, `05`, `06`, `17`, `18`) with
-      open-access equivalents.
+- [x] Consider replacing the 5 abstract-only files (`03`, `05`, `06`, `17`, `18`) with
+      open-access equivalents — **resolved by promotion, not replacement (2026-10-03).** The
+      user supplied the publisher PDFs, so all five were analysed in full and rewritten under
+      the canonical headings; the corpus goes from 32 to 37 papers usable for section-level
+      work, and the †/abstract-only machinery is gone from `SKILL.md`, `corpus.py` and the
+      generated files. `papers.csv` gains a third `full_text` value, `publisher pdf`, and
+      `verify_quotes.py` gains `--local-text`; 207 new quotations were machine-checked against
+      the PDFs before deletion, 3 more against the page images by eye.
 - [x] Flag date drift: rules derived from 2000–2008 papers (e.g. §4.1 "~1 citation per 300
       words") may not match current reviewer expectations.
 

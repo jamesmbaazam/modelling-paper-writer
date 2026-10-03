@@ -86,7 +86,7 @@ before writing a word; the corpus contains fourteen, each with a canonical exemp
 | Archetype | What it delivers | Exemplars |
 |---|---|---|
 | **Parameter estimation** | One well-defined quantity, cleanly estimated, translated into a decision | Lauer 2020 (incubation period) |
-| **Real-time transmission analysis** | R_t or transmission dynamics fitted to a live outbreak | Kucharski 2020, Abbott 2020, Tian 2020, Keeling 2001 (abstract only) |
+| **Real-time transmission analysis** | R_t or transmission dynamics fitted to a live outbreak | Kucharski 2020, Abbott 2020, Tian 2020, Keeling 2001 |
 | **Scenario projection for policy** | A ladder of intervention scenarios, projected forward | Davies 2020 (UK NPIs), Ferguson 2006 (mitigation) |
 | **Feasibility / threshold** | The parameter boundary at which a strategy works | Ferguson 2005 (containment), Hellewell 2020 (contact tracing) |
 | **Policy counterfactual** | What a past intervention achieved, and what alternatives would have | Grais 2008, Nouvellet 2015 |
@@ -167,9 +167,10 @@ Rules:
 ### 1.1 The universal spine
 
 The empirical and policy papers in the corpus are built on the same six moves; journal
-format only changes where the moves live. Reviews (Baker 2021, Heesterbeek 2015) carry moves
-1, 2 and 6 and replace the result with a framework, and the five abstract-only papers can only
-be checked for the moves their abstracts show.
+format only changes where the moves live. Reviews (Baker 2021, Heesterbeek 2015, Altizer 2006)
+carry moves 1, 2 and 6 and replace the result with a framework — Altizer 2006 enumerates its
+mechanisms where an empirical paper would give a result. The methods papers (Keeling & Rohani
+2002, Bracher 2021) replace move 1 with the modelling practice they are correcting.
 
 1. **Burden or urgency**, quantified and dated.
 2. **The specific gap** — a quantity that is missing, a strategy whose effect is unknown, an
@@ -514,7 +515,7 @@ some outbreaks were controlled even at 0% contacts traced" (Hellewell 2020).
   designs; the model **"suggests"**; the response **"appears to have"** delayed growth (Tian 2020).
 - Counterfactual modals graded by how hypothetical the premise is: *would have* (under stated
   assumptions) → *could have* → *might have* (under a hypothetical technology) (Nouvellet 2015).
-- Within a single sentence: "is found to be invariant … and also appears to be constant" (Bjørnstad 2002)
+- Within a single sentence: "is found to be invariant … also appears to be constant" (Bjørnstad 2002)
   — two evidential strengths, no separate hedging clause.
 - Claim **qualitative** agreement when that is what you have. "The model supports our dynamical
   hypothesis, capturing the qualitative pattern of episodic outbreaks" (Ferrari 2008) is more persuasive

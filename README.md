@@ -58,9 +58,9 @@ expectations (e.g. citation density).
 | Statistical | 5 |
 | Machine learning | 4 |
 
-5 papers (Keeling 2001, Altizer 2006, Keeling & Rohani 2002, Grenfell 2001, Bjørnstad 2002) have no reachable open-access full text; those style files are built on the verbatim abstract and the bibliographic record, say so at the top, and point to a full-text substitute for the same archetype.
+Every paper is analysed from its full text. For 5 of them (Keeling 2001, Altizer 2006, Keeling & Rohani 2002, Grenfell 2001, Bjørnstad 2002) that full text is paywalled, so the analysis was written from the publisher's PDF and its quotations checked against it then rather than on every run.
 
-**Quotation coverage:** 538 verified, 0 not found, 185 unchecked, 6 reviewed by hand — every quotation of 30 or more characters checked against the paper's abstract and, where PubMed Central holds it, the full text (`python3 tools/verify_quotes.py`; report in [`docs/quote-verification.md`](docs/quote-verification.md)). *Unchecked* means no open full text was reachable, not that the quotation is wrong.
+**Quotation coverage:** 511 verified, 0 not found, 152 unchecked, 217 reviewed by hand — every quotation of 30 or more characters checked against the paper's abstract and, where PubMed Central holds it, the full text (`python3 tools/verify_quotes.py`; report in [`docs/quote-verification.md`](docs/quote-verification.md)). *Unchecked* means no open full text was reachable, not that the quotation is wrong.
 
 <!-- corpus:end -->
 

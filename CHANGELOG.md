@@ -57,9 +57,11 @@ between 2000 and 2024.
 - **`references/corpus/`** — one style analysis per paper, with verbatim quotations, under a
   canonical heading set matching the rule sections (`Structure`, `Opening move`, `Methods`,
   `Results`, `Literature`, `Voice`, `Discussion and limitations`, `Data, code and funding`,
-  `Distinctive moves to borrow`), so the procedure's grep for a section is deterministic. The
-  five papers with no reachable open-access full text say so and route to a full-text substitute
-  for the same archetype.
+  `Distinctive moves to borrow`), so the procedure's grep for a section is deterministic. All 37
+  papers are analysed from their full text; for the five that are paywalled (Keeling 2001,
+  Altizer 2006, Keeling & Rohani 2002, Grenfell 2001, Bjørnstad 2002) the analysis was written
+  from the publisher's PDF and its quotations checked against it at the time of writing, since
+  automated verification can only reach their abstracts afterwards.
 - **`references/corpus/papers.csv`** as the single source of truth for the corpus, with
   `references/corpus-index.md` generated from it.
 - **Worked template passages**: compartmental model definitions at three levels of formality in
@@ -72,7 +74,9 @@ between 2000 and 2024.
   version strings disagreeing or missing a changelog section, and broken links.
 - **`tools/verify_quotes.py`** and `docs/quote-verification.md` — every quotation of 30 or more
   characters checked against the paper's abstract and, where PubMed Central holds it, the full
-  text. 538 verified, 0 not found, 185 unreachable, 6 reviewed by hand.
+  text; `--local-text` checks a paywalled paper against a local PDF extraction instead,
+  compensating for the ligature, Greek-letter and running-head damage that pre-Unicode journal
+  PDFs introduce. 511 verified, 0 not found, 152 unreachable, 217 checked by hand.
 - **`evals/`** — 14 cases with graders, covering drafting, revision, critique, the hard rules and
   the negative trigger, for `claude plugin eval`.
 - **`.claude-plugin/plugin.json` and `marketplace.json`**, so the skill installs as a plugin.

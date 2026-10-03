@@ -3,6 +3,13 @@
 
     python3 tools/verify_quotes.py            # all papers; writes docs/quote-verification.md
     python3 tools/verify_quotes.py 07 22      # only these ids, report to stdout
+    python3 tools/verify_quotes.py --local-text   # also read tools/.cache/local_<id>.txt
+
+A paper whose full_text is "publisher pdf" has no open full text: its analysis was written from
+the publisher's PDF and its quotations checked against it at the time of writing, so they are
+reported as *reviewed* rather than re-checked on every run. To check them again, put the
+extracted text at tools/.cache/local_<id>.txt and pass --local-text; every quotation should then
+come back *verified*, and anything *not found* is a transcription error. See CONTRIBUTING.md.
 
 For each paper in papers.csv it gathers the open text it can reach: the abstract from Europe
 PMC, plus the full text from PubMed Central when the DOI resolves to a PMCID. Every quotation
@@ -24,6 +31,7 @@ import time
 import unicodedata
 import urllib.parse
 import urllib.request
+from collections import Counter
 from datetime import date
 from pathlib import Path
 
@@ -43,6 +51,9 @@ REVIEWED = {
     ("Grais 2008", "Some previous studies suggest"): "matches; the source carries author-year citations",
     ("Wynants 2020", "What is already known"): "two box headings, joined with a slash",
     ("Hellewell 2020", "Isolation of cases"): "matches; PMC leaves the reference numbers inline",
+    ("Keeling 2001", "In a fully mixed system"): "matches p813 cols 2-3; the page footer falls mid-sentence",
+    ("Grenfell 2001", "r = \u22120.59"): "matches the Fig. 3 legend, p719; pdftotext mangles the minus signs",
+    ("Bjørnstad 2002", "Here we use a mechanistic model"): "matches p170-171; the running head falls mid-sentence",
 }
 UA = ("Mozilla/5.0 (compatible; modelling-paper-writer quote check; "
       "+https://github.com/jamesmbaazam/modelling-paper-writer)")
@@ -102,15 +113,45 @@ def abstract_for(doi):
 REF_NUMS = r"\d+(?:\s*[,–-]\s*\d+)*"
 
 
+def drop_running_heads(text):
+    """Remove running heads and footers from pdftotext output.
+
+    pdftotext separates pages with a form feed. Only the first and last non-blank line of each
+    page is a candidate, and only if it recurs on another page — so a mid-page sentence or a
+    title that appears once is never touched. Left in, this furniture lands inside a sentence
+    that spans a page break and makes a correct quotation look like a misquote.
+    """
+    pages = [p.splitlines() for p in text.split("\f")]
+    if len(pages) < 3:
+        return text
+    edges = Counter()
+    for page in pages:
+        lines = [l.strip() for l in page if l.strip()]
+        for line in {l for l in (lines[:1] + lines[-1:]) if 4 <= len(l) <= 150}:
+            edges[line] += 1
+    furniture = {line for line, n in edges.items() if n >= 2}
+    out = []
+    for page in pages:
+        lines = [l for l in page if l.strip()]
+        head = 1 if lines and lines[0].strip() in furniture else 0
+        tail = len(lines) - (1 if lines and lines[-1].strip() in furniture else 0)
+        out += lines[head:tail]
+    return "\n".join(out)
+
+
+def strip_markers(text):
+    """Drop reference markers and figure pointers, which quotations rightly omit."""
+    text = re.sub(r"\[\s*" + REF_NUMS + r"\s*\]", " ", text)
+    text = re.sub(r"\(\s+" + REF_NUMS + r"\s*\)", " ", text)  # PMC pads linked refs
+    return re.sub(FIG_REF, " ", text, flags=re.I)
+
+
 def strip_tags(raw):
     """Plain text with reference markers removed, since quotations rightly omit them."""
     raw = re.sub(r"<(script|style)\b.*?</\1>", " ", raw, flags=re.S)
     raw = re.sub(r"<sup\b[^>]*>(?:\s|<[^>]+>|[\d,–-])*</sup>", " ", raw, flags=re.S)
     text = html.unescape(re.sub(r"<[^>]+>", " ", raw))
-    text = re.sub(r"\[\s*" + REF_NUMS + r"\s*\]", " ", text)
-    text = re.sub(r"\(\s+" + REF_NUMS + r"\s*\)", " ", text)  # PMC pads linked refs
-    text = re.sub(FIG_REF, " ", text, flags=re.I)
-    return text
+    return strip_markers(text)
 
 
 def pmc_fulltext(pmcid):
@@ -147,12 +188,37 @@ def quotations(md):
             yield q, frags, text[m.end():m.end() + 160]
 
 
+PUBLISHER_PDF = "publisher pdf"
+LOCAL_TEXT = "--local-text"
+# Pre-Unicode journal PDFs encode ligatures as single glyphs, and `norm` would drop them along
+# with the two letters they stand for. The same glyph can mean something else in another
+# paper's equations (Bjørnstad 2002 uses ¯ as a macron), so the de-mangled text is searched
+# *alongside* the raw text rather than replacing it.
+LIGATURES = {"\u00ae": "fi", "\u00af": "fl", "\u00fe": "+", "\u00f0": "(", "\u00de": ")",
+             "\u00bc": "="}  # \u00bc is Ecology Letters' "="; NFKC would read it as 1/4
 SOURCES = {}
 
 
 def source_for(row):
     """(basis, normalised text) for a paper, fetched once per run."""
     if row["id"] not in SOURCES:
+        local = CACHE / f"local_{row['id']}.txt"
+        if LOCAL_TEXT in sys.argv and local.exists():
+            raw = drop_running_heads(local.read_text(encoding="utf-8", errors="replace"))
+            fixed = raw
+            for glyph, letters in LIGATURES.items():
+                fixed = fixed.replace(glyph, letters)
+            # Superscript citations in a PDF extract as bare digits glued to the preceding
+            # word ("demography8,13"); quotations rightly omit them.
+            # Three letters, so a symbol like R0 keeps its subscript while "demography8,13"
+            # and "Wales49" lose their citation markers.
+            bare = re.sub(r"(?<=[A-Za-z]{3})\d+(?:\s*[,\u2013\u00b1-]\s*\d+)*", "", fixed)
+            SOURCES[row["id"]] = ("local PDF", " ".join(norm(strip_markers(v))
+                                                        for v in (raw, fixed, bare)))
+            return SOURCES[row["id"]]
+        if row["full_text"] == PUBLISHER_PDF:
+            SOURCES[row["id"]] = ("publisher PDF (hand-checked)", "")
+            return SOURCES[row["id"]]
         pmcid = pmcid_for(row["doi"])
         full = pmc_fulltext(pmcid) if pmcid else ""
         abstract = abstract_for(row["doi"])
@@ -170,7 +236,9 @@ def status_of(row, q, frags):
             return "reviewed", missing
     if not missing:
         return "verified", missing
-    return ("not found" if basis.startswith("full") else "unchecked"), missing
+    if basis.startswith("publisher PDF"):
+        return "reviewed", missing
+    return ("not found" if basis.startswith(("full", "local")) else "unchecked"), missing
 
 
 def attributed(text_after, labels):
@@ -185,7 +253,7 @@ def attributed(text_after, labels):
 
 def main():
     rows = list(csv.DictReader(open(CORPUS / "papers.csv", encoding="utf-8")))
-    only = set(sys.argv[1:])
+    only = {a for a in sys.argv[1:] if not a.startswith("-")}
     if only:
         rows = [r for r in rows if r["id"] in only]
     keys = ("verified", "not found", "unchecked", "reviewed")

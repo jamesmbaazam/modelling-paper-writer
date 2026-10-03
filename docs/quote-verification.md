@@ -6,7 +6,7 @@ Every quotation of 30+ characters in `references/corpus/`, and every quotation i
 
 *Unchecked* means no open full text was reachable and the quotation is not in the abstract; it is not evidence of a misquote. *Reviewed* quotations were checked by hand and are listed with their reasons in `tools/verify_quotes.py`.
 
-**Totals:** 538 verified, 0 not found, 185 unchecked, 6 reviewed by hand.
+**Totals:** 511 verified, 0 not found, 152 unchecked, 217 reviewed by hand.
 
 ## Not found
 
@@ -18,10 +18,10 @@ None.
 |---|---|--:|--:|--:|--:|
 | Grais 2008 | full text (PMC) | 15 | 0 | 0 | 1 |
 | Ferrari 2008 | abstract only | 3 | 0 | 20 | 0 |
-| Keeling 2001 | abstract only | 9 | 0 | 1 | 0 |
+| Keeling 2001 | publisher PDF (hand-checked) | 0 | 0 | 0 | 43 |
 | Earn 2000 | abstract only | 3 | 0 | 24 | 0 |
-| Altizer 2006 | abstract only | 9 | 0 | 1 | 0 |
-| Keeling & Rohani 2002 | none reachable | 0 | 0 | 10 | 0 |
+| Altizer 2006 | publisher PDF (hand-checked) | 0 | 0 | 0 | 29 |
+| Keeling & Rohani 2002 | publisher PDF (hand-checked) | 0 | 0 | 0 | 42 |
 | Lauer 2020 | full text (PMC) | 18 | 0 | 0 | 0 |
 | Lee 2010 | full text (PMC) | 12 | 0 | 0 | 0 |
 | Cramer 2022 | full text (PMC) | 31 | 0 | 0 | 0 |
@@ -32,8 +32,8 @@ None.
 | Baker 2021 | full text (PMC) | 17 | 0 | 0 | 0 |
 | Heesterbeek 2015 | full text (PMC) | 16 | 0 | 0 | 0 |
 | Tian 2020 | full text (PMC) | 18 | 0 | 0 | 0 |
-| Grenfell 2001 | abstract only | 9 | 0 | 1 | 0 |
-| Bjørnstad 2002 | none reachable | 0 | 0 | 19 | 0 |
+| Grenfell 2001 | publisher PDF (hand-checked) | 0 | 0 | 0 | 44 |
+| Bjørnstad 2002 | publisher PDF (hand-checked) | 0 | 0 | 0 | 52 |
 | Kucharski 2020 | full text (PMC) | 21 | 0 | 0 | 0 |
 | Nouvellet 2015 | full text (PMC) | 18 | 0 | 0 | 0 |
 | Weitz 2015 | full text (PMC) | 13 | 0 | 0 | 2 |
@@ -59,7 +59,7 @@ None.
 | File | Verified | Not found | Unchecked | Reviewed |
 |---|--:|--:|--:|--:|
 | `SKILL.md` | 0 | 0 | 0 | 0 |
-| `references/evidence.md` | 24 | 0 | 4 | 0 |
+| `references/evidence.md` | 24 | 0 | 3 | 1 |
 | `references/examples.md` | 0 | 0 | 0 | 0 |
 | `references/ml-prediction.md` | 0 | 0 | 0 | 0 |
 | `references/guidance-papers.md` | 0 | 0 | 0 | 0 |
