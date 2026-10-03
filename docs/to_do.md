@@ -52,11 +52,24 @@ Sections 1–6 are the 2026-09-13 critique, kept as a record; line references th
       paper names six recurring failings without ranking them. Superlatives inside quotations
       are left alone.
 
-**Structure**
-- [ ] C1. `papers.csv` as the single source (label, year, venue, archetype, full-text
-      columns); generate `corpus-index.md` with a script that also has a `--check` mode.
-- [ ] C2. Merge "Hybrid (mathematical-statistical)" and "Hybrid (statistical-mathematical)".
-- [ ] C3. Move `writing_styles/` to `references/corpus/` and update every path.
+**Structure** — done 2026-10-03
+- [x] C1. `references/corpus/papers.csv` is the single source: 13 columns including label,
+      year, venue, archetype, role and full_text. `tools/corpus.py index` generates
+      `references/corpus-index.md` *and* the corpus block in `README.md` (between
+      `<!-- corpus:begin -->` markers); `tools/corpus.py check` fails on drift. It now also
+      verifies the paper count, year range and COVID-19 count stated in `SKILL.md`'s preamble,
+      and that every `Author YEAR` citation in the rule files names a real corpus paper —
+      `EXTERNAL_LABELS` holds the deliberate exceptions (currently Bennett 2012, cited for a
+      ◆ reporting-guideline rule). Verified by temporarily breaking each: a stale README block,
+      a wrong preamble count, an added CSV row and a mistyped label all fail the check.
+      The `role` column was reviewed and kept: 29 of 37 roles say something the archetype does
+      not ("Living methods + tool" for Abbott 2020), so it is not duplication.
+- [x] C2. Merged in `papers.csv` — one "Hybrid (mathematical-statistical)" at 17 papers. The
+      README still showed the old 12/5 split, which is what prompted generating that table
+      rather than maintaining it by hand.
+- [x] C3. Done: `writing_styles/` → `references/corpus/`, every path updated. Two deliberate
+      exceptions, both historical records that would be falsified by editing them:
+      `docs/prompt.md` (the original brief, quoted verbatim) and the §1–§6 entries in this file.
 
 **Content and provenance**
 - [ ] D1. Citation rule: cite only papers the user supplied or the corpus holds; anything
