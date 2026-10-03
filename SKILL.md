@@ -9,9 +9,9 @@ metadata:
 ---
 # Writing infectious disease modelling papers
 
-Rules distilled from 44 well-written infectious disease modelling, statistical and machine
+Rules distilled from 49 well-written infectious disease modelling, statistical and machine
 learning papers (2000–2024; *Nature*, *Science*, *PNAS*, the *Lancet* family, *BMJ*, *PLoS
-Comput Biol* and others; 13 of 44 are COVID-19). The corpus is landmark work from a narrow set
+Comput Biol* and others; 13 of 49 are COVID-19). The corpus is landmark work from a narrow set
 of groups, chosen for writing quality, not sampled systematically; rules from the 2000–2008
 papers may predate current reviewer expectations. Rules marked ◆ come from reporting guidelines
 or journal instructions rather than the corpus; check them against the current source.
@@ -100,16 +100,16 @@ the shape of the headline claim. Identify it before writing a word. → `evidenc
 | Archetype | Headline claim shape | Exemplars (`references/corpus/`) |
 |---|---|---|
 | **Parameter estimation** | A number with an interval, translated into a decision | Lauer 2020 |
-| **Real-time transmission analysis** | A dated R_t or growth estimate with an interval | Kucharski 2020, Abbott 2020, Tian 2020, Keeling 2001 |
-| **Scenario projection for policy** | A comparison against a named reference scenario | Davies 2020, Ferguson 2006 |
+| **Real-time transmission analysis** | A dated R_t or growth estimate with an interval | Kucharski 2020, Abbott 2020, Tian 2020, Keeling 2001, Thompson 2019, Zhao 2020 |
+| **Scenario projection for policy** | A comparison against a named reference scenario | Davies 2020, Ferguson 2006, Ngonghala 2020 |
 | **Feasibility / threshold** | The parameter threshold at which a strategy works | Ferguson 2005, Hellewell 2020 |
-| **Policy counterfactual** | A percentage averted relative to what happened | Grais 2008, Nouvellet 2015 |
+| **Policy counterfactual** | A percentage averted relative to what happened | Grais 2008, Nouvellet 2015, Verguet 2015 |
 | **Competing hypotheses** | The best-supported mechanism, with the runners-up | Davies 2021 |
 | **Forecast evaluation** | A score relative to a naïve baseline | Cramer 2022, Reich 2019, Bracher 2021 |
-| **Dynamical systems** | A regime, different from the one assumed | Ferrari 2008, Earn 2000, Bjørnstad 2002, Grenfell 2001 |
+| **Dynamical systems** | A regime, different from the one assumed | Ferrari 2008, Earn 2000, Bjørnstad 2002, Grenfell 2001, Griffin 2015 |
 | **Methods / simulation benchmark** | A limit on what the data can identify | Lee 2010, Bracher 2021, Keeling & Rohani 2002, Weitz 2015, Li 2017 |
 | **Review** | A framework that organises a scattered literature | Baker 2021, Heesterbeek 2015, Altizer 2006 |
-| **Best-practice guidance** | A direction and magnitude of bias, plus a recommendation | Gostic 2020, Charniga 2024 |
+| **Best-practice guidance** | A direction and magnitude of bias, plus a recommendation | Gostic 2020, Charniga 2024, Thompson 2019 |
 | **Risk mapping / trait prediction** | A burden or a named candidate list, never the AUC | Bhatt 2013, Olival 2017, Han 2015 |
 | **Digital surveillance / nowcasting** | A reduction in reporting lag against a naive alternative | Ginsberg 2009, Yang 2015 |
 | **Clinical prediction model** | A discrimination metric with an interval and a named operating point | Zoabi 2021 |

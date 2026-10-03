@@ -19,7 +19,7 @@ later change gets an entry.
 ## [1.0.0] — unreleased
 
 First release. A skill for writing, revising and critiquing infectious disease modelling papers,
-distilled from 37 well-written mathematical, statistical and machine learning papers published
+distilled from 49 well-written mathematical, statistical and machine learning papers published
 between 2000 and 2024.
 
 ### Added
@@ -36,11 +36,13 @@ between 2000 and 2024.
   spelling variant and tense in revision mode and show edits rather than rewriting silently; and
   treat *Lancet* house typography (middle-dot decimals, "to" inside intervals) as house style
   rather than a rule.
-- **Fifteen paper archetypes**, each with its exemplars and the shape its headline claim must
+- **Twenty-two paper archetypes**, each with its exemplars and the shape its headline claim must
   take — estimation, real-time analysis, scenario projection, feasibility threshold, policy
   counterfactual, competing hypotheses, forecast evaluation, dynamical systems, methods
   benchmark, review, best-practice guidance, risk mapping, nowcasting, clinical prediction and
-  critique.
+  critique, vaccine impact and economic evaluation, phylodynamics and genomic epidemiology,
+  serological inference, within-host dynamics, agent-based model documentation, nowcasting and
+  reporting delays, and rapid-response outbreak analysis.
 - **Rules for every section**: four title shapes; the abstract's six-move spine with per-venue
   word budgets; the five-move introduction; how much mathematics belongs in the main text and
   where; assumptions with their direction of bias; parameters, priors and the parameter table;
@@ -68,6 +70,9 @@ between 2000 and 2024.
   both LaTeX and Unicode, an annotated abstract, weak→strong repairs for gap statements, results
   sentences and limitations, methods paragraphs for a Bayesian fit and for a supervised model, a
   bias check, availability statements, and parameter and scenario tables.
+- **`tools/candidates.py`** and **`tools/fulltext.py`** — search Europe PMC for open-access
+  candidates by archetype and venue, and pull a paper's full text, so a corpus addition is
+  always written from the paper and never from memory.
 - **`tools/corpus.py`** — regenerates the corpus index and checks the repo for drift: stale
   index, corpus files missing from `papers.csv`, missing canonical headings, archetype and
   full-text flags disagreeing with the §0 table, frontmatter breaking the Agent Skills spec,

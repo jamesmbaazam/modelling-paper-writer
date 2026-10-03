@@ -6,7 +6,7 @@ Every quotation of 30+ characters in `references/corpus/`, and every quotation i
 
 *Unchecked* means no open full text was reachable and the quotation is not in the abstract; it is not evidence of a misquote. *Reviewed* quotations were checked by hand and are listed with their reasons in `tools/verify_quotes.py`.
 
-**Totals:** 511 verified, 0 not found, 152 unchecked, 217 reviewed by hand.
+**Totals:** 830 verified, 0 not found, 152 unchecked, 217 reviewed by hand.
 
 ## Not found
 
@@ -53,6 +53,18 @@ None.
 | Wynants 2020 | full text (PMC) | 26 | 0 | 0 | 1 |
 | Roberts 2021 | none reachable | 0 | 0 | 19 | 0 |
 | Zoabi 2021 | full text (PMC) | 19 | 0 | 0 | 0 |
+| Chen 2019 | full text (PMC) | 33 | 0 | 0 | 0 |
+| Geoghegan 2020 | full text (PMC) | 26 | 0 | 0 | 0 |
+| Prayitno 2017 | full text (PMC) | 30 | 0 | 0 | 0 |
+| Pawelek 2012 | full text (PMC) | 25 | 0 | 0 | 0 |
+| Kerr 2021 | full text (PMC) | 20 | 0 | 0 | 0 |
+| McGough 2020 | full text (PMC) | 28 | 0 | 0 | 0 |
+| Finger 2019 | full text (PMC) | 27 | 0 | 0 | 0 |
+| Thompson 2019 | full text (PMC) | 22 | 0 | 0 | 0 |
+| Griffin 2015 | full text (PMC) | 31 | 0 | 0 | 0 |
+| Ngonghala 2020 | full text (PMC) | 27 | 0 | 0 | 0 |
+| Zhao 2020 | full text (PMC) | 25 | 0 | 0 | 0 |
+| Verguet 2015 | full text (PMC) | 25 | 0 | 0 | 0 |
 
 ## Attributed quotations in the rule files
 

@@ -195,11 +195,19 @@ All five are now in the *Hard rules* block of `SKILL.md`.
       them (only passing mentions in `14` Baker and `29` Bhatt). Correct the README.
 - [x] State the selection basis honestly: landmark/high-citation papers from a narrow set of
       groups; 11/37 are COVID-19.
-- [ ] Add papers from the venues most users target: *Epidemics*, *Epidemiology & Infection*,
-      *BMC Med*, *Math Biosci*, *Proc B*, *Vaccine*, *Eurosurveillance*, agency reports.
-- [ ] Add missing archetypes: vaccine impact / cost-effectiveness, phylodynamics / genomic
-      epi, serological inference, within-host, agent-based model documentation, reporting-delay
-      nowcasting, rapid-response technical reports.
+- [x] Add papers from the venues most users target — done 2026-10-03: Thompson 2019
+      (*Epidemics*), Zhao 2020 (*Epidemiology & Infection*), Finger 2019 (*BMC Medicine*),
+      Ngonghala 2020 (*Mathematical Biosciences*), Griffin 2015 (*Proc R Soc B*), Verguet 2015
+      (*Vaccine*), plus Chen 2019 (*Lancet Glob Health*), Geoghegan 2020 (*Nature
+      Communications*) and Prayitno 2017 (*PLoS NTD*). Eurosurveillance and agency reports are
+      still absent: Europe PMC returns few Eurosurveillance modelling papers under the search
+      used, and agency reports are mostly outside its index.
+- [x] Add missing archetypes — all seven done 2026-10-03: Chen 2019 (vaccine impact and
+      economic evaluation, the first exemplar behind the ◆ CHEERS rule), Geoghegan 2020
+      (phylodynamics / genomic epidemiology), Prayitno 2017 (serological inference), Pawelek
+      2012 (within-host), Kerr 2021 (agent-based model documentation, behind the ◆ ODD rule),
+      McGough 2020 (nowcasting / reporting delays) and Finger 2019 (rapid-response outbreak
+      analysis). `SKILL.md` §0 now has 22 archetype rows; the corpus is 49 papers.
 - [x] Consider replacing the 5 abstract-only files (`03`, `05`, `06`, `17`, `18`) with
       open-access equivalents — **resolved by promotion, not replacement (2026-10-03).** The
       user supplied the publisher PDFs, so all five were analysed in full and rewritten under

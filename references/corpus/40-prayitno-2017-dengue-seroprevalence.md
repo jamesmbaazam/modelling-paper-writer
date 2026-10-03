@@ -82,4 +82,4 @@ Ethical approval is named by committee; consent is described including assent fr
 10. **Write the Author Summary around the decision in play**, not as a simplified abstract.
 
 ## Related files
-For the mapping-and-burden approach to the same disease see [29-bhatt-2013-global-dengue-distribution](29-bhatt-2013-global-dengue-distribution.md); for parameter estimation from observational data with a clean estimand see [07-lauer-2020-incubation-period](07-lauer-2020-incubation-period.md); for the reporting-rate problem this paper's serology circumvents see [18-bjornstad-2002-tsir-measles](18-bjornstad-2002-tsir-measles.md).
+For the mapping-and-burden approach to the same disease see [29-bhatt-2013-global-dengue-distribution](29-bhatt-2013-global-dengue-distribution.md); for parameter estimation from observational data with a clean estimand see [07-lauer-2020-incubation-period](07-lauer-2020-incubation-period.md); for the reporting-rate problem this paper's serology circumvents see [48-zhao-2020-lassa-nigeria](48-zhao-2020-lassa-nigeria.md) and [18-bjornstad-2002-tsir-measles](18-bjornstad-2002-tsir-measles.md).
