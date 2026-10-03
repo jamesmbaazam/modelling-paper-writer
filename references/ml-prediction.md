@@ -48,7 +48,7 @@ Worked passages: `examples.md` §12.9–§12.10.
 
 ## Checklist
 
-Run with the `SKILL.md` §11 checklist before returning.
+Run with `checklist.md` before returning.
 
 - [ ] Problem and burden lead; algorithm named once and justified by a property of the data.
 - [ ] Methods subheadings are the pipeline stages in execution order.

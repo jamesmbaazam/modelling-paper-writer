@@ -2,9 +2,76 @@
 
 Companion to `SKILL.md`. Section numbers here match the rule sections there: when
 `SKILL.md` §3.2 says *give every number a comparator*, §3.2 here holds the corpus quotations
-that justify it. Read a section when you need the sentence-level detail behind a rule, or when
-the user asks *why*. Papers are cited as Author YEAR; `corpus-index.md` maps each to its file in
-`writing_styles/`.
+that justify it.
+
+**Never read this file whole — it is over 1,200 lines.** Find the §N.M you need in the
+Contents below, `grep -n '^##'` this file for that heading and the one after it, and `Read`
+only that line range. Come here when a rule is too terse to apply, when the user asks *why*,
+when you are critiquing, or when you need a venue's headings and budgets (§1.2).
+
+Papers are cited as Author YEAR; `corpus-index.md` maps each to its file in
+`references/corpus/`, where the per-paper analyses sit under the canonical headings listed in
+`SKILL.md` step 3.
+
+## Contents
+
+- 0. First decide the archetype
+- 1. Structural patterns
+  - 1.0 Titles
+  - 1.1 The universal spine
+  - 1.2 Journal templates
+  - 1.3 Subheading craft
+  - 1.4 Introduction shape
+- 2. Methodology conventions
+  - 2.1 How much mathematics, and where
+  - 2.2 Assumptions
+  - 2.3 Parameters and priors
+  - 2.4 Scenarios
+  - 2.5 Sensitivity analysis
+  - 2.6 Software and computation
+- 3. Results storytelling
+  - 3.1 Uncertainty: pick the right interval and label it
+  - 3.2 Give every number a comparator
+  - 3.3 Sentence shapes that recur
+  - 3.4 Grade your verbs and modals to your evidence
+  - 3.5 Report your own failures in the Results
+  - 3.6 Figures and tables
+- 4. Literature integration
+  - 4.1 Density
+  - 4.2 How to state the gap
+  - 4.3 Seven ways to position against prior work
+  - 4.4 Other integration habits
+- 5. Voice and tone
+  - 5.1 Person and tense
+  - 5.2 Hedging that carries information
+  - 5.3 Precision over vagueness
+- 6. Domain-specific conventions
+  - 6.1 The R₀ paragraph
+  - 6.2 Validation, out-of-sample evidence and scoring
+  - 6.3 Identifiability and the limits of inference
+  - 6.4 Decision relevance
+  - 6.5 Real-time and living analyses
+  - 6.6 Data, code and funding statements
+- 7. Machine learning and predictive modelling conventions
+  - 7.1 Lead with the problem, not the algorithm
+  - 7.2 Structure Methods as the pipeline, in execution order
+  - 7.3 Train/test discipline — state it in one unambiguous sentence
+  - 7.4 Report performance honestly
+  - 7.5 Confront bias in the training data explicitly
+  - 7.6 Interpretation is a result, not a garnish
+  - 7.7 Say which numbers are ordinal
+  - 7.8 What appraisers will mark you down for
+  - 7.9 The two failure modes that killed Google Flu Trends
+- 8. Discussion and limitations
+  - 8.1 Discussion shape
+  - 8.2 Limitations
+- 9. Best-practice and guidance papers
+  - 9.1 Structure by problem or by task, not by IMRaD
+  - 9.2 Build the paper so the summaries alone are usable
+  - 9.3 Simulate the truth, then degrade the data one step at a time
+  - 9.4 Quantify the cost of bad practice
+  - 9.5 Prescriptive but not imperious
+  - 9.6 Other conventions of the archetype
 
 ## 0. First decide the archetype
 
@@ -108,7 +175,8 @@ An annotated abstract built on these six moves is worked in examples.md §12.2.
 
 **Abstract and main-text budgets.** Typical limits for the venues in the corpus and the
 modelling venues users most often target. These drift; **verify against the current author
-guidelines before drafting**, and ask the user for the target if it is not inferable. Write
+guidelines before drafting**; for an abstract, title or heading scheme, ask the user for the
+target if it is not inferable. Write
 to the budget from the first draft — an abstract cut from 400 words to 250 loses its
 uncertainty statements first, which is the wrong thing to lose.
 
@@ -154,9 +222,10 @@ mandatory *Role of the funding source*) → Results → Discussion → Data shar
 → Declaration of interests.
 → Kucharski 2020, Hellewell 2020, Davies 2020
 
-*Write the `Research in context` panel first even when the journal does not require it.* Three
-short paragraphs — what was known, what you added, what should change — will discipline the
-whole manuscript.
+*Plan with the `Research in context` triplet first even when the journal does not require
+it.* Three short paragraphs — what was known, what you added, what should change — will
+discipline the whole manuscript. It is scaffolding for your own drafting: return it to the
+user only when the target journal requires the panel or the user asks for it.
 
 **PLoS / methods journals.** Numbered sections and subsections (`2.1`, `2.2`) are appropriate
 and normal when the contribution is methodological. PLoS also wants an **Author Summary**
@@ -277,7 +346,7 @@ Three rules:
 2. **State the direction of the bias**, not merely its existence. "Relaxing these assumptions
    would decrease the probability that control is achieved" (Hellewell 2020). "If the true delay … is
    shorter than our global delay, then we will overestimate onset case numbers, and vice versa"
-   (Abbott 2020). This is the single most valuable habit in the corpus.
+   (Abbott 2020). The habit recurs across archetypes (also Gostic 2020, Lauer 2020).
 3. **Claim conservatism only when you can defend it**, and then repeat the word deliberately
    (Lauer 2020, Ferguson 2005). Optimistic assumptions plus a pessimistic conclusion is a strong argument;
    say so explicitly.
@@ -348,10 +417,10 @@ Name the language, the version, the packages, and the versions of the packages:
 
 > "coarseDataTools and activemonitr packages in the R statistical programming language, version
 > 3.6.2" (Lauer 2020)
-> "rpart, ipred, randomForest, twang" with R 2.6.1 (Lee 2010)
+> `rpart`, `ipred`, `randomForest` and `twang` with R 2.6.1, each package named where its method is described (Lee 2010)
 > "the EpiNow2 R package (version 1.2.1)" (Abbott 2020)
 
-Pin the data too: "Ground truth values obtained as of September 27, 2017" (Reich 2019); data pulled
+Pin the data too: "All scores were based on ‘ground truth’ values of wILI data obtained as of September 27, 2017" (Reich 2019); data pulled
 through a versioned API so the analysis is re-runnable. Generating the manuscript itself from
 code (Sweave/knitr, Reich 2019) means text and numbers cannot diverge.
 
@@ -894,7 +963,7 @@ Wynants 2020 and Roberts 2021 condemn.
   limit transmission" (Bhatt 2013).
 - **State the confound-adjustment inside the claim sentence**: bats host more zoonoses "after
   controlling for reporting effort and other predictor variables" (Olival 2017).
-- **Ship the predictions as a named, falsifiable list**: "we identify 58 species predicted to be
+- **Ship the predictions as a named, falsifiable list**: "we also identify 58 species predicted to be
   novel reservoirs and 159 species predicted to be novel hyperreservoirs" (Han 2015), supplied in
   full as a dataset. A predictive paper's proper conclusion is an experiment someone can run.
 

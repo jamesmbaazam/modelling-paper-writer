@@ -5,6 +5,22 @@ rules as §12.N. **All numbers, place names and results here are illustrative** 
 shape of a sentence, not a finding. Replace every value, and never paste a corpus quotation
 into a user's manuscript.
 
+**Contents**
+
+- 12.1 Defining a compartmental model
+- 12.2 An abstract, built move by move
+- 12.3 Gap statements: weak → strong
+- 12.4 An assumption, with its direction of bias
+- 12.5 Results sentences: weak → strong
+- 12.6 A limitation, weak → strong
+- 12.7 Positioning against prior work
+- 12.8 A methods paragraph for a mechanistic fit
+- 12.9 A methods paragraph for a supervised model
+- 12.10 Reporting a bias check
+- 12.11 Data and code availability
+- 12.12 Parameter table
+- 12.13 Scenario-definition table
+
 ### 12.1 Defining a compartmental model
 
 Write this at the level of formality the venue expects, but **always name the compartments in

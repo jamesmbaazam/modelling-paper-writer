@@ -1,8 +1,70 @@
 # To do
 
-Working list from the 2026-09-13 critique of the skill. Ordered by priority; tick items off as
-they are done. Line references were to `SKILL.md` as of commit `43f3359`; the 2026-09-16 restructure moved
-the detailed sections to `references/evidence.md`, so use section numbers rather than lines.
+Section 0 is the working list from the 2026-10-03 critique and the public-release pass.
+Sections 1–6 are the 2026-09-13 critique, kept as a record; line references there were to
+`SKILL.md` as of commit `43f3359`, so use section numbers rather than lines.
+
+## 0. 2026-10-03 critique and public release
+
+**Instruction conflicts** — done 2026-10-03
+- [x] A1. `Research in context` panel: internal scaffolding only. Step 4 and `checklist.md`
+      already said so; `evidence.md` §1.2 still told the reader to *write* it, now reworded to
+      *plan with* it and to return it only when the journal requires the panel or the user asks.
+- [x] A2. Procedure step 2 asks about venue and budget only for titles, abstracts, heading
+      schemes and full papers; otherwise it assumes a default and states it in the closing
+      note. `checklist.md` matches. No change needed.
+- [x] A3. All five abstract-only exemplars carry † in §0 (enforced against `papers.csv` by
+      `corpus.py check`), and each now opens with `## Section analysis unavailable — use a
+      full-text exemplar`, naming two full-text substitutes for its archetype. The 32
+      full-text files were renamed onto one canonical heading set matching the `SKILL.md` rule
+      sections — `Structure`, `Opening move`, `Methods`, `Results`, `Literature`, `Voice`,
+      `Discussion and limitations`, `Data, code and funding`, `Distinctive moves to borrow`,
+      `Related files` — with distinctive titles kept as a trailing `— …` gloss (*Methods —
+      screening as evidence*) and topical extras left alone. Step 3 now lists the headings,
+      says to match on the prefix, and gives the fallback when a section is absent.
+      `corpus.py check` errors on a missing core heading and notes the sections a paper's
+      analysis genuinely lacks (Literature in 8 files, Voice in 6).
+- [x] A4. `evidence.md` header now forbids reading it whole and gives the procedure: find the
+      §N.M in its Contents, grep for that heading and the next, read that range only. The
+      `SKILL.md` file table says the same. TOCs checked: `evidence.md` (1,222 lines) and
+      `examples.md` (324) have complete ones; every other reference file is under 100 lines.
+
+**Claims the repo contradicts**
+- [ ] B1. §10 "absent from every paper in the corpus" is false (Earn 2000 opens with "still
+      poorly understood") and unverifiable for abstract-only papers. Reword.
+- [ ] B2. README stale after the token pass (fourteen → fifteen archetypes; §1 templates;
+      §10 name).
+- [ ] B3. This file's §2 preamble says none of the guardrails exist.
+- [ ] B4. Remove unsupported superlatives ("the single most valuable habit").
+
+**Structure**
+- [ ] C1. `papers.csv` as the single source (label, year, venue, archetype, full-text
+      columns); generate `corpus-index.md` with a script that also has a `--check` mode.
+- [ ] C2. Merge "Hybrid (mathematical-statistical)" and "Hybrid (statistical-mathematical)".
+- [ ] C3. Move `writing_styles/` to `references/corpus/` and update every path.
+
+**Content and provenance**
+- [ ] D1. Citation rule: cite only papers the user supplied or the corpus holds; anything
+      from memory goes on the verify list, never into the text as settled.
+- [ ] D2. Mark rules that come from outside the corpus (reporting guidelines, EVPI).
+- [ ] D3. Script that checks corpus quotations against open full text; run it; fix misquotes;
+      record coverage in the README.
+
+**Evals**
+- [ ] E1. Grade that a corpus file was read (`tool_used: Read`).
+- [ ] E2. Case for no unnecessary venue question and no `Research in context` leakage.
+- [ ] E3. Grade that `references/ml-prediction.md` loads for ML; add a guidance-archetype case.
+- [ ] E4. Run the suite and commit a baseline summary.
+
+**Public release (Agent Skills spec + Claude Code plugin standards)**
+- [ ] F1. Frontmatter: third-person description ≤1024 chars, `license`, `metadata`.
+- [ ] F2. `.claude-plugin/plugin.json` and `marketplace.json`; pass `claude plugin validate`.
+- [ ] F3. Version 2.0.0: `CHANGELOG.md`, `CITATION.cff`, git tag.
+- [ ] F4. CI: validate manifests, frontmatter, links and index on every push.
+- [ ] F5. README: install routes (marketplace, git clone, claude.ai upload), corpus
+      verification status.
+- [ ] F6. `CONTRIBUTING.md` for adding papers.
+- [ ] F7. Packaging script that builds the upload zip without the dev files.
 
 ## 1. Restructure: procedure first, progressive disclosure for the rest
 
@@ -30,7 +92,7 @@ It describes what good papers look like but never tells Claude what to do.
 
 ## 2. Guardrails for the failure modes that matter most
 
-None of these exist in SKILL.md today; each is a one-liner.
+All five are now in the *Hard rules* block of `SKILL.md`.
 
 - [x] Never invent a citation, DOI or author — use `[ref]` / `[Author YEAR]` placeholders and
       list what needs a source.

@@ -1,7 +1,7 @@
 # Evals
 
 Regression suite for the `modelling-paper-writer` skill, run with `claude plugin eval`.
-Each case is one realistic request; the graders are drawn from the §11 working checklist
+Each case is one realistic request; the graders are drawn from the `references/checklist.md` working checklist
 and the *Hard rules* block in `SKILL.md`.
 
 ## Run

@@ -20,10 +20,10 @@ uncertainty, position themselves against prior work, and write limitations.
 | `references/guidance-papers.md` | §9 rules, anti-patterns and checklist for best-practice and guidance papers, loaded only for that archetype                                                                                                        |
 | `references/evidence.md`        | The corpus quotations behind each rule, with the same section numbering as `SKILL.md`                                                                                                                              |
 | `references/examples.md`        | Worked template passages (§12.1–§12.13): model definitions, abstract, gap statements, results sentences, limitations, methods paragraphs, parameter and scenario tables, availability statement                    |
-| `references/corpus-index.md`    | Author YEAR → `writing_styles/` file, with venue and archetype                                                                                                                                                     |
+| `references/corpus-index.md`    | Author YEAR → `references/corpus/` file, with venue and archetype                                                                                                                                                     |
 | `evals/`                        | Regression suite for `claude plugin eval` (see `evals/README.md`)                                                                                                                                                  |
-| `writing_styles/*.md`           | One style analysis per paper (37 files), with verbatim quotations                                                                                                                                                  |
-| `writing_styles/papers.csv`     | Index: title, DOI, authors, methodological type, source URL, style file                                                                                                                                            |
+| `references/corpus/*.md`           | One style analysis per paper (37 files), with verbatim quotations                                                                                                                                                  |
+| `references/corpus/papers.csv`     | Index: title, DOI, authors, methodological type, source URL, style file                                                                                                                                            |
 | `docs/prompt.md`                | The original brief the skill was built from                                                                                                                                                                        |
 | `CITATION.cff`                  | Machine-readable citation metadata                                                                                                                                                                                 |
 
@@ -102,11 +102,11 @@ revising a modelling manuscript. You can also invoke it explicitly with
 
 ## Adding a paper to the corpus
 
-1. Write a style analysis as `writing_styles/NN-firstauthor-year-slug.md`, following the shape
+1. Write a style analysis as `references/corpus/NN-firstauthor-year-slug.md`, following the shape
    of the existing files: archetype, structure, opening move, methodology conventions, results
    storytelling, literature integration, voice, limitations, distinctive moves to borrow.
    Quote verbatim wherever possible, and link related files with relative markdown links.
-2. Add a row to `writing_styles/papers.csv` and to `references/corpus-index.md`.
+2. Add a row to `references/corpus/papers.csv` and to `references/corpus-index.md`.
 3. Fold any genuinely new convention into `SKILL.md` as a one-line imperative, with the
    supporting quotation in `references/evidence.md` under the same section number.
 4. Run `claude plugin eval .` to check nothing regressed.

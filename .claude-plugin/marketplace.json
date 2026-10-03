@@ -1,0 +1,17 @@
+{
+  "name": "jamesmbaazam",
+  "owner": {
+    "name": "James Azam",
+    "url": "https://github.com/jamesmbaazam"
+  },
+  "description": "Claude skills for infectious disease modelling research.",
+  "plugins": [
+    {
+      "name": "modelling-paper-writer",
+      "source": "./",
+      "description": "Write, revise and critique infectious disease modelling papers in the style of the field's best-written work.",
+      "category": "writing",
+      "tags": ["epidemiology", "modelling", "scientific-writing"]
+    }
+  ]
+}
