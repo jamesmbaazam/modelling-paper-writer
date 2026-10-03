@@ -1,10 +1,11 @@
 # modelling-paper-writer
 
+[![GitHub stars](https://img.shields.io/github/stars/jamesmbaazam/modelling-paper-writer?style=flat)](https://github.com/jamesmbaazam/modelling-paper-writer/stargazers)
+[![Version](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fjamesmbaazam%2Fmodelling-paper-writer%2Fmain%2FCITATION.cff&query=%24.version&label=version&color=blue)](CITATION.cff)
+
 A [Claude Code](https://claude.com/claude-code) skill for writing infectious disease
 mathematical, statistical and machine learning modelling papers, distilled from the writing
 style of 37 well-written papers in the field.
-
-**Developed by [James Azam](https://github.com/jamesmbaazam).**
 
 The skill does not generate claims or results. It encodes *how* good papers in this field are
 put together: how they structure sections, present models and assumptions, report estimates and
@@ -12,17 +13,19 @@ uncertainty, position themselves against prior work, and write limitations.
 
 ## What's in here
 
-| Path | Contents |
-|---|---|
-| `SKILL.md` | The skill itself: a six-step procedure, hard rules, the archetype table, the conventions as one-line imperatives, anti-patterns and the working checklist (~450 lines, loaded on every invocation) |
-| `references/evidence.md` | The corpus quotations behind each rule, with the same section numbering as `SKILL.md` |
-| `references/examples.md` | Worked template passages (§12.1–§12.13): model definitions, abstract, gap statements, results sentences, limitations, methods paragraphs, parameter and scenario tables, availability statement |
-| `references/corpus-index.md` | Author YEAR → `writing_styles/` file, with venue and archetype |
-| `evals/` | Regression suite for `claude plugin eval` (see `evals/README.md`) |
-| `writing_styles/*.md` | One style analysis per paper (37 files), with verbatim quotations |
-| `writing_styles/papers.csv` | Index: title, DOI, authors, methodological type, source URL, style file |
-| `docs/prompt.md` | The original brief the skill was built from |
-| `CITATION.cff` | Machine-readable citation metadata |
+| Path                            | Contents                                                                                                                                                                                                           |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `SKILL.md`                      | The skill itself: a six-step procedure, hard rules, the archetype table, the conventions as one-line imperatives, banned phrases and the working checklist (~370 lines / ~3,500 words, loaded on every invocation) |
+| `references/ml-prediction.md`   | §7 rules, anti-patterns and checklist for machine learning / predictive modelling papers, loaded only for those archetypes                                                                                         |
+| `references/guidance-papers.md` | §9 rules, anti-patterns and checklist for best-practice and guidance papers, loaded only for that archetype                                                                                                        |
+| `references/evidence.md`        | The corpus quotations behind each rule, with the same section numbering as `SKILL.md`                                                                                                                              |
+| `references/examples.md`        | Worked template passages (§12.1–§12.13): model definitions, abstract, gap statements, results sentences, limitations, methods paragraphs, parameter and scenario tables, availability statement                    |
+| `references/corpus-index.md`    | Author YEAR → `writing_styles/` file, with venue and archetype                                                                                                                                                     |
+| `evals/`                        | Regression suite for `claude plugin eval` (see `evals/README.md`)                                                                                                                                                  |
+| `writing_styles/*.md`           | One style analysis per paper (37 files), with verbatim quotations                                                                                                                                                  |
+| `writing_styles/papers.csv`     | Index: title, DOI, authors, methodological type, source URL, style file                                                                                                                                            |
+| `docs/prompt.md`                | The original brief the skill was built from                                                                                                                                                                        |
+| `CITATION.cff`                  | Machine-readable citation metadata                                                                                                                                                                                 |
 
 ## The corpus
 
@@ -40,14 +43,14 @@ groups, chosen for writing quality rather than sampled systematically across ven
 subfields. Conventions derived from the 2000–2008 papers may not match current reviewer
 expectations (e.g. citation density).
 
-| Methodological type | Papers |
-|---|---:|
-| Hybrid (mathematical–statistical) | 12 |
-| Hybrid (statistical–machine learning) | 6 |
-| Mathematical | 5 |
-| Statistical | 5 |
-| Hybrid (statistical–mathematical) | 5 |
-| Machine learning | 4 |
+| Methodological type                   | Papers |
+| ------------------------------------- | -----: |
+| Hybrid (mathematical–statistical)     |     12 |
+| Hybrid (statistical–machine learning) |      6 |
+| Mathematical                          |      5 |
+| Statistical                           |      5 |
+| Hybrid (statistical–mathematical)     |      5 |
+| Machine learning                      |      4 |
 
 Five papers (Keeling 2001, Altizer 2006, Keeling & Rohani 2002, Grenfell 2001, Bjørnstad 2002) have no reachable open-access full text; those style
 files are built on the verbatim abstract and bibliographic record, and say so at the top.
@@ -113,6 +116,9 @@ revising a modelling manuscript. You can also invoke it explicitly with
 **James Azam** ([@jamesmbaazam](https://github.com/jamesmbaazam)) — designed the skill, selected
 and curated the 37-paper corpus, defined the analytical framework the style summaries follow,
 and directed its development.
+
+If you find this skill helpful, please [star the repo](https://github.com/jamesmbaazam/modelling-paper-writer) —
+it helps others find it.
 
 If you use this skill in your work, please cite it — see [CITATION.cff](CITATION.cff), or:
 

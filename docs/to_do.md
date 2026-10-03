@@ -22,6 +22,11 @@ It describes what good papers look like but never tells Claude what to do.
 - [x] Move §12 worked examples into `references/examples.md` (or one file per archetype).
 - [x] Replace `NN` code references (`01`, `22`…, 225 occurrences) with `Author YEAR` inline so
       Claude does not need the index table to interpret them.
+- [x] 2026-10-03 token pass: SKILL.md ~4,900 → ~3,500 words. Moved §7 (ML) and §9 (guidance)
+      with their checklist blocks to `references/ml-prediction.md` and
+      `references/guidance-papers.md`; folded headline shapes into the §0 table; cut §10 to
+      banned phrases; journal templates now only in `evidence.md` §1.2; exemplars read one
+      file (or one section) at a time.
 
 ## 2. Guardrails for the failure modes that matter most
 
