@@ -9,9 +9,9 @@ metadata:
 ---
 # Writing infectious disease modelling papers
 
-Rules distilled from 37 well-written infectious disease modelling, statistical and machine
+Rules distilled from 39 well-written infectious disease modelling, statistical and machine
 learning papers (2000–2024; *Nature*, *Science*, *PNAS*, the *Lancet* family, *BMJ*, *PLoS
-Comput Biol* and others; 11 of 37 are COVID-19). The corpus is landmark work from a narrow set
+Comput Biol* and others; 12 of 39 are COVID-19). The corpus is landmark work from a narrow set
 of groups, chosen for writing quality, not sampled systematically; rules from the 2000–2008
 papers may predate current reviewer expectations. Rules marked ◆ come from reporting guidelines
 or journal instructions rather than the corpus; check them against the current source.
@@ -114,6 +114,8 @@ the shape of the headline claim. Identify it before writing a word. → `evidenc
 | **Digital surveillance / nowcasting** | A reduction in reporting lag against a naive alternative | Ginsberg 2009, Yang 2015 |
 | **Clinical prediction model** | A discrimination metric with an interval and a named operating point | Zoabi 2021 |
 | **Critique / appraisal** | A named failure mode | Lazer 2014, Wynants 2020, Roberts 2021 |
+| **Vaccine impact / economic evaluation** | Deaths and DALYs averted, and an ICER against a named threshold | Chen 2019 |
+| **Phylodynamics / genomic epidemiology** | Introductions partitioned by what they led to | Geoghegan 2020 |
 
 ---
 
