@@ -15,7 +15,7 @@ uncertainty, position themselves against prior work, and write limitations.
 
 | Path                            | Contents                                                                                                                                                                                                           |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `SKILL.md`                      | The skill itself: a six-step procedure, hard rules, the archetype table, the conventions as one-line imperatives, banned phrases and the working checklist (~370 lines / ~3,500 words, loaded on every invocation) |
+| `SKILL.md`                      | The skill itself: a six-step procedure, hard rules, the archetype table, the conventions as one-line imperatives, banned phrases and pointers into `references/` (~350 lines / ~3,500 words, loaded on every invocation) |
 | `references/ml-prediction.md`   | §7 rules, anti-patterns and checklist for machine learning / predictive modelling papers, loaded only for those archetypes                                                                                         |
 | `references/guidance-papers.md` | §9 rules, anti-patterns and checklist for best-practice and guidance papers, loaded only for that archetype                                                                                                        |
 | `references/evidence.md`        | The corpus quotations behind each rule, with the same section numbering as `SKILL.md`                                                                                                                              |
@@ -65,29 +65,35 @@ voice in revision; journal typography is not a style rule). The conventions then
 structure, with the corpus evidence for each in `references/evidence.md` under the same
 section numbers:
 
-0. **Choosing the archetype** — fourteen paper types, each with a canonical exemplar and the
-   shape its headline claim should take
-1. **Structural patterns** — the six-move spine, journal templates (Nature/Science, PNAS,
-   Lancet, PLoS, clinical, living formats), subheading craft
-2. **Methodology conventions** — how much mathematics and where; assumptions; parameters and
-   priors; scenarios; sensitivity analysis; software
-3. **Results storytelling** — choosing the right interval; giving every number a comparator;
-   recurring sentence shapes; grading verbs to evidence; reporting your own failures
-4. **Literature integration** — citation density by archetype; stating a checkable gap; seven
-   ways to position against prior work
-5. **Voice and tone** — person and tense; hedging that carries information; precision
-6. **Domain-specific conventions** — the R₀ paragraph; validation and scoring; identifiability;
-   decision relevance; real-time analyses; data, code and funding statements
-7. **Machine learning conventions** — train/test discipline, calibration, confronting bias in
-   training data, what appraisers mark you down for, the two failure modes that killed Google
-   Flu Trends
+0. **First decide the archetype** — fifteen paper types, each with its exemplars and the
+   shape its headline claim must take
+1. **Structure** — four title shapes; the abstract's six-move spine and per-venue word
+   budgets; subheading craft; the five-move introduction. Journal templates (Nature/Science,
+   PNAS, Lancet, PLoS, clinical, living formats) sit in `references/evidence.md` §1.2
+2. **Methods** — how much mathematics and where; assumptions and their direction of bias;
+   parameters, priors and the parameter table; scenarios; sensitivity analysis; software
+3. **Results** — choosing the right interval; giving every number a comparator; recurring
+   sentence shapes; grading verbs to evidence; reporting your own failures; figures, tables
+   and the main-text/supplement split
+4. **Literature** — stating a checkable gap; seven ways to position against prior work;
+   citation density by archetype
+5. **Voice** — person and tense; hedging that carries information; precision over vagueness
+6. **Domain conventions** — the R₀ paragraph; validation and scoring; identifiability;
+   decision relevance; real-time analyses; availability statements; which reporting guideline
+   to name
+7. **Machine learning and predictive modelling** (in `references/ml-prediction.md`) —
+   train/test discipline, calibration, confronting bias in training data, what appraisers mark
+   you down for, the two failure modes that killed Google Flu Trends
 8. **Discussion and limitations** — six categories of limitation and how to write each
-9. **Best-practice and guidance papers** — a distinct archetype with its own rules
-10. **Anti-patterns**
-11. **Working checklist**
-12. **Worked examples** (in `references/examples.md`) — SIR/SEIR model definitions at three
-    levels of formality with LaTeX and Word variants, an annotated abstract, weak→strong
-    repairs, template methods and availability sections, and parameter and scenario tables
+9. **Best-practice and guidance papers** (in `references/guidance-papers.md`) — a distinct
+   archetype with its own rules, which override the rest where they conflict
+10. **Banned phrases**
+
+The self-review checklist is `references/checklist.md`, and the worked passages are
+`references/examples.md` §12.1–§12.13: SIR/SEIR model definitions at three levels of formality
+with LaTeX and Word variants, an annotated abstract, weak→strong repairs for gaps, results
+sentences and limitations, template methods and availability sections, and parameter and
+scenario tables.
 
 ## Installing
 

@@ -158,8 +158,10 @@ Rules:
 
 ### 1.1 The universal spine
 
-Every paper in the corpus, whatever its journal, is built on the same six moves. Journal
-format only changes where the moves live.
+The empirical and policy papers in the corpus are built on the same six moves; journal
+format only changes where the moves live. Reviews (Baker 2021, Heesterbeek 2015) carry moves
+1, 2 and 6 and replace the result with a framework, and the five abstract-only papers can only
+be checked for the moves their abstracts show.
 
 1. **Burden or urgency**, quantified and dated.
 2. **The specific gap** — a quantity that is missing, a strategy whose effect is unknown, an
@@ -292,7 +294,7 @@ Openings from the corpus, all following the same beat:
 > Whether this strategy will achieve control depends on characteristics of both the pathogen and
 > the response. Here we use a mathematical model to assess if…" (Hellewell 2020)
 
-The strongest opening in the corpus is the **expectation-violation** (Ferrari 2008, Earn 2000): derive what
+The hardest opening to argue with is the **expectation-violation** (Ferrari 2008, Earn 2000): derive what
 the canonical theory predicts for your system, then show the data refuse it. Use it whenever
 you can.
 
@@ -302,7 +304,8 @@ you can.
 
 ### 2.1 How much mathematics, and where
 
-The corpus is nearly unanimous: **the main text carries the argument, not the algebra.**
+Across the corpus the depth of mathematics tracks the venue, not the complexity of the
+model: **the main text carries the argument, not the algebra.**
 
 - **General-science journals:** essentially no equations. Models are named and described
   ("a stochastic compartmental model stratified into 5-year age bands"; "variations on the
@@ -458,7 +461,8 @@ Weak-to-strong repairs for results sentences are worked in examples.md §12.5.
 
 ### 3.2 Give every number a comparator
 
-Nothing in this corpus is "good" or "large" in the abstract. Every claim is anchored:
+The headline claims collected here are all anchored to something; none rests on "good" or
+"large" alone:
 
 - to a **naïve baseline**, glossed in plain English: "a relative WIS of 0.61, which can be
   interpreted as achieving, on average, 39% less probabilistic error than the baseline forecast"
@@ -521,7 +525,7 @@ This applies to your own estimates, to your assumptions (§2.2), and to any meth
 
 ### 3.5 Report your own failures in the Results
 
-The most trust-building habit in the corpus:
+Reporting your own model's failures, in the Results:
 
 > "the model did not predict the slowdown in cases that was observed in early February." (Kucharski 2020)
 > "In some of the selected waves (e.g., North Dakota and Florida), the ensemble forecast showed
@@ -672,8 +676,8 @@ More weak-to-strong gap statements are worked in examples.md §12.3; a worked po
 
 ### 5.2 Hedging that carries information
 
-Hedge the **inference**, not the number. Generic hedging ("may possibly suggest") is absent from
-this corpus; every hedge names what is uncertain:
+Hedge the **inference**, not the number. The hedges in the passages collected here all name
+what is uncertain; none is the contentless kind ("may possibly suggest"):
 
 > "COVID-19 transmission probably declined in Wuhan during late January, 2020." (Kucharski 2020)
 > "unlikely to delay spread by more than 2–3 weeks unless more than 99% effective" (Ferguson 2006)
@@ -797,7 +801,7 @@ class: "This is a generic feature of epidemiological models" (Weitz 2015).
 
 ### 6.6 Data, code and funding statements
 
-Match the best in the corpus:
+Two statements worth matching:
 
 > "All code and data are available at https://github.com/HopkinsIDD/ncov_incubation (release at
 > time of submission at https://zenodo.org/record/3692048)." (Lauer 2020)
@@ -855,8 +859,8 @@ what is specific to learning from data.
 
 ### 7.1 Lead with the problem, not the algorithm
 
-No paper in this corpus opens by naming a method. Bhatt (10,400 citations) opens "Dengue is a
-systemic viral infection transmitted between humans by *Aedes* mosquitoes"; Han opens
+Most of the ML corpus opens on the problem, not the method. Bhatt 2013 opens "Dengue is a
+systemic viral infection transmitted between humans by *Aedes* mosquitoes"; Han 2015 opens
 "Forecasting reservoirs of zoonotic disease is a pressing public health priority." The algorithm
 appears in one sentence, named and justified by a property of the *data*, never by novelty:
 
@@ -869,6 +873,12 @@ appears in one sentence, named and justified by a property of the *data*, never 
 > "Gradient boosting is widely considered state of the art in predicting tabular data." (Zoabi 2021)
 
 **Never lead with the AUC either.** Bhatt's headline is 96 million infections, not 0.81.
+
+The exception in the corpus is Lee 2010, which opens on the method — "Machine learning
+techniques such as classification and regression trees (CART) have been suggested as promising
+alternatives to logistic regression" — because the method *is* the subject: a simulation
+benchmark's problem is a claim in the methodological literature, not a disease burden. Open on
+the method only when you are evaluating methods.
 
 A full worked supervised-learning methods paragraph is examples.md §12.9; a worked bias check is examples.md §12.10.
 
@@ -920,14 +930,14 @@ model building to prevent overfitting" (Han 2015).
   models (ii–iv) are dynamically trained with a 2-y moving window" (Yang 2015).
 - **Contextualise a modest fit rather than hiding it**: 27–49% deviance explained is "greater than
   or comparable to studies examining much narrower groups of mammal hosts" (Olival 2017).
-- **Assess calibration, not just discrimination.** Its absence is the single most common failing
-  named by Wynants 2020: "Only five studies assessed calibration."
+- **Assess calibration, not just discrimination.** Its absence is one of the six recurring
+  failings named by Wynants 2020: "Only five studies assessed calibration."
 - Report the metric set in a fixed order across every table (Lee 2010).
 
 ### 7.5 Confront bias in the training data explicitly
 
-The strongest habit in the ML corpus, and the one that separates these papers from the ones
-Wynants 2020 and Roberts 2021 condemn.
+The habit that most clearly separates the ML papers in this corpus from the ones Wynants 2020
+and Roberts 2021 condemn.
 
 - **Put sampling effort in the model as a covariate**, then report how much signal it absorbs:
   "research effort had the strongest effect on the total number of viruses per host, explaining
@@ -1107,8 +1117,8 @@ Six rules for writing them:
 
 A weak-to-strong limitations paragraph is worked in examples.md §12.6.
 
-The most quotable statement of modelling's epistemic limits, for use when arguing what a model
-can and cannot do:
+A compact statement of modelling's epistemic limits, for use when arguing what a model can
+and cannot do:
 
 > "By definition and design, models are not reality. The properties of stochasticity and
 > non-linearity strongly influence the accuracy of absolute predictions over long time horizons.
@@ -1156,7 +1166,7 @@ prescribing one method for everyone.
 
 ### 9.3 Simulate the truth, then degrade the data one step at a time
 
-Gostic 2020's evidential engine, and the cleanest available template for evaluating any estimator:
+Gostic 2020's evidential engine, and a template for evaluating any estimator:
 
 1. Generate synthetic data from a known model (a deterministic or stochastic SEIR), so the true
    value of the target quantity is known by construction.
@@ -1189,7 +1199,7 @@ Trace the error forward to the thing people actually use. "Knock-on impacts" (Ch
 - **Say what you do not recommend, with a structural reason**: "In its current form, we do not
   recommend using the method of Bettencourt and Ribeiro, given that unrealistic structural
   assumptions lead to bias" (Gostic 2020). Only publishable because the synthetic-data design makes it
-  demonstrable — but where you can support it, it is the most useful sentence in the paper.
+  demonstrable — but where you can support it, it is the recommendation readers act on.
 - Hedge **applicability**, not confidence: "may not always be the case", "should be assessed on a
   case-by-case basis", "likely a better use of available data".
 - State consequences in plain conditional form: "Not or incorrectly accounting for censoring of

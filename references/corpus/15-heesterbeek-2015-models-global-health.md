@@ -38,7 +38,7 @@ Numbered references, 1–2 per paragraph in flowing text, 3–4 where precedent 
 ## Voice
 Present tense for the state of knowledge; past for historical episodes. Active, with agency shifting between the authors and the models themselves ("We argue that experts…" vs. "Models have shown that…"). Hedging is graded: "can lead to", "may help to explore", "it is likely that", "it is becoming increasingly clear that".
 
-## Discussion and limitations — the most quotable passage in the corpus
+## Discussion and limitations — a compact statement of modelling's limits
 > "By definition and design, models are not reality. The properties of stochasticity and non-linearity strongly influence the accuracy of absolute predictions over long time horizons. Even if the mechanisms involved are broadly understood and relevant data are available, predicting the exact future course of an outbreak is impossible due to changes in conditions in response to the outbreak itself, and due to the many chance effects in play."
 > "There is, typically in complex systems, a fundamental horizon beyond which accurate prediction is impossible."
 

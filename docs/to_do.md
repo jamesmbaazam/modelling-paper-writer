@@ -29,13 +29,28 @@ Sections 1–6 are the 2026-09-13 critique, kept as a record; line references th
       `SKILL.md` file table says the same. TOCs checked: `evidence.md` (1,222 lines) and
       `examples.md` (324) have complete ones; every other reference file is under 100 lines.
 
-**Claims the repo contradicts**
-- [ ] B1. §10 "absent from every paper in the corpus" is false (Earn 2000 opens with "still
-      poorly understood") and unverifiable for abstract-only papers. Reword.
-- [ ] B2. README stale after the token pass (fourteen → fifteen archetypes; §1 templates;
-      §10 name).
-- [ ] B3. This file's §2 preamble says none of the guardrails exist.
-- [ ] B4. Remove unsupported superlatives ("the single most valuable habit").
+**Claims the repo contradicts** — done 2026-10-03
+- [x] B1. `SKILL.md` §10 was already reworded (it now cites Earn 2000's "still poorly
+      understood" as the near-miss that proves the rule). Five further absolutes in
+      `evidence.md` were unverifiable or false and are now scoped to what the corpus shows:
+      the six-move spine (reviews carry only moves 1, 2 and 6; abstract-only papers can be
+      checked only for what their abstracts show), generic hedging, numbers without a
+      comparator, the main-text-algebra claim, and "no paper opens by naming a method" —
+      which Lee 2010, in the same section's own sub-corpus, contradicts. That exception is
+      now stated, with the reason: a simulation benchmark's problem *is* a methodological
+      claim, so open on the method when you are evaluating methods.
+- [x] B2. README's section list rebuilt to the current `SKILL.md`: fifteen archetypes, the
+      current section names (§1 Structure with titles and abstract budgets, §10 Banned
+      phrases), journal templates located in `evidence.md` §1.2, §7 and §9 marked as loading
+      from `references/`, and the checklist and worked examples named as separate files. Also
+      corrected the `SKILL.md` row, which still claimed the checklist was inside it.
+- [x] B3. Already corrected: §2's preamble now says all five guardrails are in the *Hard
+      rules* block.
+- [x] B4. Eight superlatives removed from `evidence.md` and two from corpus-file headings
+      ("the most quotable passage in the corpus", "the exemplar in this corpus"). The
+      calibration rule no longer calls it Wynants 2020's "single most common failing" — that
+      paper names six recurring failings without ranking them. Superlatives inside quotations
+      are left alone.
 
 **Structure**
 - [ ] C1. `papers.csv` as the single source (label, year, venue, archetype, full-text

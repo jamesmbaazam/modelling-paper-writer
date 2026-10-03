@@ -15,7 +15,7 @@ Merging Results and Discussion suits a paper whose findings need immediate ecolo
 
 Pattern: **priority → "We apply machine learning to…" → why this taxon.** Two sentences. The method is named in the second word of the second sentence and never dwelt on.
 
-## Methods — supervised learning conventions, the exemplar in this corpus
+## Methods — supervised learning conventions
 - **Algorithm named and justified by properties of the data, not by fashion**: "generalized boosted regressions"/"boosted regression trees"; they "have particular use for comparative ecological studies because they accommodate multiple data types as covariates, nonrandom patterns of data missingness, and hidden, nonlinear interactions." Contrasted with classical comparative methods that assume independence. Framed as "Model-free approaches allow the data to speak for themselves."
 - **Explicit train/test split, stated as a single unambiguous sentence**: "Datasets were partitioned into training (80% of all 2,277 species) and test (the remaining 20%) sets before analysis." The words *before analysis* are doing real work.
 - **Cross-validation named with its purpose**: "10-fold cross-validation during model building to prevent overfitting."
