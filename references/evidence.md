@@ -13,6 +13,11 @@ Papers are cited as Author YEAR; `corpus-index.md` maps each to its file in
 `references/corpus/`, where the per-paper analyses sit under the canonical headings listed in
 `SKILL.md` step 3.
 
+As in `SKILL.md`, **a rule marked ◆ does not come from the corpus** — it comes from journal
+instructions, a reporting guideline, or general practice in the field. Those are the rules to
+check against a current source before relying on them. Everything unmarked is attributed to a
+corpus paper on the same line.
+
 ## Contents
 
 - 0. First decide the archetype
@@ -150,9 +155,12 @@ Rules:
 - **A hook before the colon is allowed once per career** and only when it is exact: *Time is
   of the essence* (Grais 2008) is about the timing of a vaccination campaign; *The parable of Google
   Flu* (Lazer 2014) announces a cautionary tale. If the hook could sit on any paper, cut it.
-- **Length**: 10–18 words for the corpus; under 15 for *Nature*/*Science*. Every word should
-  be one a reader would search for. Cut *A study of*, *An analysis of*, *Insights into*,
-  *Towards*, *Novel*.
+- **Length**: the corpus runs 6–20 words, median 10, with half the titles between 8 and 13.
+  *Nature* and *Science* are the shortest (median 9, longest 17 — Tian 2020); the *Lancet*
+  family the longest, because the genre label is appended (11–19). Aim for the 8–13 band and
+  treat anything past 18 as needing a reason. Every word should be one a reader would search
+  for: no corpus title contains *A study of*, *An analysis of*, *Insights into*, *Towards* or
+  *Novel*.
 - **Do not put a number in the title** unless it is the finding (*the first 50 days* in Tian 2020
   is scope, and fine; *R₀ = 2·5* is not).
 
@@ -175,8 +183,8 @@ An annotated abstract built on these six moves is worked in examples.md §12.2.
 
 ### 1.2 Journal templates
 
-**Abstract and main-text budgets.** Typical limits for the venues in the corpus and the
-modelling venues users most often target. These drift; **verify against the current author
+◆ **Abstract and main-text budgets.** Journal instructions, not a corpus observation.
+Typical limits for the venues in the corpus and the modelling venues users most often target. These drift; **verify against the current author
 guidelines before drafting**; for an abstract, title or heading scheme, ask the user for the
 target if it is not inferable. Write
 to the budget from the first draft — an abstract cut from 400 words to 250 loses its
@@ -536,15 +544,17 @@ Put these in Results, not buried in Discussion.
 
 ### 3.6 Figures and tables
 
-**Which display items, and where.** Main-text slots are scarce (≤5 in the *Lancet* family,
-≤6 in *Nature*), so decide the split before drafting:
+**Which display items, and where.** ◆ Main-text slots are scarce (≤5 in the *Lancet*
+family, ≤6 in *Nature* — journal instructions, so verify them), so decide the split before
+drafting:
 
 - **Main text** carries one item per headline claim, plus the parameter table (examples.md §12.12) and,
-  for intervention papers, the scenario table (examples.md §12.13). The corpus norm is one *model fit or
-  validation* figure (data overlaid on simulation), one *headline result* figure (the
-  estimate, threshold, ranking or projection), and one *what governs it* figure (sensitivity
-  or mechanism). A schematic of the model structure is worth a slot only when the structure is
-  the contribution or unfamiliar (Weitz 2015, Li 2017).
+  for intervention papers, the scenario table (examples.md §12.13). ◆ A workable default
+  allocation, not a figure census of the corpus: one *model fit or validation* figure (data
+  overlaid on simulation), one *headline result* figure (the estimate, threshold, ranking or
+  projection), and one *what governs it* figure (sensitivity or mechanism). A schematic of the
+  model structure is worth a slot only when the structure is the contribution or unfamiliar
+  (Weitz 2015, Li 2017).
 - **Supplementary material** carries the full equations if the journal does not want them in
   Methods (§2.1), every sensitivity analysis not summarised in a main figure, convergence
   diagnostics, per-region or per-model breakdowns, and the completed reporting checklist.
@@ -556,11 +566,12 @@ Put these in Results, not buried in Discussion.
 
 **Captions.** A caption must let the figure be read without the text: what is plotted (and
 what the interval or band is — §3.1), under which scenario or parameter values (Earn 2000), and
-what the reader should see. Start with a declarative sentence where the journal allows it
-(*Contact tracing controls most outbreaks when R₀ = 1.5 but few when R₀ = 3.5*), then the
-panel-by-panel key.
+what the reader should see. ◆ Start with a declarative sentence where the journal allows it — illustrative shape, not a
+corpus quotation: *Contact tracing controls most outbreaks when R₀ = 1.5 but few when
+R₀ = 3.5* — then the panel-by-panel key.
 
-**Design rules from the corpus:**
+**Design rules.** Those attributed to a paper are the corpus's; those marked ◆ are general
+practice:
 
 - Overlay observed data on simulated trajectories so validation is visual and immediate (Grais 2008).
 - Put the fixed parameter values in the caption of the figure they generated (Earn 2000).
@@ -573,13 +584,13 @@ panel-by-panel key.
   the same axis (Ferrari 2008, Earn 2000).
 - Put the baseline or reference scenario in every panel so each comparison is visible without
   flipping between panels (Hellewell 2020, Davies 2020).
-- Use one colour or line style per scenario or model *across the whole paper*, keyed to the
+- ◆ Use one colour or line style per scenario or model *across the whole paper*, keyed to the
   scenario labels (examples.md §12.13), and do not reassign it between figures.
-- Log-scale the y-axis for growth-phase incidence and say so in the caption; linear for
+- ◆ Log-scale the y-axis for growth-phase incidence and say so in the caption; linear for
   cumulative or peak quantities readers will want to compare in absolute terms.
-- Label axes with the quantity and its unit, not the variable name (*Daily reported cases*,
+- ◆ Label axes with the quantity and its unit, not the variable name (*Daily reported cases*,
   not *I(t)*).
-- **Tables**: one row per scenario or model, one column per outcome, the baseline row first,
+- ◆ **Tables**: one row per scenario or model, one column per outcome, the baseline row first,
   intervals in the same cell as the point estimate — `2,340 (95% CrI 1,810–2,910)` — and the
   unit in the column header. Round to the precision the data support; a table full of
   four-significant-figure posterior medians overstates what the model knows.
@@ -782,7 +793,7 @@ class: "This is a generic feature of epidemiological models" (Weitz 2015).
   quarantine policy might pose ethical dilemmas unless excellent infection control was
   implemented" (Ferguson 2006).
 - **Convert model requirements into a numbered operational checklist with target values** —
-  the six containment criteria in Ferguson 2005 are the most-quoted part of that paper.
+  the six containment criteria in Ferguson 2005.
 - **Define a plain-language vocabulary for posterior probabilities, numerically, before use**:
   <5% subcritical → "definite" increase; >95% → "definite" decrease; 20–80% → "unsure" (Abbott 2020).
 - **Say when the analysis was done and for whom**: "The results we present here summarise the key

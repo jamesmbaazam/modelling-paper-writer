@@ -25,6 +25,8 @@ uncertainty, position themselves against prior work, and write limitations.
 | `references/corpus/*.md`           | One style analysis per paper (37 files), with verbatim quotations                                                                                                                                                  |
 | `references/corpus/papers.csv`     | Index: title, DOI, authors, methodological type, source URL, style file                                                                                                                                            |
 | `docs/prompt.md`                | The original brief the skill was built from                                                                                                                                                                        |
+| `docs/quote-verification.md`    | Every corpus quotation checked against the published paper, per paper and per rule file                                                                                                                            |
+| `tools/`                        | `corpus.py` (regenerate the index and the README block; check the repo for drift) and `verify_quotes.py`                                                                                                            |
 | `CHANGELOG.md`                  | What changed in each version, and the versioning rules                                                                                                                                                             |
 | `CITATION.cff`                  | Machine-readable citation metadata                                                                                                                                                                                 |
 
@@ -56,6 +58,8 @@ expectations (e.g. citation density).
 | Machine learning | 4 |
 
 5 papers (Keeling 2001, Altizer 2006, Keeling & Rohani 2002, Grenfell 2001, Bjørnstad 2002) have no reachable open-access full text; those style files are built on the verbatim abstract and the bibliographic record, say so at the top, and point to a full-text substitute for the same archetype.
+
+**Quotation coverage:** 538 verified, 0 not found, 185 unchecked, 6 reviewed by hand — every quotation of 30 or more characters checked against the paper's abstract and, where PubMed Central holds it, the full text (`python3 tools/verify_quotes.py`; report in [`docs/quote-verification.md`](docs/quote-verification.md)). *Unchecked* means no open full text was reachable, not that the quotation is wrong.
 
 <!-- corpus:end -->
 

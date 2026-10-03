@@ -122,8 +122,9 @@ Every archetype has at least one full-text exemplar; use that for section-level 
   or strategy/question (*Feasibility of controlling COVID-19 outbreaks by…*).
 - **Name the estimand and the pathogen/place, not the model.** Method goes in a colon
   subtitle if anywhere; a claim title needs a claim the Discussion defends.
-- **Lancet family appends `: a mathematical modelling study`**; 10–18 words; cut *A study of*,
-  *Novel*, *Towards*, *Insights into*.
+- **Lancet family appends `: a mathematical modelling study`**. Aim for 8–13 words (the
+  corpus median is 10; *Nature* and *Science* run shortest); cut *A study of*, *Novel*,
+  *Towards*, *Insights into*.
 
 **Abstract** → `evidence.md` §1.1, `examples.md` §12.2
 - **Build on the six-move spine**: burden (quantified, dated) → specific gap → "Here, we…"
@@ -227,19 +228,20 @@ Every archetype has at least one full-text exemplar; use that for section-level 
 - **Report where the model failed, in the Results**, not buried in the Discussion.
 
 **Figures and tables** → `evidence.md` §3.6
-- **Decide the main-text/supplement split before drafting**: main text gets one item per
-  headline claim plus the parameter (and scenario) table — typically a fit/validation
+- ◆ **Decide the main-text/supplement split before drafting**: main text gets one item per
+  headline claim plus the parameter (and scenario) table — as a default, a fit/validation
   figure, a headline-result figure and a what-governs-it figure. Supplement gets full
   equations, remaining sensitivity analyses, diagnostics, breakdowns, the reporting checklist;
   cite every supplementary item from the sentence it supports.
 - **Table for look-up and comparison across labelled scenarios; figure when the shape is the
   finding.** Never both for the same numbers.
 - **Captions stand alone**: what is plotted and what the band is, under which parameters, and
-  what to see. Observed data overlaid on simulations; parameters in the caption; baseline
-  in every panel; one colour per scenario across the whole paper; axes labelled with quantity
-  and unit.
-- **Tables**: baseline row first, interval in the same cell as the estimate, unit in the
-  header, precision the data support.
+  what to see. Observed data overlaid on simulations; parameters in the caption; baseline in
+  every panel.
+- ◆ **Also conventional, but not from the corpus**: one colour per scenario across the whole
+  paper; axes labelled with quantity and unit, not variable name; tables with the baseline row
+  first, the interval in the same cell as the estimate, the unit in the header, and the
+  precision the data support.
 
 ---
 

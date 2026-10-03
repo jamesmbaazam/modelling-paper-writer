@@ -71,12 +71,28 @@ Sections 1–6 are the 2026-09-13 critique, kept as a record; line references th
       exceptions, both historical records that would be falsified by editing them:
       `docs/prompt.md` (the original brief, quoted verbatim) and the §1–§6 entries in this file.
 
-**Content and provenance**
-- [ ] D1. Citation rule: cite only papers the user supplied or the corpus holds; anything
-      from memory goes on the verify list, never into the text as settled.
-- [ ] D2. Mark rules that come from outside the corpus (reporting guidelines, EVPI).
-- [ ] D3. Script that checks corpus quotations against open full text; run it; fix misquotes;
-      record coverage in the README.
+**Content and provenance** — done 2026-10-03
+- [x] D1. The hard rule was already in `SKILL.md`: cite as `[Author YEAR]` only papers the
+      user supplied or that `papers.csv` holds, `[Author YEAR?]` for anything recalled, and
+      list every citation to verify. The checklist only said "no invented citations", so it now
+      carries the full rule — recalled citations are marked and go on the verify list, never
+      into the text as settled. `corpus.py check` enforces the repo's own half of this: every
+      `Author YEAR` in a rule file must name a real corpus paper (C1).
+- [x] D2. The ◆ convention is now defined in `evidence.md` as well as `SKILL.md`, and applied
+      to ten rules that are journal instructions or general practice rather than corpus
+      observations: abstract and main-text budgets, main-text display-item limits, the default
+      figure allocation, declarative captions, log scaling, colour consistency, axis labelling
+      and table formatting. EVPI needed no mark — it is Li 2017's, cited on the line.
+      Also corrected one rule the corpus contradicts: titles were said to run "10–18 words,
+      under 15 for *Nature*/*Science*", but the measured range is 6–20 (median 10, half between
+      8 and 13), and *Nature*/*Science* reach 17 (Tian 2020). The banned title words were
+      checked and do hold — none appears in any corpus title.
+- [x] D3. `tools/verify_quotes.py` and `docs/quote-verification.md` already existed; re-run
+      after this session's edits with no change and no misquotes: **538 verified, 0 not found,
+      185 unchecked (no open full text reachable), 6 reviewed by hand**. Coverage is now stated
+      in the README, generated from the report by `corpus.py index` so it cannot go stale —
+      verified by editing the totals line and watching `check` fail. The README file table also
+      gained rows for `docs/quote-verification.md` and `tools/`.
 
 **Evals**
 - [ ] E1. Grade that a corpus file was read (`tool_used: Read`).
