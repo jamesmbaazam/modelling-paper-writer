@@ -25,6 +25,7 @@ uncertainty, position themselves against prior work, and write limitations.
 | `references/corpus/*.md`           | One style analysis per paper (37 files), with verbatim quotations                                                                                                                                                  |
 | `references/corpus/papers.csv`     | Index: title, DOI, authors, methodological type, source URL, style file                                                                                                                                            |
 | `docs/prompt.md`                | The original brief the skill was built from                                                                                                                                                                        |
+| `CHANGELOG.md`                  | What changed in each version, and the versioning rules                                                                                                                                                             |
 | `CITATION.cff`                  | Machine-readable citation metadata                                                                                                                                                                                 |
 
 ## The corpus

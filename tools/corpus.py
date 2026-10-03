@@ -22,6 +22,7 @@ INDEX_PATH = ROOT / "references" / "corpus-index.md"
 SKILL_PATH = ROOT / "SKILL.md"
 PLUGIN_PATH = ROOT / ".claude-plugin" / "plugin.json"
 CFF_PATH = ROOT / "CITATION.cff"
+CHANGELOG_PATH = ROOT / "CHANGELOG.md"
 
 COLUMNS = ["id", "label", "year", "venue", "archetype", "role", "full_text",
            "method_type", "title", "authors", "doi", "url", "file"]
@@ -175,7 +176,7 @@ def check():
     if n_lines > 500:
         errors.append(f"SKILL.md is {n_lines} lines (keep under 500)")
 
-    # Versions agree
+    # Versions agree, and the version has a CHANGELOG section
     versions = {"SKILL.md metadata.version": fm.get("metadata", {}).get("version")}
     if PLUGIN_PATH.exists():
         versions["plugin.json"] = json.loads(PLUGIN_PATH.read_text())["version"]
@@ -183,6 +184,18 @@ def check():
     versions["CITATION.cff"] = m.group(1) if m else None
     if len(set(versions.values())) != 1:
         errors.append(f"versions disagree: {versions}")
+    version = versions["SKILL.md metadata.version"]
+    if not CHANGELOG_PATH.exists():
+        errors.append("CHANGELOG.md is missing")
+    elif version:
+        changelog = CHANGELOG_PATH.read_text(encoding="utf-8")
+        headings = re.findall(r"^## \[([^\]]+)\]", changelog, re.M)
+        if version not in headings:
+            errors.append(f"CHANGELOG.md has no '## [{version}]' section "
+                          f"(it has {headings or 'none'})")
+        elif headings[0] != version:
+            errors.append(f"CHANGELOG.md leads with [{headings[0]}], not the current "
+                          f"version [{version}]; newest first")
 
     # §0 table <-> papers.csv archetypes and full-text flags
     table = archetype_table(body)

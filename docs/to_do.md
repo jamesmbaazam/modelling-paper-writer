@@ -74,7 +74,14 @@ Sections 1–6 are the 2026-09-13 critique, kept as a record; line references th
 **Public release (Agent Skills spec + Claude Code plugin standards)**
 - [ ] F1. Frontmatter: third-person description ≤1024 chars, `license`, `metadata`.
 - [ ] F2. `.claude-plugin/plugin.json` and `marketplace.json`; pass `claude plugin validate`.
-- [ ] F3. Version 2.0.0: `CHANGELOG.md`, `CITATION.cff`, git tag.
+- [~] F3. Versioning: nothing has been released, so the skill stays at **1.0.0** —
+      `SKILL.md`, `plugin.json` and `CITATION.cff` now agree on it, and `CITATION.cff` no longer
+      claims a `date-released` for a release that never happened. `CHANGELOG.md` added, stating
+      what major, minor and patch mean for a skill and carrying one `## [1.0.0] — unreleased`
+      section; pre-release development stays in the git history and in this file.
+      `corpus.py check` fails if the three version strings drift, if the current version has no
+      `## [version]` section, or if the changelog is not newest-first. **Remaining:** tag 1.0.0
+      and date it in both files, once C–F are done.
 - [ ] F4. CI: validate manifests, frontmatter, links and index on every push.
 - [ ] F5. README: install routes (marketplace, git clone, claude.ai upload), corpus
       verification status.

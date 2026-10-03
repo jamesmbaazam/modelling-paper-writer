@@ -4,7 +4,7 @@ description: Writes, structures, revises and critiques infectious disease mathem
 license: MIT
 metadata:
   author: James Azam
-  version: "2.0.0"
+  version: "1.0.0"
   repository: https://github.com/jamesmbaazam/modelling-paper-writer
 ---
 # Writing infectious disease modelling papers
