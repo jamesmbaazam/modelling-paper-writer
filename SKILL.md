@@ -4,8 +4,6 @@ description: Write, structure, revise or review infectious disease mathematical 
 ---
 # Writing infectious disease modelling papers
 
-*Developed by James Azam (https://github.com/jamesmbaazam). Licensed MIT.*
-
 Rules distilled from 37 well-written infectious disease modelling, statistical and machine
 learning papers (2000–2024; *Nature*, *Science*, *PNAS*, the *Lancet* family, *BMJ*, *PLoS
 Comput Biol* and others; 11 of 37 are COVID-19). The corpus is landmark work from a narrow set
