@@ -28,7 +28,10 @@ between 2000 and 2024.
   mode (draft, revise or critique), establish the archetype, read one corpus exemplar, draft or
   edit only what was asked, self-review, report placeholders and assumptions — then the
   conventions as one-line imperatives that point into `references/`.
-- **Hard rules** that override the conventions: never invent a citation, DOI, author or number;
+- **Hard rules** that override the conventions: cite as `[Author YEAR]` only papers the user
+  supplied, since the corpus is a style corpus and not a bibliography — a recalled paper is
+  `[Author YEAR?]` and goes on the verify list, and no DOI, journal, volume or page is written
+  from memory, in the text or the verify list; never invent a number;
   never reuse a corpus sentence verbatim in the user's manuscript; preserve the author's voice,
   spelling variant and tense in revision mode and show edits rather than rewriting silently; and
   treat *Lancet* house typography (middle-dot decimals, "to" inside intervals) as house style

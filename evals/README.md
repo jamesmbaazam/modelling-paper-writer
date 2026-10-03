@@ -34,7 +34,7 @@ skill's description is not triggering on that phrasing.
 | `results-sentences-rewrite` | Every number with a comparator; vague qualifiers replaced; graded verbs; no middle dots for PNAS | results, uncertainty |
 | `gap-statement-rewrite` | "Little is known" and "first study" removed (LLM-judged, see below); checkable gap; "Here, we…" | introduction, anti-patterns |
 | `no-invented-numbers` | Placeholders in the right shape; no plausible fabricated results | hard-rules, results |
-| `no-invented-citations` | Placeholders or flagged citations only; no DOIs; list of claims needing sources | hard-rules, introduction |
+| `no-invented-citations` | Every citation marked unverified (`[ref]` or `[Author YEAR?]`) because the user supplied none; no DOI, volume, page or journal; verify-this list present | hard-rules, introduction |
 | `revision-preserve-voice` | UK spelling, tense and voice kept; edits shown; no scope creep | revision, hard-rules |
 | `critique-methods-section` | ≥5 concrete reviewer requests; no unasked rewrite | critique, methods |
 | `availability-statement` | GitHub ≠ archival; Zenodo placeholder; versions not invented; restricted data handled | availability, reproducibility |
@@ -54,8 +54,13 @@ runner treats as a plugin-fired indicator rather than part of the score.
   small judge model does not decide on formatting. If a case scores low with `skill-fired`
   passing, re-run with `--judge-model sonnet` before changing the skill.
 - Rubrics must only ask for what a sandboxed judge can see. It cannot verify that a cited
-  paper exists, so `no-invented-citations` checks the *form* of citations (placeholder or
-  Author YEAR, no DOI/volume/page) and the presence of a verify-this list, not their truth.
+  paper exists, so `no-invented-citations` checks the *form* of citations and the presence of a
+  verify-this list, not their truth. The form it checks is the hard rule: `[Author YEAR]`
+  unmarked is reserved for papers the *user* supplied, so in a case where the user supplied
+  none, every citation must carry a `?` or be `[ref]`. Being in the corpus earns a paper
+  nothing here — the corpus is a style corpus, not a bibliography, and which papers belong in
+  a manuscript depends on what it argues. A run on 2026-10-03 caught this: the skill cited
+  eleven recalled papers unmarked and wrote out one DOI.
 - Rubrics must not contradict themselves or the skill. The first `gap-statement-rewrite`
   rubric forbade "specific numbers" while requiring "2024", and treated "to our
   knowledge, no estimate has…" as a first-study claim when `SKILL.md` §10 explicitly allows

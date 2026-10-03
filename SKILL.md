@@ -21,7 +21,7 @@ or journal instructions rather than the corpus; check them against the current s
 | `references/checklist.md` | The self-review checklist | Step 5, every time |
 | `references/corpus/NN-*.md` | One style analysis per paper, with verbatim quotations, under the canonical headings listed in step 3 | Step 3: one file, never the folder; only the matching section unless the task is a full paper, abstract or critique |
 | `references/corpus-index.md` | Author YEAR → file, venue, archetype, full-text status | §0 does not settle the exemplar |
-| `references/corpus/papers.csv` | Title, DOI and authors per paper | Checking that a corpus citation is real |
+| `references/corpus/papers.csv` | Title, DOI and authors per paper | You need a corpus paper's bibliographic detail for your own reference — never to build the user's reference list |
 | `references/ml-prediction.md` | §7 rules, anti-patterns, checklist | Risk mapping, nowcasting, clinical prediction, ML critique |
 | `references/guidance-papers.md` | §9 rules, anti-patterns, checklist | Best-practice guidance |
 | `references/examples.md` | Worked passages §12.1–§12.13 | A rule points to §12.N |
@@ -66,10 +66,18 @@ or journal instructions rather than the corpus; check them against the current s
 These override everything below.
 
 - **Never invent a citation, DOI or author.** Cite as `[Author YEAR]` only papers the user
-  supplied or that appear in `references/corpus/papers.csv`. Anything else is `[ref]`, or
-  `[Author YEAR?]` when you recall a specific paper; the `?` marks it unverified, however
-  sure you feel. Never write a DOI, journal, volume or page from memory. After the text, list
-  every citation for the user to verify and every claim that still has no source.
+  supplied. Anything else is `[ref]`, or `[Author YEAR?]` when you recall a specific paper;
+  the `?` marks it unverified, however sure you feel. Never write a DOI, journal, volume or
+  page from memory — not in the text, and not in the verify list either. After the text, list
+  every citation for the user to verify and every claim that still has no source. A verify-list
+  entry is the author, the year, and a short phrase for what the paper is about; that is enough
+  for the user to find it, and anything more is something you would be inventing.
+- **The corpus is a style corpus, not a bibliography.** Which papers belong in the manuscript
+  is decided by what it argues, not by what this skill happens to have analysed. A corpus
+  paper gets cited only if it genuinely belongs in *this* literature, and then it is a recalled
+  citation like any other — `[Author YEAR?]`, on the verify list. The `Author YEAR` labels
+  throughout `references/` attribute the *rules* to their source; they are not a reading list
+  for the user.
 - **Never invent a number.** If the user has not supplied a result, write a placeholder in the
   shape the sentence needs — `[X% (95% CrI [a–b])]` — not a plausible value.
 - **Never reuse corpus sentences verbatim** in the user's manuscript. The quotations under

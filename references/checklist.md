@@ -41,9 +41,9 @@ section. Only the blocks relevant to the section and archetype apply. Section nu
 - [ ] Reporting guideline named (§6) and its checklist attached.
 
 **Hard rules**
-- [ ] Every citation is either one the user supplied or a paper in `references/corpus/papers.csv`.
-      Anything recalled from memory is written `[Author YEAR?]` and appears on the verify list —
-      never in the text as though it were settled.
+- [ ] Every `[Author YEAR]` citation is one the user supplied. Everything else — including any
+      corpus paper — is `[ref]` or `[Author YEAR?]` and appears on the verify list, never in the
+      text as though it were settled. No journal, volume, page or DOI written from memory.
 - [ ] No invented numbers or DOIs; every placeholder listed for the user, with what is needed
       to fill it.
 - [ ] No corpus sentence reused verbatim.
