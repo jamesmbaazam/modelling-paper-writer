@@ -9,9 +9,9 @@ metadata:
 ---
 # Writing infectious disease modelling papers
 
-Rules distilled from 57 well-written infectious disease modelling, statistical and machine
+Rules distilled from 61 well-written infectious disease modelling, statistical and machine
 learning papers (2000–2024; *Nature*, *Science*, *PNAS*, the *Lancet* family, *BMJ*, *PLoS
-Comput Biol* and others; 17 of 57 are COVID-19). The corpus is landmark work from a narrow set
+Comput Biol* and others; 20 of 61 are COVID-19). The corpus is landmark work from a narrow set
 of groups, chosen for writing quality, not sampled systematically; rules from the 2000–2008
 papers may predate current reviewer expectations. Rules marked ◆ come from reporting guidelines
 or journal instructions rather than the corpus; check them against the current source.
@@ -112,9 +112,9 @@ the shape of the headline claim. Identify it before writing a word. → `evidenc
 | **Best-practice guidance** | A direction and magnitude of bias, plus a recommendation | Gostic 2020, Charniga 2024, Thompson 2019 |
 | **Risk mapping / trait prediction** | A burden or a named candidate list, never the AUC | Bhatt 2013, Olival 2017, Han 2015 |
 | **Digital surveillance / nowcasting** | A reduction in reporting lag against a naive alternative | Ginsberg 2009, Yang 2015 |
-| **Clinical prediction model** | A discrimination metric with an interval and a named operating point | Zoabi 2021 |
+| **Clinical prediction model** | A discrimination metric with an interval and a named operating point | Zoabi 2021, Yadaw 2020, Berenguer 2021 |
 | **Critique / appraisal** | A named failure mode | Lazer 2014, Wynants 2020, Roberts 2021 |
-| **Vaccine impact / economic evaluation** | Deaths and DALYs averted, and an ICER against a named threshold | Chen 2019 |
+| **Vaccine impact / economic evaluation** | Deaths and DALYs averted, and an ICER against a named threshold | Chen 2019, Watson 2022, Abbas 2020 |
 | **Phylodynamics / genomic epidemiology** | Introductions partitioned by what they led to | Geoghegan 2020 |
 | **Serological inference** | A force of infection, and cumulative exposure by age | Prayitno 2017 |
 | **Within-host dynamics** | The mechanism a feature of the viral curve requires | Pawelek 2012 |

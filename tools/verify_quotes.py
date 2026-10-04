@@ -54,6 +54,7 @@ REVIEWED = {
     ("Keeling 2001", "In a fully mixed system"): "matches p813 cols 2-3; the page footer falls mid-sentence",
     ("Grenfell 2001", "r = \u22120.59"): "matches the Fig. 3 legend, p719; pdftotext mangles the minus signs",
     ("Bjørnstad 2002", "Here we use a mechanistic model"): "matches p170-171; the running head falls mid-sentence",
+    ("Watson 2022", "Based on official reported COVID-19 deaths"): "matches; PMC renders the published 'CrI' as 'Crl'",
 }
 UA = ("Mozilla/5.0 (compatible; modelling-paper-writer quote check; "
       "+https://github.com/jamesmbaazam/modelling-paper-writer)")

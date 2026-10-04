@@ -258,8 +258,12 @@ Sebastian Funk work on forecast evaluation. 24 papers in six phases.
 - [x] Phase 2 — parameter estimation: Ganyani 2020 (*Eurosurveillance*, closing that venue
       gap), Stopard 2021 (*PLoS Comput Biol*); competing hypotheses: Lavine 2021 (*Science*),
       Yakob 2015 (*Sci Rep*).
-- [ ] Phase 3 — clinical prediction (Yadaw 2020, Berenguer 2021); vaccine impact (Watson 2022,
-      Abbas 2020).
+- [x] Phase 3 — clinical prediction: Yadaw 2020 (*Lancet Digital Health*), Berenguer 2021
+      (*Thorax*); vaccine impact: Watson 2022 (*Lancet Infect Dis*), Abbas 2020 (*Lancet Glob
+      Health*). The two clinical-prediction files are a deliberate contrast: Yadaw's dual-split
+      design is exemplary but its performance reporting omits calibration, auPRC, an interval
+      on the AUC and a named operating point, so its file carries a *what to avoid* section;
+      Berenguer is TRIPOD-compliant and supplies all four.
 - [ ] Phase 4 — phylodynamics (Grubaugh 2017, Lemieux 2021); serological inference
       (Ximenes 2014, Golden 2016).
 - [ ] Phase 5 — within-host (Néant 2021, Clapham 2014); agent-based model documentation

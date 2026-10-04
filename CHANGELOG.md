@@ -19,7 +19,7 @@ later change gets an entry.
 ## [1.0.0] — unreleased
 
 First release. A skill for writing, revising and critiquing infectious disease modelling papers,
-distilled from 57 well-written mathematical, statistical and machine learning papers published
+distilled from 61 well-written mathematical, statistical and machine learning papers published
 between 2000 and 2024.
 
 ### Added
@@ -81,7 +81,7 @@ between 2000 and 2024.
   characters checked against the paper's abstract and, where PubMed Central holds it, the full
   text; `--local-text` checks a paywalled paper against a local PDF extraction instead,
   compensating for the ligature, Greek-letter and running-head damage that pre-Unicode journal
-  PDFs introduce. 511 verified, 0 not found, 152 unreachable, 217 checked by hand.
+  PDFs introduce. 1,102 verified, 0 not found, 152 unreachable, 218 checked by hand.
 - **`evals/`** — 14 cases with graders, covering drafting, revision, critique, the hard rules and
   the negative trigger, for `claude plugin eval`.
 - **`.claude-plugin/plugin.json` and `marketplace.json`**, so the skill installs as a plugin.
