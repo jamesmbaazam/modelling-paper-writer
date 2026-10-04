@@ -9,9 +9,9 @@ metadata:
 ---
 # Writing infectious disease modelling papers
 
-Rules distilled from 53 well-written infectious disease modelling, statistical and machine
+Rules distilled from 57 well-written infectious disease modelling, statistical and machine
 learning papers (2000–2024; *Nature*, *Science*, *PNAS*, the *Lancet* family, *BMJ*, *PLoS
-Comput Biol* and others; 15 of 53 are COVID-19). The corpus is landmark work from a narrow set
+Comput Biol* and others; 17 of 57 are COVID-19). The corpus is landmark work from a narrow set
 of groups, chosen for writing quality, not sampled systematically; rules from the 2000–2008
 papers may predate current reviewer expectations. Rules marked ◆ come from reporting guidelines
 or journal instructions rather than the corpus; check them against the current source.
@@ -99,12 +99,12 @@ the shape of the headline claim. Identify it before writing a word. → `evidenc
 
 | Archetype | Headline claim shape | Exemplars (`references/corpus/`) |
 |---|---|---|
-| **Parameter estimation** | A number with an interval, translated into a decision | Lauer 2020 |
+| **Parameter estimation** | A number with an interval, translated into a decision | Lauer 2020, Ganyani 2020, Stopard 2021 |
 | **Real-time transmission analysis** | A dated R_t or growth estimate with an interval | Kucharski 2020, Abbott 2020, Tian 2020, Keeling 2001, Thompson 2019, Zhao 2020 |
 | **Scenario projection for policy** | A comparison against a named reference scenario | Davies 2020, Ferguson 2006, Ngonghala 2020 |
 | **Feasibility / threshold** | The parameter threshold at which a strategy works | Ferguson 2005, Hellewell 2020 |
 | **Policy counterfactual** | A percentage averted relative to what happened | Grais 2008, Nouvellet 2015, Verguet 2015 |
-| **Competing hypotheses** | The best-supported mechanism, with the runners-up | Davies 2021 |
+| **Competing hypotheses** | The best-supported mechanism, with the runners-up | Davies 2021, Lavine 2021, Yakob 2015 |
 | **Forecast evaluation** | A score relative to a naïve baseline | Cramer 2022, Reich 2019, Bracher 2021a, Funk 2019, Sherratt 2023, Bosse 2023, Bracher 2021b |
 | **Dynamical systems** | A regime, different from the one assumed | Ferrari 2008, Earn 2000, Bjørnstad 2002, Grenfell 2001, Griffin 2015 |
 | **Methods / simulation benchmark** | A limit on what the data can identify | Lee 2010, Bracher 2021a, Bosse 2023, Keeling & Rohani 2002, Weitz 2015, Li 2017 |

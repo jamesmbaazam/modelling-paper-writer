@@ -245,3 +245,24 @@ All five are now in the *Hard rules* block of `SKILL.md`.
 - [x] Replace `[[wikilinks]]` in `writing_styles/*.md` with relative paths Claude can open.
 - [x] Add a script or make target that regenerates the index table from `papers.csv` —
       `tools/corpus.py index`, which also writes the README corpus block (see C1).
+
+## 7. Second expansion (approved 2026-10-04): two more exemplars per single-exemplar archetype
+
+Ten archetypes had one exemplar each; the agreed plan adds two more to each, plus further
+Sebastian Funk work on forecast evaluation. 24 papers in six phases.
+
+- [x] Phase 1 — forecast evaluation: Funk 2019 (*PLoS Comput Biol*), Sherratt 2023 (*eLife*),
+      Bosse 2023 (*PLoS Comput Biol*), Bracher 2021b (*Nat Commun*). Adding the last collided
+      with the existing Bracher 2021 label, so the WIS paper became Bracher 2021a; `corpus.py
+      check` now rejects duplicate labels.
+- [x] Phase 2 — parameter estimation: Ganyani 2020 (*Eurosurveillance*, closing that venue
+      gap), Stopard 2021 (*PLoS Comput Biol*); competing hypotheses: Lavine 2021 (*Science*),
+      Yakob 2015 (*Sci Rep*).
+- [ ] Phase 3 — clinical prediction (Yadaw 2020, Berenguer 2021); vaccine impact (Watson 2022,
+      Abbas 2020).
+- [ ] Phase 4 — phylodynamics (Grubaugh 2017, Lemieux 2021); serological inference
+      (Ximenes 2014, Golden 2016).
+- [ ] Phase 5 — within-host (Néant 2021, Clapham 2014); agent-based model documentation
+      (Ajelli 2010, Kerr 2021 *Nat Commun*).
+- [ ] Phase 6 — nowcasting (Günther 2021, Wolffram 2023); rapid response (Camacho 2015,
+      Shi 2016).
