@@ -91,9 +91,9 @@ before writing a word; the corpus contains fourteen, each with a canonical exemp
 | **Feasibility / threshold** | The parameter boundary at which a strategy works | Ferguson 2005 (containment), Hellewell 2020 (contact tracing) |
 | **Policy counterfactual** | What a past intervention achieved, and what alternatives would have | Grais 2008, Nouvellet 2015 |
 | **Competing hypotheses** | Several mechanisms formalised, fitted and ranked | Davies 2021 (B.1.1.7) |
-| **Forecast evaluation** | Many models, one scoring rule, a verdict | Cramer 2022, Reich 2019, Bracher 2021 |
+| **Forecast evaluation** | Many models, one scoring rule, a verdict | Cramer 2022, Reich 2019, Bracher 2021a |
 | **Dynamical systems** | A system shown to sit in a different regime than assumed | Ferrari 2008, Earn 2000, Bjørnstad 2002, Grenfell 2001 |
-| **Methods / simulation benchmark / critique** | A tool, a validation, or a demonstration of what cannot be inferred | Lee 2010, Bracher 2021, Keeling & Rohani 2002, Weitz 2015, Li 2017 |
+| **Methods / simulation benchmark / critique** | A tool, a validation, or a demonstration of what cannot be inferred | Lee 2010, Bracher 2021a, Keeling & Rohani 2002, Weitz 2015, Li 2017 |
 | **Review** | A framework that organises a scattered literature | Baker 2021, Heesterbeek 2015, Altizer 2006 |
 | **Best-practice guidance** | Recommendations, checklists or reporting standards for a method others already use | Gostic 2020 (R_t), Charniga 2024 (delay distributions) |
 | **Risk mapping / trait prediction** | A supervised model over covariates or traits, producing a surface or a ranked candidate list | Bhatt 2013 (dengue), Olival 2017 (spillover), Han 2015 (rodents) |
@@ -130,7 +130,7 @@ The corpus titles fall into four shapes. Pick the shape by archetype, then apply
 | Shape | Pattern | Corpus examples |
 |---|---|---|
 | **Claim** | The finding as a declarative sentence | *Host and viral traits predict zoonotic spillover from mammals* (Olival 2017); *Improving propensity score weighting using machine learning* (Lee 2010) |
-| **Object + verb phrase** | *Estimating / Evaluating / Detecting* + the quantity + the data or setting | *Estimating the time-varying reproduction number of SARS-CoV-2 using national and subnational case counts* (Abbott 2020); *Detecting influenza epidemics using search engine query data* (Ginsberg 2009); *Evaluating epidemic forecasts in an interval format* (Bracher 2021) |
+| **Object + verb phrase** | *Estimating / Evaluating / Detecting* + the quantity + the data or setting | *Estimating the time-varying reproduction number of SARS-CoV-2 using national and subnational case counts* (Abbott 2020); *Detecting influenza epidemics using search engine query data* (Ginsberg 2009); *Evaluating epidemic forecasts in an interval format* (Bracher 2021a) |
 | **Quantity, pathogen, place** | The estimand and its scope, no verb | *The incubation period of coronavirus disease 2019 (COVID-19) from publicly reported confirmed cases* (Lauer 2020); *The global distribution and burden of dengue* (Bhatt 2013); *Estimated transmissibility and impact of SARS-CoV-2 lineage B.1.1.7 in England* (Davies 2021) |
 | **Question or strategy** | *Strategies for…* / *Feasibility of…* / *The role of…* | *Strategies for containing an emerging influenza pandemic in Southeast Asia* (Ferguson 2005); *Feasibility of controlling COVID-19 outbreaks by isolation of cases and contacts* (Hellewell 2020); *The role of rapid diagnostics in managing Ebola epidemics* (Nouvellet 2015) |
 
@@ -140,7 +140,7 @@ Rules:
   Altizer 2006, Baker 2021). Two of the four shapes carry them by construction.
 - **Name the estimand, not the model.** *Estimating the time-varying reproduction number*
   (Abbott 2020), not *A Bayesian semi-mechanistic model for…*. The method goes in the subtitle if
-  anywhere. The exception is a methods paper, where the method *is* the object (Bracher 2021, Bjørnstad 2002).
+  anywhere. The exception is a methods paper, where the method *is* the object (Bracher 2021a, Bjørnstad 2002).
 - **A claim title needs a claim you will defend in the Discussion.** Olival 2017 can say *predict*
   because the paper reports out-of-sample performance; do not use the shape for a projection
   under assumptions.
@@ -170,7 +170,7 @@ The empirical and policy papers in the corpus are built on the same six moves; j
 format only changes where the moves live. Reviews (Baker 2021, Heesterbeek 2015, Altizer 2006)
 carry moves 1, 2 and 6 and replace the result with a framework — Altizer 2006 enumerates its
 mechanisms where an empirical paper would give a result. The methods papers (Keeling & Rohani
-2002, Bracher 2021) replace move 1 with the modelling practice they are correcting.
+2002, Bracher 2021a) replace move 1 with the modelling practice they are correcting.
 
 1. **Burden or urgency**, quantified and dated.
 2. **The specific gap** — a quantity that is missing, a strategy whose effect is unknown, an
@@ -241,7 +241,7 @@ user only when the target journal requires the panel or the user asks for it.
 **PLoS / methods journals.** Numbered sections and subsections (`2.1`, `2.2`) are appropriate
 and normal when the contribution is methodological. PLoS also wants an **Author Summary**
 written for the practitioner alongside the technical abstract.
-→ Bracher 2021
+→ Bracher 2021a
 
 **Royal Society journals (*J R Soc Interface*, *Proc B*).** Conventional IMRaD with
 unnumbered subsections; the Methods can carry the full model specification in the main text.
@@ -322,7 +322,7 @@ model: **the main text carries the argument, not the algebra.**
   words on first use, and often *only* in a figure caption (Ferrari 2008, Earn 2000, Ferguson 2006, Ferguson 2005).
 - **Methods and modelling journals:** displayed, numbered equations, referred to as
   "Equation (1)" or `(2.1)`. Build complexity in visible steps, one subsection per step —
-  single interval score → weighted interval score; discrete → continuous (Bracher 2021).
+  single interval score → weighted interval score; discrete → continuous (Bracher 2021a).
 - **A compact model block beats prose** when the model is a generative chain. Abbott 2020 gives four
   lines (R_t process, renewal equation, delay convolution, negative binomial observation) and
   then glosses each line in a paragraph.
@@ -336,7 +336,7 @@ model: **the main text carries the argument, not the algebra.**
 Worked model-definition passages at all three levels of formality are in examples.md §12.1.
 
 Reserve full formal treatment for **the one object that carries the argument** — the scoring
-rule in Reich 2019 and Bracher 2021, the elasticity and EVPI formulas in Li 2017, the coupling derivation in
+rule in Reich 2019 and Bracher 2021a, the elasticity and EVPI formulas in Li 2017, the coupling derivation in
 Keeling & Rohani 2002. Everything else is named and cited.
 
 ### 2.2 Assumptions
@@ -578,7 +578,7 @@ practice:
 - Put the fixed parameter values in the caption of the figure they generated (Earn 2000).
 - Use boxplots over replicates to argue about **dispersion**, not just central tendency (Lee 2010).
 - Build **pedagogical figures** for methods papers: show the object, then walk the reader through
-  it line by line (Bracher 2021).
+  it line by line (Bracher 2021a).
 - Mark the boundary between estimates and estimates-from-partial-data in every real-time figure
   (Abbott 2020).
 - Show a bifurcation diagram with your system's parameters *and* the canonical system's marked on
@@ -707,7 +707,7 @@ Hedge decisions rather than estimates when writing for policy:
 
 **Concede the alternative in the same paragraph as your choice.** "We preferred to motivate the
 score through central predictive intervals … However, when applying …, formulation (4) may seem
-more natural" (Bracher 2021). This construction does more for credibility than any amount of caution.
+more natural" (Bracher 2021a). This construction does more for credibility than any amount of caution.
 
 **Use scare quotes to flag terms you will not take at face value** — "big data", "historical
 baseline" (Reich 2019) — and to mark deliberate coinages on first use — 'sparks', 'core', 'satellite'
@@ -760,7 +760,7 @@ The field's analogue of train/test discipline. Report:
   coverage of prediction intervals. They are different virtues; never conflate them (Cramer 2022).
 - **Proper scoring rules**, named, cited and interpreted for the reader; report on an
   interpretable scale (geometric mean of scores; relative WIS), not on the raw log scale (Reich 2019,
-  Bracher 2021).
+  Bracher 2021a).
 - **Simulation benchmarks**: fix a metric set (bias, SE, coverage, balance) and report it in the
   same order in every table; use the off-the-shelf configuration and defend that as the realistic
   user's configuration (Lee 2010).

@@ -189,6 +189,13 @@ def check():
     ids = [r["id"] for r in rows]
     if len(set(ids)) != len(ids):
         errors.append("papers.csv has duplicate ids")
+    # Labels are the Author YEAR form used throughout the rule files, so they must be unique:
+    # two papers sharing one label makes every citation of it ambiguous. Disambiguate with a
+    # trailing letter, as Bracher 2021a / Bracher 2021b.
+    seen = Counter(r["label"] for r in rows)
+    for label, n in sorted(seen.items()):
+        if n > 1:
+            errors.append(f"papers.csv has {n} papers labelled {label!r}; labels must be unique")
     on_disk = {p.name for p in CORPUS.glob("[0-9][0-9]-*.md")}
     listed = {r["file"] for r in rows}
     for f in sorted(on_disk - listed):

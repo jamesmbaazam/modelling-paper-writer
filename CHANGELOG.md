@@ -19,7 +19,7 @@ later change gets an entry.
 ## [1.0.0] — unreleased
 
 First release. A skill for writing, revising and critiquing infectious disease modelling papers,
-distilled from 49 well-written mathematical, statistical and machine learning papers published
+distilled from 53 well-written mathematical, statistical and machine learning papers published
 between 2000 and 2024.
 
 ### Added
