@@ -6,7 +6,7 @@ Every quotation of 30+ characters in `references/corpus/`, and every quotation i
 
 *Unchecked* means no open full text was reachable and the quotation is not in the abstract; it is not evidence of a misquote. *Reviewed* quotations were checked by hand and are listed with their reasons in `tools/verify_quotes.py`.
 
-**Totals:** 1102 verified, 0 not found, 152 unchecked, 218 reviewed by hand.
+**Totals:** 1187 verified, 0 not found, 152 unchecked, 218 reviewed by hand.
 
 ## Not found
 
@@ -77,6 +77,10 @@ None.
 | Berenguer 2021 | full text (PMC) | 28 | 0 | 0 | 0 |
 | Watson 2022 | full text (PMC) | 20 | 0 | 0 | 1 |
 | Abbas 2020 | full text (PMC) | 18 | 0 | 0 | 0 |
+| Grubaugh 2017 | full text (PMC) | 23 | 0 | 0 | 0 |
+| Lemieux 2021 | full text (PMC) | 19 | 0 | 0 | 0 |
+| Ximenes 2014 | full text (PMC) | 22 | 0 | 0 | 0 |
+| Golden 2016 | full text (PMC) | 21 | 0 | 0 | 0 |
 
 ## Attributed quotations in the rule files
 

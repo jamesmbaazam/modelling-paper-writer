@@ -264,8 +264,13 @@ Sebastian Funk work on forecast evaluation. 24 papers in six phases.
       design is exemplary but its performance reporting omits calibration, auPRC, an interval
       on the AUC and a named operating point, so its file carries a *what to avoid* section;
       Berenguer is TRIPOD-compliant and supplies all four.
-- [ ] Phase 4 — phylodynamics (Grubaugh 2017, Lemieux 2021); serological inference
-      (Ximenes 2014, Golden 2016).
+- [x] Phase 4 — phylodynamics: Grubaugh 2017 (*Nature*), Lemieux 2021 (*Science*);
+      serological inference: Ximenes 2014 (*PLoS ONE*), Golden 2016 (*Parasites & Vectors*).
+      Grubaugh supplies the bounded introduction count and the R₀<1-plus-importation
+      reconciliation; Lemieux the marker-allele tracer and the limit that migration can
+      outpace mutation. Ximenes compares three mixing structures rather than fitting one;
+      Golden validates the serological marker before modelling it, and reads a two-phase
+      force of infection as a record of the control programme.
 - [ ] Phase 5 — within-host (Néant 2021, Clapham 2014); agent-based model documentation
       (Ajelli 2010, Kerr 2021 *Nat Commun*).
 - [ ] Phase 6 — nowcasting (Günther 2021, Wolffram 2023); rapid response (Camacho 2015,
