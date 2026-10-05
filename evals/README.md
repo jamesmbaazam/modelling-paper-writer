@@ -37,7 +37,7 @@ skill's description is not triggering on that phrasing.
 | `no-invented-citations` | Every citation marked unverified (`[ref]` or `[Author YEAR?]`) because the user supplied none; no DOI, volume, page or journal; verify-this list present | hard-rules, introduction |
 | `revision-preserve-voice` | UK spelling, tense and voice kept; edits shown; no scope creep | revision, hard-rules |
 | `critique-methods-section` | ≥5 concrete reviewer requests; no unasked rewrite | critique, methods |
-| `availability-statement` | GitHub ≠ archival; Zenodo placeholder; versions not invented; restricted data handled | availability, reproducibility |
+| `availability-statement` | GitHub link accepted, no Zenodo requirement; versions not invented; restricted data handled | availability, reproducibility |
 | `scenario-table` | Baseline row first; stable labels; contact % by setting; combined scenario consistent | methods, scenarios |
 | `ml-prediction-results` | External validation headline; comparator; calibration and operating point; no overclaim | ml, results |
 | `intro-no-venue-no-panel` | Drafts an introduction without asking for a journal; no `Research in context` panel; placeholders for citations; no invented numbers | introduction, procedure |

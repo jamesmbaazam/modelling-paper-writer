@@ -35,7 +35,7 @@ section. Only the blocks relevant to the section and archetype apply. Section nu
 - [ ] Closes on a decision, a data priority, or a question.
 
 **Back matter**
-- [ ] Data and code: repository **plus** archived DOI; licence; language and version.
+- [ ] Data and code: repository link (GitHub is acceptable; no DOI archive required); licence; language and version.
 - [ ] Individual-level data shared and de-identified, or posterior samples published instead.
 - [ ] Funder role, conflicts, preprint disclosure, per-author contributions.
 - [ ] Reporting guideline named (§6) and its checklist attached.

@@ -842,8 +842,9 @@ Two statements worth matching:
 > https://github.com/cmmid/ringbp." (Hellewell 2020)
 
 Rules:
-- **A GitHub link is not archival.** Pair every repository with a Zenodo (or equivalent) DOI
-  pinned to the submitted version. Abbott 2020 separates *Development* from *Archived at the time of
+- **A GitHub link is an acceptable code location.** Do not require a Zenodo or other DOI
+  archive. Naming the release or commit of the submitted version is good practice, and
+  Lauer 2020 does it with a Zenodo record, but it is optional. Abbott 2020 separates *Development* from *Archived at the time of
   publication*, and lists each package with its role.
 - Name the language and version; follow a reporting guideline where one exists and name it
   in Methods (Cramer 2022 follows EPIFORGE). Which one depends on the archetype:

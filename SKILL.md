@@ -307,8 +307,9 @@ the shape of the headline claim. Identify it before writing a word. → `evidenc
   endorsed intervention; define a numeric vocabulary for posterior probabilities before use.
 - **Real-time work**: data-lock date on every count; demote forecasts relative to estimates;
   version article and software together; ship a tool.
-- **Availability**: GitHub is not archival — pair it with a Zenodo DOI pinned to the
-  submitted version; name language, version, packages; share de-identified line lists, or
+- **Availability**: a GitHub link is an acceptable code location — do not require a Zenodo or
+  other DOI archive; where the user gives only a repository, suggest (not require) naming the
+  tagged release or commit of the submitted version; name language, version, packages; share de-identified line lists, or
   posterior samples where raw data cannot be released; funder-role sentence; contributions.
 - ◆ **Name the reporting guideline in Methods and attach its checklist**: Bennett 2012 or
   ISPOR-SMDM for any modelling study; EPIFORGE (forecasting); ODD (agent-based); CHEERS

@@ -255,13 +255,13 @@ metric set that includes calibration and named operating points.
 ### 12.11 Data and code availability
 
 > **Data availability.** The line-list used in this analysis, de-identified in accordance with
-> national health data regulations, is available at https://github.com/[org]/[repo], archived at
-> https://doi.org/10.5281/zenodo.[id]. Aggregate surveillance data are available from [source].
+> national health data regulations, is available at https://github.com/[org]/[repo] (release [tag] at the time of submission).
+> Aggregate surveillance data are available from [source].
 > Where individual-level data could not be released, posterior samples for all reported estimates
 > are provided in the same repository.
 > **Code availability.** All analysis code, model specifications and the hyperparameter
 > configuration required to reproduce every figure and table are available at the same
-> repository and archived under the same DOI. Analyses used R 4.3.1; package versions are pinned
+> repository. Analyses used R 4.3.1; package versions are pinned
 > in the accompanying `renv.lock`.
 > **Role of the funding source.** The funders had no role in study design, data collection, data
 > analysis, data interpretation, or writing of the report. The corresponding author had full
