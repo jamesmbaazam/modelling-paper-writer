@@ -67,3 +67,6 @@ A comparative aside is used to show the mechanism is general and its consequence
 3. Diagnose an aggregation artefact: national data look regular only because local epidemics are asynchronous.
 4. Claim qualitative agreement when that is what you have, and validate on years you did not fit.
 5. State CRediT-style author contributions explicitly, including who wrote the paper.
+
+## Related files
+Other *dynamical systems* exemplars: see [04-earn-2000-simple-model-complex-transitions](04-earn-2000-simple-model-complex-transitions.md) for the four-page theory that puts measles' changing regimes on one axis of one model; [17-grenfell-2001-travelling-waves](17-grenfell-2001-travelling-waves.md) for travelling waves found with a method that respects non-stationarity, then reproduced mechanistically; [18-bjornstad-2002-tsir-measles](18-bjornstad-2002-tsir-measles.md) for every TSIR parameter estimated from a national dataset, in monograph form; [46-griffin-2015-malaria-immunity](46-griffin-2015-malaria-immunity.md) for two readings of how malaria immunity is acquired, separated by a fit to age- and transmission-stratified data.

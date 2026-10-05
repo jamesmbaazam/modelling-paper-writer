@@ -59,3 +59,6 @@ The model ships as an installable R package, not a script dump.
 2. Label every parameter as sampled or fixed.
 3. When you assume the best case and still find failure, say so explicitly — it converts a limitation into strength.
 4. Define "control" formally, then question your own definition in the Discussion.
+
+## Related files
+Other *feasibility / threshold* exemplars: see [13-ferguson-2005-containing-pandemic-sea](13-ferguson-2005-containing-pandemic-sea.md) for a feasibility threshold and an operational checklist from a very large individual-based simulation.

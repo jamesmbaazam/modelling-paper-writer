@@ -218,6 +218,25 @@ def check():
         if absent:
             notes.append(f"{r['file']}: no section analysis for {', '.join(absent)}")
 
+    # Exemplars of one archetype link each other, in both directions, from `Related files`:
+    # a reader who lands on any one of them can reach the rest. Adding a paper therefore means
+    # adding a sentence to each sibling's `Related files` saying what the new paper adds.
+    by_arch = {}
+    for r in rows:
+        for arch in r["archetype"].split("; "):
+            by_arch.setdefault(arch, []).append(r)
+    for arch, members in sorted(by_arch.items()):
+        for r in members:
+            if r["file"] not in on_disk:
+                continue
+            text = (CORPUS / r["file"]).read_text(encoding="utf-8")
+            m = re.search(r"^## Related files\n(.*?)(?=^## |\Z)", text, re.M | re.S)
+            related = m.group(1) if m else ""
+            for o in members:
+                if o is not r and f"]({o['file']})" not in related:
+                    errors.append(f"{r['file']}: Related files does not link {o['label']} "
+                                  f"(both are {arch})")
+
     skill = SKILL_PATH.read_text(encoding="utf-8")
 
     # SKILL.md's preamble counts match papers.csv
@@ -371,6 +390,16 @@ def check():
                 continue
             if not (md.parent / target).exists():
                 errors.append(f"{md.relative_to(ROOT)}: broken link {target}")
+
+    # SKILL.md numbers only its top-level sections; a §N.M reference to it is stale
+    # (the subsections live in evidence.md). Cite `SKILL.md` §N and `evidence.md` §N.M.
+    rule_files = [ROOT / "SKILL.md", ROOT / "README.md", ROOT / "CONTRIBUTING.md",
+                  *sorted((ROOT / "references").rglob("*.md"))]
+    for md in rule_files:
+        for n, line in enumerate(md.read_text(encoding="utf-8").splitlines(), 1):
+            for ref in re.findall(r"SKILL\.md`?\s+§(\d+\.\d+)", line):
+                errors.append(f"{md.relative_to(ROOT)}:{n}: `SKILL.md` §{ref} does not exist "
+                              f"— cite `SKILL.md` §{ref.split('.')[0]} and `evidence.md` §{ref}")
 
     for n in notes:
         print(f"note: {n}", file=sys.stderr)

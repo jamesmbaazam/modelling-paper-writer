@@ -54,3 +54,6 @@ No repository, but the model is shipped as a usable artefact:
 2. Make the answer context-dependent on purpose, and say what it depends on: stage of epidemic, bed capacity relative to demand.
 3. Name the trade-off explicitly: "a trade-off exists between the risk of nosocomial infection and the benefits of treatment."
 4. Grade your modals to your evidence.
+
+## Related files
+Other *policy counterfactual* exemplars: see [01-grais-2008-measles-orv-niamey](01-grais-2008-measles-orv-niamey.md) for a stochastic model fitted to one outbreak and re-run under alternative response scenarios; [49-verguet-2015-measles-sia](49-verguet-2015-measles-sia.md) for a model used to compute a campaign schedule rather than project a scenario, delivered as a per-country table.

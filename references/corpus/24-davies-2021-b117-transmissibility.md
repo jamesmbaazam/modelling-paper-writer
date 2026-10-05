@@ -54,3 +54,6 @@ Two categories again: **scope of scenarios** and **contested parameters**, with 
 2. Give the "it's an artifact" rebuttal its own heading and its own analysis.
 3. Report a range of credible intervals across methods when several methods target the same quantity.
 4. State null findings as intervals that span both directions, and say so in words.
+
+## Related files
+Other *competing hypotheses* exemplars: see [57-yakob-2015-cdifficile-displacement](57-yakob-2015-cdifficile-displacement.md) for three mechanisms, one parameter each, ranked by whether they can reproduce the data; [56-lavine-2021-endemicity](56-lavine-2021-endemicity.md) for rival explanations framed as immunity components that wane at different rates.

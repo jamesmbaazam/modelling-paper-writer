@@ -66,3 +66,6 @@ The paper also frames the historical record as an experiment, which is a lovely 
 4. Validate by mapping several independent case histories onto different regions of one diagram.
 5. Reframe historical policy variation as a set of natural experiments.
 6. End with the lesson for the wider field, one sentence, no hedging.
+
+## Related files
+Other *dynamical systems* exemplars: see [17-grenfell-2001-travelling-waves](17-grenfell-2001-travelling-waves.md) for travelling waves found with a method that respects non-stationarity, then reproduced mechanistically; [18-bjornstad-2002-tsir-measles](18-bjornstad-2002-tsir-measles.md) for every TSIR parameter estimated from a national dataset, in monograph form; [02-ferrari-2008-measles-sub-saharan-africa](02-ferrari-2008-measles-sub-saharan-africa.md) for a fitted model and a bifurcation diagram that place a system in a different regime from the one assumed; [46-griffin-2015-malaria-immunity](46-griffin-2015-malaria-immunity.md) for two readings of how malaria immunity is acquired, separated by a fit to age- and transmission-stratified data.

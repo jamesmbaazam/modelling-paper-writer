@@ -58,3 +58,6 @@ The paper closes on a call for data collection rather than on a recommendation:
 2. Present all results under two labelled transmissibility scenarios throughout.
 3. Attach a logistics or ethics checkpoint to every intervention you endorse.
 4. Push all machinery to the SI and use the pointer as punctuation, so the main text reads as an argument about policy rather than about code.
+
+## Related files
+Other *scenario projection for policy* exemplars: see [25-davies-2020-npi-uk](25-davies-2020-npi-uk.md) for an age-structured model run under a ladder of intervention scenarios while the decisions were being made; [47-ngonghala-2020-npi-math-assessment](47-ngonghala-2020-npi-math-assessment.md) for a stability analysis that precedes the scenarios, in the applied-mathematics register; [69-kerr-2021-test-trace-quarantine](69-kerr-2021-test-trace-quarantine.md) for scenarios run on a documented agent-based model and then checked against the months that followed.

@@ -67,3 +67,6 @@ And the closing weighs cost against consequence rather than asserting a recommen
 4. Convert the model's requirements into a numbered list of operational criteria with target values.
 5. Justify every structural choice twice: by evidence, and by whether policy can act on it.
 6. Say which detail is present because data support it, and call that parsimony.
+
+## Related files
+Other *feasibility / threshold* exemplars: see [22-hellewell-2020-contact-tracing-feasibility](22-hellewell-2020-contact-tracing-feasibility.md) for a branching-process boundary on when contact tracing can control an outbreak, with no fitted data.

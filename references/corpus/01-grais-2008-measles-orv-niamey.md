@@ -51,3 +51,6 @@ Each limitation closes by naming the analysis that would resolve it.
 2. **Nested spatial vocabulary** (quartier → CSI catchment → commune → city) reused consistently in data, model and results so the reader never re-learns the scale.
 3. **Equations immediately re-expressed epidemiologically** — never leave a β unexplained in biological terms.
 4. **Closing on the decision, not the model**: "Ultimately the decision whether or not to intervene … depend[s] upon the political will of public health authorities."
+
+## Related files
+Other *policy counterfactual* exemplars: see [20-nouvellet-2015-rapid-diagnostics-ebola](20-nouvellet-2015-rapid-diagnostics-ebola.md) for three strategies compared on several metrics at two scales, with an answer that depends on context; [49-verguet-2015-measles-sia](49-verguet-2015-measles-sia.md) for a model used to compute a campaign schedule rather than project a scenario, delivered as a per-country table.

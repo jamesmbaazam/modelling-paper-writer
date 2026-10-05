@@ -138,26 +138,26 @@ Sections 1–6 are the 2026-09-13 critique, kept as a record; line references th
       and `.claude-plugin/`. It refuses to build if `corpus.py check` fails, and `--list`
       prints the contents without building. `dist/` is gitignored.
 
-**Cross-references** — found 2026-10-05 during Phase 5, left for a separate pass
-- [ ] G1. Six corpus files cite `SKILL.md` subsections that the §1 restructure removed:
-      `SKILL.md` now numbers only its top-level rule sections, and the §N.M numbering lives on
-      in `evidence.md`. Stale: §2.1 (Ximenes 2014, Verguet 2015), §2.3 (Ganyani 2020), §3.4
-      (Thompson 2019, Ngonghala 2020), §6.2 (McGough 2020). Point each to `SKILL.md` §N with
-      its evidence in `evidence.md` §N.M, as files 66 and 67 now do, after checking that the
-      §N.M in `evidence.md` holds the rule the file means. Then have `corpus.py check` reject
-      any `SKILL.md` §N.M reference, so the drift cannot recur.
-- [ ] G2. Back-links between exemplars of the same archetype. The expansion phases linked
-      each new file to its older siblings but never the reverse, and some original files
-      never linked each other: after Phase 6, 43 files lack a link to at least one later file
-      in the same archetype (38 before it; the 34 first recorded here counted only the files
-      up to id 44). Phase 5's share is Pawelek 2012 (→ Néant 2021, Clapham 2014) and Kerr
-      2021a (→ Ajelli 2010, Kerr 2021b); Phase 6 added McGough 2020 (→ Günther 2021, Wolffram
-      2023), Finger 2019 (→ Camacho 2015, Shi 2016), Bracher 2021b and Funk 2019 (→ Wolffram
-      2023) and Zhao 2020 (→ Günther 2021, Camacho 2015). The worst cases are forecast
-      evaluation (Cramer 2022 links none of its seven siblings), methods / simulation
-      benchmark and real-time transmission analysis. Add a sentence to each `Related files`
-      saying what the sibling adds, not a bare link; consider a `corpus.py check` note listing
-      unlinked same-archetype pairs. Phase 6 is done, so this can now be done in one pass.
+**Cross-references** — found 2026-10-05 during Phase 5; done 2026-10-05
+- [x] G1. Six corpus files cited `SKILL.md` subsections that the §1 restructure removed
+      (§2.1 in Ximenes 2014 and Verguet 2015, §2.3 in Ganyani 2020, §3.4 in Thompson 2019 and
+      Ngonghala 2020, §6.2 in McGough 2020). Each now cites `SKILL.md` §N for the rule and
+      `evidence.md` §N.M for its evidence, after checking that the `evidence.md` subsection
+      holds the rule the file means — all six did. The `evidence.md` header, which explained
+      the numbering with a `SKILL.md` §3.2 that no longer exists, now states the convention.
+      `corpus.py check` rejects any `SKILL.md` §N.M in `SKILL.md`, README, CONTRIBUTING or
+      `references/`, naming the replacement; verified by reintroducing one.
+- [x] G2. Every exemplar now links every other exemplar of its archetype from `Related files`,
+      in both directions. The gap was larger than first recorded: 115 links from older files
+      to later siblings across 43 files, and another 65 in the other direction, mostly
+      between original files (Nouvellet 2015 did not link Grais 2008, Reich 2019 did not link
+      Cramer 2022). 22 older files had no `Related files` section at all and now have one.
+      Each file gets one sentence per archetype — *Other \*archetype\* exemplars: see …* —
+      with the siblings in publication order and a clause saying what each adds, not a bare
+      link. `corpus.py check` now fails on any missing same-archetype link, so adding a paper
+      means adding it to each sibling (CONTRIBUTING says so); verified by removing one.
+      One stale claim surfaced on the way: Bracher 2021b called itself "the only corpus paper
+      that pre-registers", untrue since Wolffram 2023 joined; corrected.
 
 ## 1. Restructure: procedure first, progressive disclosure for the rest
 

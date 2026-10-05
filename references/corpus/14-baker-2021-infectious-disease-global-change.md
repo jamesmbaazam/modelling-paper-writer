@@ -53,3 +53,6 @@ Note that the review **argues against its own thesis** before closing. That is w
 2. **Triads for coverage**: "climate change, rapid urbanization and changing land-use patterns"; used consistently so the reader can track completeness.
 3. **Historical framing turns urgency into acceleration, not novelty** — premodern, maritime and modern eras placed side by side.
 4. Verbs of association, not causation: "have altered", never "caused".
+
+## Related files
+Other *review* exemplars: see [05-altizer-2006-seasonality-review](05-altizer-2006-seasonality-review.md) for a review that inventories the distinct mechanisms through which one driver, seasonality, acts; [15-heesterbeek-2015-models-global-health](15-heesterbeek-2015-models-global-health.md) for the field-defining review of what modelling can and cannot do for global health.

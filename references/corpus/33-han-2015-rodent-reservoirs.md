@@ -54,3 +54,6 @@ Deposited in Dryad (10.5061/dryad.7fh4q), with five supplementary datasets: zoon
 4. Disclose a conservative labelling choice and state which way it biases performance.
 5. **Ship the predictions as a named list** so the paper can be proved wrong.
 6. Report a cutoff and justify it (90th percentile), rather than presenting continuous scores only.
+
+## Related files
+Other *risk mapping / trait prediction* exemplars: see [29-bhatt-2013-global-dengue-distribution](29-bhatt-2013-global-dengue-distribution.md) for boosted regression trees turned into a global risk surface and then a burden estimate; [32-olival-2017-zoonotic-spillover-traits](32-olival-2017-zoonotic-spillover-traits.md) for trait-based prediction of which hosts and viruses matter, framed as a surveillance priority map.

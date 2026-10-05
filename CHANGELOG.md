@@ -76,7 +76,8 @@ between 2000 and 2024.
 - **`tools/corpus.py`** — regenerates the corpus index and checks the repo for drift: stale
   index, corpus files missing from `papers.csv`, missing canonical headings, archetype and
   full-text flags disagreeing with the §0 table, frontmatter breaking the Agent Skills spec,
-  version strings disagreeing or missing a changelog section, and broken links.
+  version strings disagreeing or missing a changelog section, exemplars of one archetype not
+  linking each other, references to `SKILL.md` subsections that do not exist, and broken links.
 - **`tools/verify_quotes.py`** and `docs/quote-verification.md` — every quotation of 30 or more
   characters checked against the paper's abstract and, where PubMed Central holds it, the full
   text; `--local-text` checks a paywalled paper against a local PDF extraction instead,

@@ -53,3 +53,6 @@ Reproducibility is argued as an obligation, not a checkbox:
 2. Use boxes to hold glossary, worked example and history so the main line of argument never stalls.
 3. State the prediction horizon problem plainly, then ask where the horizon actually is.
 4. Turn the literature review into a table when the field is fifty years old.
+
+## Related files
+Other *review* exemplars: see [05-altizer-2006-seasonality-review](05-altizer-2006-seasonality-review.md) for a review that inventories the distinct mechanisms through which one driver, seasonality, acts; [14-baker-2021-infectious-disease-global-change](14-baker-2021-infectious-disease-global-change.md) for a synthesis review whose contribution is a framework for a scattered literature.

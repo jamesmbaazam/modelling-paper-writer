@@ -60,3 +60,6 @@ A dated development note is included rather than quietly folded in: "After the i
 4. Say explicitly what you did to make the benchmark comparison fair.
 5. Admit when hyperparameter selection was noisy and had to be prespecified.
 6. If your predecessor failed by staying wrong, make **recovery speed** the advertised property.
+
+## Related files
+Other *digital surveillance / nowcasting* exemplars: see [30-ginsberg-2009-google-flu-trends](30-ginsberg-2009-google-flu-trends.md) for a correlational nowcast over an enormous feature space, validated out of sample and sold on timeliness.

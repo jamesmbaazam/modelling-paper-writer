@@ -56,3 +56,6 @@ Weak by modern standards and worth noting as the thing not to copy: "the full bi
 4. Report the covariate that *didn't* matter.
 5. Localise your uncertainty geographically and name the countries.
 6. Lead with the burden, not the AUC.
+
+## Related files
+Other *risk mapping / trait prediction* exemplars: see [33-han-2015-rodent-reservoirs](33-han-2015-rodent-reservoirs.md) for boosted regression trees used to name candidate rodent reservoirs, with strict train/test discipline; [32-olival-2017-zoonotic-spillover-traits](32-olival-2017-zoonotic-spillover-traits.md) for trait-based prediction of which hosts and viruses matter, framed as a surveillance priority map.

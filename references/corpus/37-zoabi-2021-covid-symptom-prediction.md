@@ -56,3 +56,6 @@ Note "The model hyperparameters and the analytic code" — the trained configura
 4. Give SHAP (or any explanation method) one sentence of plain definition before using it.
 5. Argue simplicity as a deployment property, with the feature count in the abstract.
 6. Release hyperparameters alongside code.
+
+## Related files
+Other *clinical prediction model* exemplars: see [58-yadaw-2020-covid-mortality-prediction](58-yadaw-2020-covid-mortality-prediction.md) for a three-feature classifier, and what its performance reporting leaves out; [59-berenguer-2021-covid-mortality-score](59-berenguer-2021-covid-mortality-score.md) for an externally validated, TRIPOD-compliant risk score banded into categories a clinician can act on.

@@ -21,8 +21,11 @@ python3 tools/package.py          # build the claude.ai upload zip into dist/
 `corpus.py check` is the gate. It verifies that the generated files are current, that each corpus
 file carries the canonical headings `SKILL.md` greps for, that `papers.csv` agrees with the
 `SKILL.md` archetype table and preamble counts, that every `Author YEAR` citation names a real
-corpus paper, that the frontmatter and plugin manifests are valid, that the three version strings
-agree with the changelog, and that no markdown link is broken. Its `note:` lines are
+corpus paper, that exemplars of the same archetype link each other from `Related files`, that
+no file cites a `SKILL.md` subsection (`SKILL.md` numbers only its top-level sections; cite
+`SKILL.md` §N for a rule and `evidence.md` §N.M for its evidence), that the frontmatter and
+plugin manifests are valid, that the three version strings agree with the changelog, and that no
+markdown link is broken. Its `note:` lines are
 informational — they list sections a paper's analysis genuinely lacks.
 
 ## Two files are generated — do not edit them by hand
@@ -58,6 +61,12 @@ every run, while a paywalled paper's can only be checked once, by whoever holds 
    section deserves a name of its own (`## Methods — screening as evidence`), and add topical
    sections of your own freely — the canonical prefix is what the skill's procedure greps for.
    Quote verbatim wherever you can, and link related files with relative markdown links.
+
+   **Link every exemplar of the same archetype, in both directions.** The new file's
+   `Related files` gets a clause for each sibling, and each sibling's `Related files` gets a
+   clause for the new paper, opening *Other \*archetype\* exemplars: see …* and saying for each
+   link what that paper contributes, not just its title. `check` fails on
+   any missing link, so a reader who lands on one exemplar can always reach the rest.
 
 2. **Add a row to `references/corpus/papers.csv`.** The columns are `id`, `label`, `year`,
    `venue`, `archetype`, `role`, `full_text`, `method_type`, `title`, `authors`, `doi`, `url`,

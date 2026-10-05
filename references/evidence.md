@@ -1,8 +1,9 @@
 # Evidence: the corpus behind each rule
 
-Companion to `SKILL.md`. Section numbers here match the rule sections there: when
-`SKILL.md` §3.2 says *give every number a comparator*, §3.2 here holds the corpus quotations
-that justify it.
+Companion to `SKILL.md`. Top-level sections here match the rule sections there, and each §N.M
+here backs a group of rules in `SKILL.md` §N: when `SKILL.md` §3 says *give every number a
+comparator*, §3.2 here holds the corpus quotations that justify it. `SKILL.md` numbers only its
+top-level sections, so cite a rule as `SKILL.md` §N and its evidence as `evidence.md` §N.M.
 
 **Never read this file whole — it is over 1,200 lines.** Find the §N.M you need in the
 Contents below, `grep -n '^##'` this file for that heading and the one after it, and `Read`

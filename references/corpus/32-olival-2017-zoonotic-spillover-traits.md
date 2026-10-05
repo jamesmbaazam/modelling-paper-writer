@@ -55,3 +55,6 @@ Note "and R package dependencies" — the environment, not just the scripts.
 4. Run parallel models over redundant predictors instead of silently choosing one.
 5. Contextualise a modest deviance-explained against comparable studies.
 6. State the confound-adjustment inside the claim sentence.
+
+## Related files
+Other *risk mapping / trait prediction* exemplars: see [29-bhatt-2013-global-dengue-distribution](29-bhatt-2013-global-dengue-distribution.md) for boosted regression trees turned into a global risk surface and then a burden estimate; [33-han-2015-rodent-reservoirs](33-han-2015-rodent-reservoirs.md) for boosted regression trees used to name candidate rodent reservoirs, with strict train/test discipline.
