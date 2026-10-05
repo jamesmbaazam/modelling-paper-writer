@@ -40,10 +40,20 @@ skill's description is not triggering on that phrasing.
 | `availability-statement` | GitHub ≠ archival; Zenodo placeholder; versions not invented; restricted data handled | availability, reproducibility |
 | `scenario-table` | Baseline row first; stable labels; contact % by setting; combined scenario consistent | methods, scenarios |
 | `ml-prediction-results` | External validation headline; comparator; calibration and operating point; no overclaim | ml, results |
+| `intro-no-venue-no-panel` | Drafts an introduction without asking for a journal; no `Research in context` panel; placeholders for citations; no invented numbers | introduction, procedure |
+| `guidance-recommendations` | "We recommend", never "must"; the cost of ignoring each recommendation; a negative recommendation; a bulleted summary | guidance, discussion |
 | `negative-trigger-observational` | Skill does **not** fire on a non-modelling cohort study | trigger |
 
-Every case except the last also has a `skill-fired` grader (`tool_used: Skill`), which the
-runner treats as a plugin-fired indicator rather than part of the score.
+Every case except the negative trigger also has a `skill-fired` grader (`tool_used: Skill`),
+which the runner treats as a plugin-fired indicator rather than part of the score.
+
+Three more graders check the procedure, marked `arm: with-only` so they are reported in every
+run but never scored (the runner's guidance is to score outcomes, not trajectories):
+`read-corpus-file` (step 3 — a `references/corpus/NN-…` file was read; on every case except
+the negative trigger), `read-ml-reference` (`references/ml-prediction.md` loaded for the
+machine-learning case) and `read-guidance-reference` (`references/guidance-papers.md` loaded
+for the guidance case). A run that scores well with one of these failing has skipped a step
+and got lucky.
 
 ## Grader design
 

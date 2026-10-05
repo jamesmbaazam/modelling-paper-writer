@@ -33,7 +33,7 @@ consistent, and `tools/verify_quotes.py` checks every quotation against the publ
 
 ### 2.1 The brief
 
-The original request ([`docs/prompt.md`](prompt.md)) was to build a skill for writing infectious
+The original request was to build a skill for writing infectious
 disease mathematical, statistical and machine learning modelling papers "by learning from the
 examples of papers with good writing styles": first summarise each paper's writing style into its
 own file, then consolidate the styles into one skill. Each summary was to cover six dimensions:
@@ -335,8 +335,8 @@ trials, health economics, ecology, software papers.
    and the documents that describe them, and run it in CI.
 10. **Test behaviour with evals** run with and without the skill, and add a case for every fix.
 11. **Critique and iterate.** Both major revisions here came from a structured critique of the
-    whole skill; record each critique's findings and their resolutions in a to-do file
-    ([`docs/to_do.md`](to_do.md)) so the history is auditable.
+    whole skill; record each critique's findings and how each was resolved, so the history is
+    auditable.
 
 **What transfers from `tools/`.** `corpus.py` is generic once its paths, column names and
 canonical headings are changed. `verify_quotes.py` works for any field indexed by Europe PMC and

@@ -290,6 +290,8 @@ def check():
          "archetype count"),
         ("CHANGELOG.md", r"\*\*([A-Za-z-]+) paper archetypes\*\*", n_arch, "archetype count"),
     ]
+    n_cases = sum(1 for d in (ROOT / "evals").iterdir() if (d / "prompt.md").exists())
+    doc_claims.append(("CHANGELOG.md", r"\*\*`evals/`\*\* — (\d+) cases", n_cases, "eval case count"))
     for name, pattern, expected, what in doc_claims:
         m = re.search(pattern, (ROOT / name).read_text(encoding="utf-8"))
         if not m:

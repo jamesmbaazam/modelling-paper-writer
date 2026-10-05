@@ -13,7 +13,7 @@ the same version; `python3 tools/corpus.py check` fails if they drift or if the 
 section here.
 
 Nothing has been released yet, so this file has one section. Development before the first
-release is in the git history and in `docs/to_do.md`, not here; once 1.0.0 is tagged, every
+release is in the git history and in `docs/reproducibility.md`, not here; once 1.0.0 is tagged, every
 later change gets an entry.
 
 ## [1.0.0] — unreleased
@@ -85,10 +85,9 @@ between 2000 and 2024.
   text; `--local-text` checks a paywalled paper against a local PDF extraction instead,
   compensating for the ligature, Greek-letter and running-head damage that pre-Unicode journal
   PDFs introduce. 1,548 verified, 0 not found, 152 unreachable, 218 checked by hand.
-- **`evals/`** — 14 cases with graders, covering drafting, revision, critique, the hard rules and
+- **`evals/`** — 15 cases with graders, covering drafting, revision, critique, the hard rules and
   the negative trigger, for `claude plugin eval`.
 - **`.claude-plugin/plugin.json` and `marketplace.json`**, so the skill installs as a plugin.
-- **`docs/to_do.md`** — the working critique list, recording what has been done and what has not.
 - **`docs/reproducibility.md`** — how the skill was built (the brief, both critiques, the corpus
   expansions), the corpus and its generated summary, the method for selecting, analysing and
   verifying papers, the maintainer workflow, and how to apply the method to build a similar
