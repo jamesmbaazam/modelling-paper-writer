@@ -29,7 +29,7 @@ Companion to `SKILL.md` §9. Read this for the best-practice guidance archetype
 
 ## Checklist
 
-Run with the `SKILL.md` §11 checklist before returning.
+Run with `checklist.md` before returning.
 
 - [ ] Sections are problems or tasks; instruction sections have imperative headings.
 - [ ] Every substantive section ends with a bulleted summary; the summaries alone are usable.

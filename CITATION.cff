@@ -10,12 +10,14 @@ authors:
     alias: jamesmbaazam
 repository-code: https://github.com/jamesmbaazam/modelling-paper-writer
 abstract: >-
-  A Claude Code skill for writing infectious disease mathematical,
-  statistical and machine learning modelling papers, distilled from the
-  writing style of 37 well-written papers published between 2000 and 2024.
-  Encodes conventions for paper structure, presentation of models and
-  assumptions, reporting of estimates and uncertainty, literature
-  positioning, voice, machine learning practice, and limitations.
+  A Claude Code skill for writing, revising and critiquing infectious
+  disease mathematical, statistical and machine learning modelling papers,
+  distilled from the writing style of 81 well-written papers published
+  between 2000 and 2024. Encodes conventions for paper structure,
+  presentation of models and assumptions, reporting of estimates and
+  uncertainty, literature positioning, voice, machine learning practice,
+  and limitations, with the corpus evidence and worked example passages
+  behind each rule.
 keywords:
   - infectious disease modelling
   - epidemiology
@@ -25,4 +27,4 @@ keywords:
   - claude code
 license: MIT
 version: 1.0.0
-date-released: '2026-09-10'
+# date-released is set when the version is tagged; see CHANGELOG.md.

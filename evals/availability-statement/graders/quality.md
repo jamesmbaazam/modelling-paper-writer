@@ -6,9 +6,9 @@ weight: 1
 The response is a data and code availability statement.
 
 PASS only if ALL hold:
-- It says (in the statement or a note to the user) that a GitHub link alone is not
-  archival and recommends a Zenodo or equivalent DOI pinned to the submitted version,
-  with a placeholder for the DOI.
+- It accepts the GitHub link as the code location, and does not say the link is
+  insufficient or that a Zenodo or other DOI archive is required. Optionally suggesting
+  a tagged release or commit is fine.
 - It names the language and packages (R, odin, mcstate) and leaves a placeholder for
   versions rather than inventing them.
 - It states that the admissions data cannot be shared, says how a reader could obtain
@@ -17,5 +17,5 @@ PASS only if ALL hold:
 - It includes a role-of-the-funding-source sentence or notes that the journal will
   require one.
 
-FAIL if it invents a Zenodo DOI or version numbers, presents the GitHub URL as
-sufficient, or omits the data-sharing restriction.
+FAIL if it invents a DOI or version numbers, requires or insists on a Zenodo or DOI
+archive, treats the GitHub URL as inadequate, or omits the data-sharing restriction.

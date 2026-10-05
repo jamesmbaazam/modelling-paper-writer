@@ -1,10 +1,83 @@
 # Evidence: the corpus behind each rule
 
-Companion to `SKILL.md`. Section numbers here match the rule sections there: when
-`SKILL.md` §3.2 says *give every number a comparator*, §3.2 here holds the corpus quotations
-that justify it. Read a section when you need the sentence-level detail behind a rule, or when
-the user asks *why*. Papers are cited as Author YEAR; `corpus-index.md` maps each to its file in
-`writing_styles/`.
+Companion to `SKILL.md`. Top-level sections here match the rule sections there, and each §N.M
+here backs a group of rules in `SKILL.md` §N: when `SKILL.md` §3 says *give every number a
+comparator*, §3.2 here holds the corpus quotations that justify it. `SKILL.md` numbers only its
+top-level sections, so cite a rule as `SKILL.md` §N and its evidence as `evidence.md` §N.M.
+
+**Never read this file whole — it is over 1,200 lines.** Find the §N.M you need in the
+Contents below, `grep -n '^##'` this file for that heading and the one after it, and `Read`
+only that line range. Come here when a rule is too terse to apply, when the user asks *why*,
+when you are critiquing, or when you need a venue's headings and budgets (§1.2).
+
+Papers are cited as Author YEAR; `corpus-index.md` maps each to its file in
+`references/corpus/`, where the per-paper analyses sit under the canonical headings listed in
+`SKILL.md` step 3.
+
+As in `SKILL.md`, **a rule marked ◆ does not come from the corpus** — it comes from journal
+instructions, a reporting guideline, or general practice in the field. Those are the rules to
+check against a current source before relying on them. Everything unmarked is attributed to a
+corpus paper on the same line.
+
+## Contents
+
+- 0. First decide the archetype
+- 1. Structural patterns
+  - 1.0 Titles
+  - 1.1 The universal spine
+  - 1.2 Journal templates
+  - 1.3 Subheading craft
+  - 1.4 Introduction shape
+- 2. Methodology conventions
+  - 2.1 How much mathematics, and where
+  - 2.2 Assumptions
+  - 2.3 Parameters and priors
+  - 2.4 Scenarios
+  - 2.5 Sensitivity analysis
+  - 2.6 Software and computation
+- 3. Results storytelling
+  - 3.1 Uncertainty: pick the right interval and label it
+  - 3.2 Give every number a comparator
+  - 3.3 Sentence shapes that recur
+  - 3.4 Grade your verbs and modals to your evidence
+  - 3.5 Report your own failures in the Results
+  - 3.6 Figures and tables
+- 4. Literature integration
+  - 4.1 Density
+  - 4.2 How to state the gap
+  - 4.3 Seven ways to position against prior work
+  - 4.4 Other integration habits
+- 5. Voice and tone
+  - 5.1 Person and tense
+  - 5.2 Hedging that carries information
+  - 5.3 Precision over vagueness
+- 6. Domain-specific conventions
+  - 6.1 The R₀ paragraph
+  - 6.2 Validation, out-of-sample evidence and scoring
+  - 6.3 Identifiability and the limits of inference
+  - 6.4 Decision relevance
+  - 6.5 Real-time and living analyses
+  - 6.6 Data, code and funding statements
+- 7. Machine learning and predictive modelling conventions
+  - 7.1 Lead with the problem, not the algorithm
+  - 7.2 Structure Methods as the pipeline, in execution order
+  - 7.3 Train/test discipline — state it in one unambiguous sentence
+  - 7.4 Report performance honestly
+  - 7.5 Confront bias in the training data explicitly
+  - 7.6 Interpretation is a result, not a garnish
+  - 7.7 Say which numbers are ordinal
+  - 7.8 What appraisers will mark you down for
+  - 7.9 The two failure modes that killed Google Flu Trends
+- 8. Discussion and limitations
+  - 8.1 Discussion shape
+  - 8.2 Limitations
+- 9. Best-practice and guidance papers
+  - 9.1 Structure by problem or by task, not by IMRaD
+  - 9.2 Build the paper so the summaries alone are usable
+  - 9.3 Simulate the truth, then degrade the data one step at a time
+  - 9.4 Quantify the cost of bad practice
+  - 9.5 Prescriptive but not imperious
+  - 9.6 Other conventions of the archetype
 
 ## 0. First decide the archetype
 
@@ -14,14 +87,14 @@ before writing a word; the corpus contains fourteen, each with a canonical exemp
 | Archetype | What it delivers | Exemplars |
 |---|---|---|
 | **Parameter estimation** | One well-defined quantity, cleanly estimated, translated into a decision | Lauer 2020 (incubation period) |
-| **Real-time transmission analysis** | R_t or transmission dynamics fitted to a live outbreak | Kucharski 2020, Abbott 2020, Tian 2020, Keeling 2001 (abstract only) |
+| **Real-time transmission analysis** | R_t or transmission dynamics fitted to a live outbreak | Kucharski 2020, Abbott 2020, Tian 2020, Keeling 2001 |
 | **Scenario projection for policy** | A ladder of intervention scenarios, projected forward | Davies 2020 (UK NPIs), Ferguson 2006 (mitigation) |
 | **Feasibility / threshold** | The parameter boundary at which a strategy works | Ferguson 2005 (containment), Hellewell 2020 (contact tracing) |
 | **Policy counterfactual** | What a past intervention achieved, and what alternatives would have | Grais 2008, Nouvellet 2015 |
 | **Competing hypotheses** | Several mechanisms formalised, fitted and ranked | Davies 2021 (B.1.1.7) |
-| **Forecast evaluation** | Many models, one scoring rule, a verdict | Cramer 2022, Reich 2019, Bracher 2021 |
+| **Forecast evaluation** | Many models, one scoring rule, a verdict | Cramer 2022, Reich 2019, Bracher 2021a |
 | **Dynamical systems** | A system shown to sit in a different regime than assumed | Ferrari 2008, Earn 2000, Bjørnstad 2002, Grenfell 2001 |
-| **Methods / simulation benchmark / critique** | A tool, a validation, or a demonstration of what cannot be inferred | Lee 2010, Bracher 2021, Keeling & Rohani 2002, Weitz 2015, Li 2017 |
+| **Methods / simulation benchmark / critique** | A tool, a validation, or a demonstration of what cannot be inferred | Lee 2010, Bracher 2021a, Keeling & Rohani 2002, Weitz 2015, Li 2017 |
 | **Review** | A framework that organises a scattered literature | Baker 2021, Heesterbeek 2015, Altizer 2006 |
 | **Best-practice guidance** | Recommendations, checklists or reporting standards for a method others already use | Gostic 2020 (R_t), Charniga 2024 (delay distributions) |
 | **Risk mapping / trait prediction** | A supervised model over covariates or traits, producing a surface or a ranked candidate list | Bhatt 2013 (dengue), Olival 2017 (spillover), Han 2015 (rodents) |
@@ -58,7 +131,7 @@ The corpus titles fall into four shapes. Pick the shape by archetype, then apply
 | Shape | Pattern | Corpus examples |
 |---|---|---|
 | **Claim** | The finding as a declarative sentence | *Host and viral traits predict zoonotic spillover from mammals* (Olival 2017); *Improving propensity score weighting using machine learning* (Lee 2010) |
-| **Object + verb phrase** | *Estimating / Evaluating / Detecting* + the quantity + the data or setting | *Estimating the time-varying reproduction number of SARS-CoV-2 using national and subnational case counts* (Abbott 2020); *Detecting influenza epidemics using search engine query data* (Ginsberg 2009); *Evaluating epidemic forecasts in an interval format* (Bracher 2021) |
+| **Object + verb phrase** | *Estimating / Evaluating / Detecting* + the quantity + the data or setting | *Estimating the time-varying reproduction number of SARS-CoV-2 using national and subnational case counts* (Abbott 2020); *Detecting influenza epidemics using search engine query data* (Ginsberg 2009); *Evaluating epidemic forecasts in an interval format* (Bracher 2021a) |
 | **Quantity, pathogen, place** | The estimand and its scope, no verb | *The incubation period of coronavirus disease 2019 (COVID-19) from publicly reported confirmed cases* (Lauer 2020); *The global distribution and burden of dengue* (Bhatt 2013); *Estimated transmissibility and impact of SARS-CoV-2 lineage B.1.1.7 in England* (Davies 2021) |
 | **Question or strategy** | *Strategies for…* / *Feasibility of…* / *The role of…* | *Strategies for containing an emerging influenza pandemic in Southeast Asia* (Ferguson 2005); *Feasibility of controlling COVID-19 outbreaks by isolation of cases and contacts* (Hellewell 2020); *The role of rapid diagnostics in managing Ebola epidemics* (Nouvellet 2015) |
 
@@ -68,7 +141,7 @@ Rules:
   Altizer 2006, Baker 2021). Two of the four shapes carry them by construction.
 - **Name the estimand, not the model.** *Estimating the time-varying reproduction number*
   (Abbott 2020), not *A Bayesian semi-mechanistic model for…*. The method goes in the subtitle if
-  anywhere. The exception is a methods paper, where the method *is* the object (Bracher 2021, Bjørnstad 2002).
+  anywhere. The exception is a methods paper, where the method *is* the object (Bracher 2021a, Bjørnstad 2002).
 - **A claim title needs a claim you will defend in the Discussion.** Olival 2017 can say *predict*
   because the paper reports out-of-sample performance; do not use the shape for a projection
   under assumptions.
@@ -83,16 +156,22 @@ Rules:
 - **A hook before the colon is allowed once per career** and only when it is exact: *Time is
   of the essence* (Grais 2008) is about the timing of a vaccination campaign; *The parable of Google
   Flu* (Lazer 2014) announces a cautionary tale. If the hook could sit on any paper, cut it.
-- **Length**: 10–18 words for the corpus; under 15 for *Nature*/*Science*. Every word should
-  be one a reader would search for. Cut *A study of*, *An analysis of*, *Insights into*,
-  *Towards*, *Novel*.
+- **Length**: the corpus runs 6–20 words, median 10, with half the titles between 8 and 13.
+  *Nature* and *Science* are the shortest (median 9, longest 17 — Tian 2020); the *Lancet*
+  family the longest, because the genre label is appended (11–19). Aim for the 8–13 band and
+  treat anything past 18 as needing a reason. Every word should be one a reader would search
+  for: no corpus title contains *A study of*, *An analysis of*, *Insights into*, *Towards* or
+  *Novel*.
 - **Do not put a number in the title** unless it is the finding (*the first 50 days* in Tian 2020
   is scope, and fine; *R₀ = 2·5* is not).
 
 ### 1.1 The universal spine
 
-Every paper in the corpus, whatever its journal, is built on the same six moves. Journal
-format only changes where the moves live.
+The empirical and policy papers in the corpus are built on the same six moves; journal
+format only changes where the moves live. Reviews (Baker 2021, Heesterbeek 2015, Altizer 2006)
+carry moves 1, 2 and 6 and replace the result with a framework — Altizer 2006 enumerates its
+mechanisms where an empirical paper would give a result. The methods papers (Keeling & Rohani
+2002, Bracher 2021a) replace move 1 with the modelling practice they are correcting.
 
 1. **Burden or urgency**, quantified and dated.
 2. **The specific gap** — a quantity that is missing, a strategy whose effect is unknown, an
@@ -106,9 +185,10 @@ An annotated abstract built on these six moves is worked in examples.md §12.2.
 
 ### 1.2 Journal templates
 
-**Abstract and main-text budgets.** Typical limits for the venues in the corpus and the
-modelling venues users most often target. These drift; **verify against the current author
-guidelines before drafting**, and ask the user for the target if it is not inferable. Write
+◆ **Abstract and main-text budgets.** Journal instructions, not a corpus observation.
+Typical limits for the venues in the corpus and the modelling venues users most often target. These drift; **verify against the current author
+guidelines before drafting**; for an abstract, title or heading scheme, ask the user for the
+target if it is not inferable. Write
 to the budget from the first draft — an abstract cut from 400 words to 250 loses its
 uncertainty statements first, which is the wrong thing to lose.
 
@@ -126,6 +206,10 @@ uncertainty statements first, which is the wrong thing to lose.
 | *Epidemics* | ≤250 words | Unstructured | No firm limit | Highlights (3–5 bullets, ≤85 chars each) |
 | *Eurosurveillance* | ≤250 words | Background / Aim / Methods / Results / Conclusion | 3,500 words | Rapid communications: ≤1,500 words, ≤150-word abstract |
 | *Wellcome Open Research* | ≤300 words | Optional structure | No limit | Versioning; separate Data and Software availability |
+| *PLoS ONE* | ≤300 words, no citations | Unstructured | No limit | No Author Summary; data deposited in a public repository |
+| *PLoS Biology* | No stated limit; one paragraph | Unstructured, but written as Background → Methodology/Principal Findings → Conclusions/Significance | No limit | Materials and Methods after the Discussion |
+| *Emerging Infectious Diseases* | Research ≤150 words; Dispatch ≤50 | Unstructured | Research 3,500 words, ≤50 refs; Dispatch 1,200 words, ≤15 refs, ≤4 figures + tables | Subheadings required; first-author biographical sketch; model in a technical appendix |
+| *Infectious Diseases of Poverty* | Check the current guidelines | Background / Methods / Results / Conclusions | Check the current guidelines | Graphical abstract and keywords; BMC declarations block |
 
 Field budgets inside a 300-word Lancet-style abstract, from Kucharski 2020, Hellewell 2020, Davies 2020: **Background**
 50–70 words (moves 1–2 of §1.1), **Methods** 70–90 (move 3, plus data, period, scenarios),
@@ -154,18 +238,35 @@ mandatory *Role of the funding source*) → Results → Discussion → Data shar
 → Declaration of interests.
 → Kucharski 2020, Hellewell 2020, Davies 2020
 
-*Write the `Research in context` panel first even when the journal does not require it.* Three
-short paragraphs — what was known, what you added, what should change — will discipline the
-whole manuscript.
+*Plan with the `Research in context` triplet first even when the journal does not require
+it.* Three short paragraphs — what was known, what you added, what should change — will
+discipline the whole manuscript. It is scaffolding for your own drafting: return it to the
+user only when the target journal requires the panel or the user asks for it.
 
 **PLoS / methods journals.** Numbered sections and subsections (`2.1`, `2.2`) are appropriate
-and normal when the contribution is methodological. PLoS also wants an **Author Summary**
-written for the practitioner alongside the technical abstract.
-→ Bracher 2021
+and normal when the contribution is methodological. *PLoS Computational Biology* also wants an
+**Author Summary** written for the practitioner alongside the technical abstract; *PLoS ONE*
+does not, and *PLoS Biology* puts Materials and Methods after the Discussion.
+→ Bracher 2021a, Hay 2024
 
 **Royal Society journals (*J R Soc Interface*, *Proc B*).** Conventional IMRaD with
 unnumbered subsections; the Methods can carry the full model specification in the main text.
 → Grais 2008
+
+**Emerging Infectious Diseases.** A Research article is a short unheaded introduction,
+`Methods`, `Results` and `Discussion`, with the model in a technical appendix and a
+biographical sketch of the first author at the end. A Dispatch compresses the whole paper into
+about 1,200 words under `The Study` and `Conclusions`: with no Methods or Discussion heading,
+each paragraph does one job, and the abstract is two sentences carrying the finding and its
+condition.
+→ Simmons 2013, Kucharski 2016
+
+**BMC family (*BMC Medicine*, *BMC Infectious Diseases*, *Infectious Diseases of Poverty*).**
+Structured abstract (Background / Methods / Results / Conclusions), keywords, IMRaD, and a
+closing block of declarations — availability of data and materials, competing interests,
+funding, authors' contributions. *Infectious Diseases of Poverty* adds a graphical abstract;
+Rock 2022 also completes the PRIME-NTD reporting checklist for neglected tropical disease models.
+→ Finger 2019, Ajelli 2010, Rock 2022, Golumbeanu 2022
 
 **Clinical journals (Annals, etc.).** Fully labelled abstract including a mandated
 single-sentence **`Limitation:`** field, plus a **Reproducible Research Statement**.
@@ -223,7 +324,7 @@ Openings from the corpus, all following the same beat:
 > Whether this strategy will achieve control depends on characteristics of both the pathogen and
 > the response. Here we use a mathematical model to assess if…" (Hellewell 2020)
 
-The strongest opening in the corpus is the **expectation-violation** (Ferrari 2008, Earn 2000): derive what
+The hardest opening to argue with is the **expectation-violation** (Ferrari 2008, Earn 2000): derive what
 the canonical theory predicts for your system, then show the data refuse it. Use it whenever
 you can.
 
@@ -233,7 +334,8 @@ you can.
 
 ### 2.1 How much mathematics, and where
 
-The corpus is nearly unanimous: **the main text carries the argument, not the algebra.**
+Across the corpus the depth of mathematics tracks the venue, not the complexity of the
+model: **the main text carries the argument, not the algebra.**
 
 - **General-science journals:** essentially no equations. Models are named and described
   ("a stochastic compartmental model stratified into 5-year age bands"; "variations on the
@@ -241,7 +343,7 @@ The corpus is nearly unanimous: **the main text carries the argument, not the al
   words on first use, and often *only* in a figure caption (Ferrari 2008, Earn 2000, Ferguson 2006, Ferguson 2005).
 - **Methods and modelling journals:** displayed, numbered equations, referred to as
   "Equation (1)" or `(2.1)`. Build complexity in visible steps, one subsection per step —
-  single interval score → weighted interval score; discrete → continuous (Bracher 2021).
+  single interval score → weighted interval score; discrete → continuous (Bracher 2021a).
 - **A compact model block beats prose** when the model is a generative chain. Abbott 2020 gives four
   lines (R_t process, renewal equation, delay convolution, negative binomial observation) and
   then glosses each line in a paragraph.
@@ -255,7 +357,7 @@ The corpus is nearly unanimous: **the main text carries the argument, not the al
 Worked model-definition passages at all three levels of formality are in examples.md §12.1.
 
 Reserve full formal treatment for **the one object that carries the argument** — the scoring
-rule in Reich 2019 and Bracher 2021, the elasticity and EVPI formulas in Li 2017, the coupling derivation in
+rule in Reich 2019 and Bracher 2021a, the elasticity and EVPI formulas in Li 2017, the coupling derivation in
 Keeling & Rohani 2002. Everything else is named and cited.
 
 ### 2.2 Assumptions
@@ -277,7 +379,7 @@ Three rules:
 2. **State the direction of the bias**, not merely its existence. "Relaxing these assumptions
    would decrease the probability that control is achieved" (Hellewell 2020). "If the true delay … is
    shorter than our global delay, then we will overestimate onset case numbers, and vice versa"
-   (Abbott 2020). This is the single most valuable habit in the corpus.
+   (Abbott 2020). The habit recurs across archetypes (also Gostic 2020, Lauer 2020).
 3. **Claim conservatism only when you can defend it**, and then repeat the word deliberately
    (Lauer 2020, Ferguson 2005). Optimistic assumptions plus a pessimistic conclusion is a strong argument;
    say so explicitly.
@@ -348,10 +450,10 @@ Name the language, the version, the packages, and the versions of the packages:
 
 > "coarseDataTools and activemonitr packages in the R statistical programming language, version
 > 3.6.2" (Lauer 2020)
-> "rpart, ipred, randomForest, twang" with R 2.6.1 (Lee 2010)
+> `rpart`, `ipred`, `randomForest` and `twang` with R 2.6.1, each package named where its method is described (Lee 2010)
 > "the EpiNow2 R package (version 1.2.1)" (Abbott 2020)
 
-Pin the data too: "Ground truth values obtained as of September 27, 2017" (Reich 2019); data pulled
+Pin the data too: "All scores were based on ‘ground truth’ values of wILI data obtained as of September 27, 2017" (Reich 2019); data pulled
 through a versioned API so the analysis is re-runnable. Generating the manuscript itself from
 code (Sweave/knitr, Reich 2019) means text and numbers cannot diverge.
 
@@ -389,7 +491,8 @@ Weak-to-strong repairs for results sentences are worked in examples.md §12.5.
 
 ### 3.2 Give every number a comparator
 
-Nothing in this corpus is "good" or "large" in the abstract. Every claim is anchored:
+The headline claims collected here are all anchored to something; none rests on "good" or
+"large" alone:
 
 - to a **naïve baseline**, glossed in plain English: "a relative WIS of 0.61, which can be
   interpreted as achieving, on average, 39% less probabilistic error than the baseline forecast"
@@ -433,7 +536,7 @@ some outbreaks were controlled even at 0% contacts traced" (Hellewell 2020).
   designs; the model **"suggests"**; the response **"appears to have"** delayed growth (Tian 2020).
 - Counterfactual modals graded by how hypothetical the premise is: *would have* (under stated
   assumptions) → *could have* → *might have* (under a hypothetical technology) (Nouvellet 2015).
-- Within a single sentence: "is found to be invariant … and also appears to be constant" (Bjørnstad 2002)
+- Within a single sentence: "is found to be invariant … also appears to be constant" (Bjørnstad 2002)
   — two evidential strengths, no separate hedging clause.
 - Claim **qualitative** agreement when that is what you have. "The model supports our dynamical
   hypothesis, capturing the qualitative pattern of episodic outbreaks" (Ferrari 2008) is more persuasive
@@ -452,7 +555,7 @@ This applies to your own estimates, to your assumptions (§2.2), and to any meth
 
 ### 3.5 Report your own failures in the Results
 
-The most trust-building habit in the corpus:
+Reporting your own model's failures, in the Results:
 
 > "the model did not predict the slowdown in cases that was observed in early February." (Kucharski 2020)
 > "In some of the selected waves (e.g., North Dakota and Florida), the ensemble forecast showed
@@ -463,15 +566,17 @@ Put these in Results, not buried in Discussion.
 
 ### 3.6 Figures and tables
 
-**Which display items, and where.** Main-text slots are scarce (≤5 in the *Lancet* family,
-≤6 in *Nature*), so decide the split before drafting:
+**Which display items, and where.** ◆ Main-text slots are scarce (≤5 in the *Lancet*
+family, ≤6 in *Nature* — journal instructions, so verify them), so decide the split before
+drafting:
 
 - **Main text** carries one item per headline claim, plus the parameter table (examples.md §12.12) and,
-  for intervention papers, the scenario table (examples.md §12.13). The corpus norm is one *model fit or
-  validation* figure (data overlaid on simulation), one *headline result* figure (the
-  estimate, threshold, ranking or projection), and one *what governs it* figure (sensitivity
-  or mechanism). A schematic of the model structure is worth a slot only when the structure is
-  the contribution or unfamiliar (Weitz 2015, Li 2017).
+  for intervention papers, the scenario table (examples.md §12.13). ◆ A workable default
+  allocation, not a figure census of the corpus: one *model fit or validation* figure (data
+  overlaid on simulation), one *headline result* figure (the estimate, threshold, ranking or
+  projection), and one *what governs it* figure (sensitivity or mechanism). A schematic of the
+  model structure is worth a slot only when the structure is the contribution or unfamiliar
+  (Weitz 2015, Li 2017).
 - **Supplementary material** carries the full equations if the journal does not want them in
   Methods (§2.1), every sensitivity analysis not summarised in a main figure, convergence
   diagnostics, per-region or per-model breakdowns, and the completed reporting checklist.
@@ -483,30 +588,31 @@ Put these in Results, not buried in Discussion.
 
 **Captions.** A caption must let the figure be read without the text: what is plotted (and
 what the interval or band is — §3.1), under which scenario or parameter values (Earn 2000), and
-what the reader should see. Start with a declarative sentence where the journal allows it
-(*Contact tracing controls most outbreaks when R₀ = 1.5 but few when R₀ = 3.5*), then the
-panel-by-panel key.
+what the reader should see. ◆ Start with a declarative sentence where the journal allows it — illustrative shape, not a
+corpus quotation: *Contact tracing controls most outbreaks when R₀ = 1.5 but few when
+R₀ = 3.5* — then the panel-by-panel key.
 
-**Design rules from the corpus:**
+**Design rules.** Those attributed to a paper are the corpus's; those marked ◆ are general
+practice:
 
 - Overlay observed data on simulated trajectories so validation is visual and immediate (Grais 2008).
 - Put the fixed parameter values in the caption of the figure they generated (Earn 2000).
 - Use boxplots over replicates to argue about **dispersion**, not just central tendency (Lee 2010).
 - Build **pedagogical figures** for methods papers: show the object, then walk the reader through
-  it line by line (Bracher 2021).
+  it line by line (Bracher 2021a).
 - Mark the boundary between estimates and estimates-from-partial-data in every real-time figure
   (Abbott 2020).
 - Show a bifurcation diagram with your system's parameters *and* the canonical system's marked on
   the same axis (Ferrari 2008, Earn 2000).
 - Put the baseline or reference scenario in every panel so each comparison is visible without
   flipping between panels (Hellewell 2020, Davies 2020).
-- Use one colour or line style per scenario or model *across the whole paper*, keyed to the
+- ◆ Use one colour or line style per scenario or model *across the whole paper*, keyed to the
   scenario labels (examples.md §12.13), and do not reassign it between figures.
-- Log-scale the y-axis for growth-phase incidence and say so in the caption; linear for
+- ◆ Log-scale the y-axis for growth-phase incidence and say so in the caption; linear for
   cumulative or peak quantities readers will want to compare in absolute terms.
-- Label axes with the quantity and its unit, not the variable name (*Daily reported cases*,
+- ◆ Label axes with the quantity and its unit, not the variable name (*Daily reported cases*,
   not *I(t)*).
-- **Tables**: one row per scenario or model, one column per outcome, the baseline row first,
+- ◆ **Tables**: one row per scenario or model, one column per outcome, the baseline row first,
   intervals in the same cell as the point estimate — `2,340 (95% CrI 1,810–2,910)` — and the
   unit in the column header. Round to the precision the data support; a table full of
   four-significant-figure posterior medians overstates what the model knows.
@@ -603,8 +709,8 @@ More weak-to-strong gap statements are worked in examples.md §12.3; a worked po
 
 ### 5.2 Hedging that carries information
 
-Hedge the **inference**, not the number. Generic hedging ("may possibly suggest") is absent from
-this corpus; every hedge names what is uncertain:
+Hedge the **inference**, not the number. The hedges in the passages collected here all name
+what is uncertain; none is the contentless kind ("may possibly suggest"):
 
 > "COVID-19 transmission probably declined in Wuhan during late January, 2020." (Kucharski 2020)
 > "unlikely to delay spread by more than 2–3 weeks unless more than 99% effective" (Ferguson 2006)
@@ -622,7 +728,7 @@ Hedge decisions rather than estimates when writing for policy:
 
 **Concede the alternative in the same paragraph as your choice.** "We preferred to motivate the
 score through central predictive intervals … However, when applying …, formulation (4) may seem
-more natural" (Bracher 2021). This construction does more for credibility than any amount of caution.
+more natural" (Bracher 2021a). This construction does more for credibility than any amount of caution.
 
 **Use scare quotes to flag terms you will not take at face value** — "big data", "historical
 baseline" (Reich 2019) — and to mark deliberate coinages on first use — 'sparks', 'core', 'satellite'
@@ -675,7 +781,7 @@ The field's analogue of train/test discipline. Report:
   coverage of prediction intervals. They are different virtues; never conflate them (Cramer 2022).
 - **Proper scoring rules**, named, cited and interpreted for the reader; report on an
   interpretable scale (geometric mean of scores; relative WIS), not on the raw log scale (Reich 2019,
-  Bracher 2021).
+  Bracher 2021a).
 - **Simulation benchmarks**: fix a metric set (bias, SE, coverage, balance) and report it in the
   same order in every table; use the off-the-shelf configuration and defend that as the realistic
   user's configuration (Lee 2010).
@@ -709,7 +815,7 @@ class: "This is a generic feature of epidemiological models" (Weitz 2015).
   quarantine policy might pose ethical dilemmas unless excellent infection control was
   implemented" (Ferguson 2006).
 - **Convert model requirements into a numbered operational checklist with target values** —
-  the six containment criteria in Ferguson 2005 are the most-quoted part of that paper.
+  the six containment criteria in Ferguson 2005.
 - **Define a plain-language vocabulary for posterior probabilities, numerically, before use**:
   <5% subcritical → "definite" increase; >95% → "definite" decrease; 20–80% → "unsure" (Abbott 2020).
 - **Say when the analysis was done and for whom**: "The results we present here summarise the key
@@ -728,7 +834,7 @@ class: "This is a generic feature of epidemiological models" (Weitz 2015).
 
 ### 6.6 Data, code and funding statements
 
-Match the best in the corpus:
+Two statements worth matching:
 
 > "All code and data are available at https://github.com/HopkinsIDD/ncov_incubation (release at
 > time of submission at https://zenodo.org/record/3692048)." (Lauer 2020)
@@ -736,8 +842,9 @@ Match the best in the corpus:
 > https://github.com/cmmid/ringbp." (Hellewell 2020)
 
 Rules:
-- **A GitHub link is not archival.** Pair every repository with a Zenodo (or equivalent) DOI
-  pinned to the submitted version. Abbott 2020 separates *Development* from *Archived at the time of
+- **A GitHub link is an acceptable code location.** Do not require a Zenodo or other DOI
+  archive. Naming the release or commit of the submitted version is good practice, and
+  Lauer 2020 does it with a Zenodo record, but it is optional. Abbott 2020 separates *Development* from *Archived at the time of
   publication*, and lists each package with its role.
 - Name the language and version; follow a reporting guideline where one exists and name it
   in Methods (Cramer 2022 follows EPIFORGE). Which one depends on the archetype:
@@ -786,8 +893,8 @@ what is specific to learning from data.
 
 ### 7.1 Lead with the problem, not the algorithm
 
-No paper in this corpus opens by naming a method. Bhatt (10,400 citations) opens "Dengue is a
-systemic viral infection transmitted between humans by *Aedes* mosquitoes"; Han opens
+Most of the ML corpus opens on the problem, not the method. Bhatt 2013 opens "Dengue is a
+systemic viral infection transmitted between humans by *Aedes* mosquitoes"; Han 2015 opens
 "Forecasting reservoirs of zoonotic disease is a pressing public health priority." The algorithm
 appears in one sentence, named and justified by a property of the *data*, never by novelty:
 
@@ -800,6 +907,12 @@ appears in one sentence, named and justified by a property of the *data*, never 
 > "Gradient boosting is widely considered state of the art in predicting tabular data." (Zoabi 2021)
 
 **Never lead with the AUC either.** Bhatt's headline is 96 million infections, not 0.81.
+
+The exception in the corpus is Lee 2010, which opens on the method — "Machine learning
+techniques such as classification and regression trees (CART) have been suggested as promising
+alternatives to logistic regression" — because the method *is* the subject: a simulation
+benchmark's problem is a claim in the methodological literature, not a disease burden. Open on
+the method only when you are evaluating methods.
 
 A full worked supervised-learning methods paragraph is examples.md §12.9; a worked bias check is examples.md §12.10.
 
@@ -851,14 +964,14 @@ model building to prevent overfitting" (Han 2015).
   models (ii–iv) are dynamically trained with a 2-y moving window" (Yang 2015).
 - **Contextualise a modest fit rather than hiding it**: 27–49% deviance explained is "greater than
   or comparable to studies examining much narrower groups of mammal hosts" (Olival 2017).
-- **Assess calibration, not just discrimination.** Its absence is the single most common failing
-  named by Wynants 2020: "Only five studies assessed calibration."
+- **Assess calibration, not just discrimination.** Its absence is one of the six recurring
+  failings named by Wynants 2020: "Only five studies assessed calibration."
 - Report the metric set in a fixed order across every table (Lee 2010).
 
 ### 7.5 Confront bias in the training data explicitly
 
-The strongest habit in the ML corpus, and the one that separates these papers from the ones
-Wynants 2020 and Roberts 2021 condemn.
+The habit that most clearly separates the ML papers in this corpus from the ones Wynants 2020
+and Roberts 2021 condemn.
 
 - **Put sampling effort in the model as a covariate**, then report how much signal it absorbs:
   "research effort had the strongest effect on the total number of viruses per host, explaining
@@ -894,7 +1007,7 @@ Wynants 2020 and Roberts 2021 condemn.
   limit transmission" (Bhatt 2013).
 - **State the confound-adjustment inside the claim sentence**: bats host more zoonoses "after
   controlling for reporting effort and other predictor variables" (Olival 2017).
-- **Ship the predictions as a named, falsifiable list**: "we identify 58 species predicted to be
+- **Ship the predictions as a named, falsifiable list**: "we also identify 58 species predicted to be
   novel reservoirs and 159 species predicted to be novel hyperreservoirs" (Han 2015), supplied in
   full as a dataset. A predictive paper's proper conclusion is an experiment someone can run.
 
@@ -1038,8 +1151,8 @@ Six rules for writing them:
 
 A weak-to-strong limitations paragraph is worked in examples.md §12.6.
 
-The most quotable statement of modelling's epistemic limits, for use when arguing what a model
-can and cannot do:
+A compact statement of modelling's epistemic limits, for use when arguing what a model can
+and cannot do:
 
 > "By definition and design, models are not reality. The properties of stochasticity and
 > non-linearity strongly influence the accuracy of absolute predictions over long time horizons.
@@ -1087,7 +1200,7 @@ prescribing one method for everyone.
 
 ### 9.3 Simulate the truth, then degrade the data one step at a time
 
-Gostic 2020's evidential engine, and the cleanest available template for evaluating any estimator:
+Gostic 2020's evidential engine, and a template for evaluating any estimator:
 
 1. Generate synthetic data from a known model (a deterministic or stochastic SEIR), so the true
    value of the target quantity is known by construction.
@@ -1120,7 +1233,7 @@ Trace the error forward to the thing people actually use. "Knock-on impacts" (Ch
 - **Say what you do not recommend, with a structural reason**: "In its current form, we do not
   recommend using the method of Bettencourt and Ribeiro, given that unrealistic structural
   assumptions lead to bias" (Gostic 2020). Only publishable because the synthetic-data design makes it
-  demonstrable — but where you can support it, it is the most useful sentence in the paper.
+  demonstrable — but where you can support it, it is the recommendation readers act on.
 - Hedge **applicability**, not confidence: "may not always be the case", "should be assessed on a
   case-by-case basis", "likely a better use of available data".
 - State consequences in plain conditional form: "Not or incorrectly accounting for censoring of

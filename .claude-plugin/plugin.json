@@ -1,0 +1,25 @@
+{
+  "name": "modelling-paper-writer",
+  "displayName": "Modelling Paper Writer",
+  "version": "1.0.0",
+  "description": "Write, revise and critique infectious disease modelling papers in the style of the field's best-written work, distilled from an 81-paper corpus.",
+  "author": {
+    "name": "James Azam",
+    "url": "https://github.com/jamesmbaazam"
+  },
+  "homepage": "https://github.com/jamesmbaazam/modelling-paper-writer",
+  "repository": "https://github.com/jamesmbaazam/modelling-paper-writer",
+  "license": "MIT",
+  "keywords": [
+    "infectious-disease",
+    "epidemiology",
+    "mathematical-modelling",
+    "scientific-writing",
+    "manuscript",
+    "forecasting",
+    "machine-learning"
+  ],
+  "skills": [
+    "./"
+  ]
+}
