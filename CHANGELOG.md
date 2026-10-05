@@ -89,3 +89,7 @@ between 2000 and 2024.
   the negative trigger, for `claude plugin eval`.
 - **`.claude-plugin/plugin.json` and `marketplace.json`**, so the skill installs as a plugin.
 - **`docs/to_do.md`** — the working critique list, recording what has been done and what has not.
+- **`docs/reproducibility.md`** — how the skill was built (the brief, both critiques, the corpus
+  expansions), the corpus and its generated summary, the method for selecting, analysing and
+  verifying papers, the maintainer workflow, and how to apply the method to build a similar
+  skill. The README and contributing guide stay short and point to it.

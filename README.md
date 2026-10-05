@@ -3,121 +3,51 @@
 [![GitHub stars](https://img.shields.io/github/stars/jamesmbaazam/modelling-paper-writer?style=flat)](https://github.com/jamesmbaazam/modelling-paper-writer/stargazers)
 [![Version](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fjamesmbaazam%2Fmodelling-paper-writer%2Fmain%2FCITATION.cff&query=%24.version&label=version&color=blue)](CITATION.cff)
 
-A [Claude Code](https://claude.com/claude-code) skill for writing infectious disease
-mathematical, statistical and machine learning modelling papers, distilled from the writing
-style of 81 well-written papers in the field.
+A [Claude Code](https://claude.com/claude-code) skill for writing, revising and critiquing
+infectious disease mathematical, statistical and machine learning modelling papers, distilled
+from the writing style of 81 well-written papers in the field.
 
-The skill does not generate claims or results. It encodes *how* good papers in this field are
-put together: how they structure sections, present models and assumptions, report estimates and
-uncertainty, position themselves against prior work, and write limitations.
+The skill does not generate claims or results. It encodes *how* good papers in this field are put
+together: how they structure sections, present models and assumptions, report estimates and
+uncertainty, position themselves against prior work, and write limitations. It never invents
+citations or numbers — where your results are missing, it leaves placeholders and lists them.
 
-## What's in here
+## What it covers
 
-| Path                            | Contents                                                                                                                                                                                                           |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `SKILL.md`                      | The skill itself: a six-step procedure, hard rules, the archetype table, the conventions as one-line imperatives, banned phrases and pointers into `references/` (~370 lines / ~3,800 words, loaded on every invocation) |
-| `references/ml-prediction.md`   | §7 rules, anti-patterns and checklist for machine learning / predictive modelling papers, loaded only for those archetypes                                                                                         |
-| `references/guidance-papers.md` | §9 rules, anti-patterns and checklist for best-practice and guidance papers, loaded only for that archetype                                                                                                        |
-| `references/evidence.md`        | The corpus quotations behind each rule, with the same section numbering as `SKILL.md`                                                                                                                              |
-| `references/examples.md`        | Worked template passages (§12.1–§12.13): model definitions, abstract, gap statements, results sentences, limitations, methods paragraphs, parameter and scenario tables, availability statement                    |
-| `references/corpus-index.md`    | Author YEAR → `references/corpus/` file, with venue and archetype                                                                                                                                                     |
-| `evals/`                        | Regression suite for `claude plugin eval` (see `evals/README.md`)                                                                                                                                                  |
-| `references/corpus/*.md`           | One style analysis per paper (81 files), with verbatim quotations                                                                                                                                                  |
-| `references/corpus/papers.csv`     | Index: title, DOI, authors, methodological type, source URL, style file                                                                                                                                            |
-| `docs/prompt.md`                | The original brief the skill was built from                                                                                                                                                                        |
-| `docs/quote-verification.md`    | Every corpus quotation checked against the published paper, per paper and per rule file                                                                                                                            |
-| `tools/`                        | `corpus.py` (regenerate the index and the README block; check the repo for drift), `verify_quotes.py` (check every quotation against the paper), `candidates.py` and `fulltext.py` (find corpus candidates and pull their full text), `package.py` (build the claude.ai upload zip)                                                                                                            |
-| `CHANGELOG.md`                  | What changed in each version, and the versioning rules                                                                                                                                                             |
-| `CONTRIBUTING.md`               | How to add a paper to the corpus, change a rule, and run the checks                                                                                                                                                |
-| `CITATION.cff`                  | Machine-readable citation metadata                                                                                                                                                                                 |
+The skill first works out what kind of paper you are writing — one of twenty-two paper types,
+from parameter estimation and scenario projection to forecast evaluation, clinical prediction and
+rapid-response outbreak analysis — because that fixes the shape of the headline claim. It then
+applies conventions for:
 
-## The corpus
+- **Structure** — titles, abstracts and their per-journal budgets, introductions, and journal
+  templates
+- **Methods** — how much mathematics to show, assumptions and their direction of bias, parameter
+  and scenario tables, sensitivity analysis
+- **Results** — the right interval, a comparator for every number, verbs graded to the evidence,
+  reporting your own failures, figures and tables
+- **Literature and voice** — a checkable gap, positioning against prior work, hedging that carries
+  information
+- **Domain conventions** — the R₀ paragraph, validation and scoring, identifiability, decision
+  relevance, data and code availability, reporting guidelines
+- **Machine learning and predictive models**, and **best-practice and guidance papers**, each with
+  their own rules
+- **Discussion and limitations**, and a list of phrases to avoid
 
-The venues span high-impact general science — *Nature*, *Science*, *PNAS*, the *Lancet*
-family (*Lancet Infectious Diseases*, *Lancet Global Health*, *Lancet Public Health*, *Lancet
-Digital Health*), *BMJ*, *Nature Communications*, *Nature Machine Intelligence*, *npj Digital
-Medicine*, *eLife* — and the journals a first modelling paper actually targets: *PLoS
-Computational Biology*, *PLoS ONE*, *PLoS Biology*, *PLoS Neglected Tropical Diseases*, *PLoS
-Currents*, *Epidemics*, *Eurosurveillance*, *Emerging Infectious Diseases*, *Epidemiology &
-Infection*, *Infectious Diseases of Poverty*, *BMC Medicine*, *BMC Infectious Diseases*,
-*Parasites & Vectors*, *Vaccine*, *Mathematical Biosciences*, *Proc. R. Soc. B*, *J. R. Soc.
-Interface*, *Statistics in Medicine*, *Biometrical Journal*, *Environmental Health
-Perspectives*, *Thorax*, *Annals of Internal Medicine*, *Ecology Letters*, *Ecological
-Monographs*, *Nature Reviews Microbiology*, *Scientific Reports* and *Wellcome Open Research*.
+It works in three modes: drafting a section, revising your text while keeping your voice, and
+critiquing a manuscript as a reviewer would.
 
-Diseases covered: COVID-19, influenza, measles, dengue, malaria, Ebola, Lassa fever, Zika,
-polio, rotavirus, norovirus, hepatitis A, HPV, *Clostridioides difficile*, diphtheria,
-pneumococcal disease, gambiense human African trypanosomiasis, onchocerciasis, foot-and-mouth,
-and rodent-borne and other zoonoses. Tuberculosis and antimicrobial resistance are mentioned
-in passing in two review papers but no corpus paper models them.
+## Key files
 
-**Selection basis.** The papers are landmark, highly cited work from a narrow set of research
-groups, chosen for writing quality rather than sampled systematically across venues or
-subfields. Conventions derived from the 2000–2008 papers may not match current reviewer
-expectations (e.g. citation density).
-
-<!-- corpus:begin — generated by tools/corpus.py index -->
-
-**81 papers spanning 2000–2024**, 25 of them on COVID-19.
-
-| Methodological type | Papers |
-|---|--:|
-| Hybrid (mathematical-statistical) | 37 |
-| Statistical | 19 |
-| Mathematical | 12 |
-| Hybrid (statistical-machine learning) | 8 |
-| Machine learning | 5 |
-
-Every paper is analysed from its full text. For 5 of them (Keeling 2001, Altizer 2006, Keeling & Rohani 2002, Grenfell 2001, Bjørnstad 2002) that full text is paywalled, so the analysis was written from the publisher's PDF and its quotations checked against it then rather than on every run.
-
-**Quotation coverage:** 1548 verified, 0 not found, 152 unchecked, 218 reviewed by hand — every quotation of 30 or more characters checked against the paper's abstract and, where PubMed Central holds it, the full text (`python3 tools/verify_quotes.py`; report in [`docs/quote-verification.md`](docs/quote-verification.md)). *Unchecked* means no open full text was reachable, not that the quotation is wrong.
-
-<!-- corpus:end -->
-
-## What the skill covers
-
-`SKILL.md` opens with a **procedure** (determine mode → establish archetype, venue and budget →
-read the matching style file → draft or edit only the requested section → self-review against
-the checklist → return text plus a note of placeholders and assumptions) and a block of **hard
-rules** (never invent citations or numbers; never reuse corpus sentences; preserve the author's
-voice in revision; journal typography is not a style rule). The conventions then follow this
-structure, with the corpus evidence for each in `references/evidence.md` under the same
-section numbers:
-
-0. **First decide the archetype** — twenty-two paper types, each with its exemplars and the
-   shape its headline claim must take
-1. **Structure** — four title shapes; the abstract's six-move spine and per-venue word
-   budgets; subheading craft; the five-move introduction. Journal templates (Nature/Science,
-   PNAS, Lancet, PLoS, Royal Society, Emerging Infectious Diseases, BMC, clinical, living
-   formats) sit in `references/evidence.md` §1.2
-2. **Methods** — how much mathematics and where; assumptions and their direction of bias;
-   parameters, priors and the parameter table; scenarios; sensitivity analysis; software
-3. **Results** — choosing the right interval; giving every number a comparator; recurring
-   sentence shapes; grading verbs to evidence; reporting your own failures; figures, tables
-   and the main-text/supplement split
-4. **Literature** — stating a checkable gap; seven ways to position against prior work;
-   citation density by archetype
-5. **Voice** — person and tense; hedging that carries information; precision over vagueness
-6. **Domain conventions** — the R₀ paragraph; validation and scoring; identifiability;
-   decision relevance; real-time analyses; availability statements; which reporting guideline
-   to name
-7. **Machine learning and predictive modelling** (in `references/ml-prediction.md`) —
-   train/test discipline, calibration, confronting bias in training data, what appraisers mark
-   you down for, the two failure modes that killed Google Flu Trends
-8. **Discussion and limitations** — six categories of limitation and how to write each
-9. **Best-practice and guidance papers** (in `references/guidance-papers.md`) — a distinct
-   archetype with its own rules, which override the rest where they conflict
-10. **Banned phrases**
-
-The self-review checklist is `references/checklist.md`, and the worked passages are
-`references/examples.md` §12.1–§12.13: SIR/SEIR model definitions at three levels of formality
-with LaTeX and Word variants, an annotated abstract, weak→strong repairs for gaps, results
-sentences and limitations, template methods and availability sections, and parameter and
-scenario tables.
+| Path | Contents |
+|---|---|
+| `SKILL.md` | The skill: a six-step procedure, hard rules and the conventions (~370 lines, loaded on every use) |
+| `references/` | Material loaded on demand: the evidence behind each rule, worked examples, the self-review checklist, and the machine-learning and guidance-paper rules |
+| `references/corpus/` | One style analysis per corpus paper, with verbatim quotations |
+| `evals/` | Test cases for `claude plugin eval` |
+| `docs/reproducibility.md` | How the skill was built, the corpus, and how to build a skill like it |
+| `CHANGELOG.md` | What changed in each version |
 
 ## Installing
-
-Three routes, depending on where you use Claude.
 
 **As a Claude Code plugin** (recommended — you get updates with `/plugin`):
 
@@ -141,28 +71,23 @@ Use `.claude/skills/` inside a project instead if you want it available only the
 python3 tools/package.py     # writes dist/modelling-paper-writer-<version>.zip
 ```
 
-The zip holds the skill and what it reads at runtime — no tooling, evals or CI.
-
-Claude Code picks the skill up automatically and invokes it when you ask for help drafting or
-revising a modelling manuscript. You can also invoke it explicitly with
-`/modelling-paper-writer`.
+Claude picks the skill up automatically when you ask for help drafting, revising or reviewing a
+modelling manuscript. You can also invoke it explicitly with `/modelling-paper-writer`.
 
 ## Contributing
 
-A new paper for the corpus, a correction to a rule the corpus does not support, or a failing eval
-case are all welcome — see [CONTRIBUTING.md](CONTRIBUTING.md) for the corpus file format, the
-`papers.csv` columns, and the checks to run. In short: every rule must be traceable to a corpus
-quotation or marked ◆ as coming from outside the corpus, and `python3 tools/corpus.py check` must
-pass.
+Bug reports, rule corrections and paper suggestions are welcome — [open an
+issue](https://github.com/jamesmbaazam/modelling-paper-writer/issues), or see
+[CONTRIBUTING.md](CONTRIBUTING.md) for small pull requests.
 
 ## Author
 
 **James Azam** ([@jamesmbaazam](https://github.com/jamesmbaazam)) — designed the skill, selected
-and curated the corpus, defined the analytical framework the style summaries follow,
-and directed its development.
+and curated the corpus, defined the analytical framework the style summaries follow, and directed
+its development.
 
-If you find this skill helpful, please [star the repo](https://github.com/jamesmbaazam/modelling-paper-writer) —
-it helps others find it.
+If you find this skill helpful, please [star the
+repo](https://github.com/jamesmbaazam/modelling-paper-writer) — it helps others find it.
 
 If you use this skill in your work, please cite it — see [CITATION.cff](CITATION.cff), or:
 

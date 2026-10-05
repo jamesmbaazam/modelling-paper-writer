@@ -9,7 +9,7 @@ A paper whose full_text is "publisher pdf" has no open full text: its analysis w
 the publisher's PDF and its quotations checked against it at the time of writing, so they are
 reported as *reviewed* rather than re-checked on every run. To check them again, put the
 extracted text at tools/.cache/local_<id>.txt and pass --local-text; every quotation should then
-come back *verified*, and anything *not found* is a transcription error. See CONTRIBUTING.md.
+come back *verified*, and anything *not found* is a transcription error. See docs/reproducibility.md.
 
 For each paper in papers.csv it gathers the open text it can reach: the abstract from Europe
 PMC, plus the full text from PubMed Central when the DOI resolves to a PMCID. Every quotation

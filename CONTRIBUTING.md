@@ -1,155 +1,46 @@
 # Contributing
 
-Thanks for considering a contribution. The most useful ones are a new paper in the corpus, a
-correction to a rule the corpus does not actually support, and a failing eval case that shows the
-skill behaving badly.
+Thanks for considering a contribution. The most useful ones are a report of the skill behaving
+badly, a correction to a rule, and a suggestion for a paper the corpus should learn from. None of
+these need code.
 
 ## Raising an issue
 
-You do not need to write code to contribute. If the skill gave you bad advice, broke one of its
-own rules, cited a paper that does not exist, or failed to install, or if you know a well-written
-paper the corpus should learn from, [open an issue](https://github.com/jamesmbaazam/modelling-paper-writer/issues).
-The most useful issues include:
+If the skill gave you bad advice, broke one of its own rules, cited a paper that does not exist,
+or failed to install, or if you know a well-written paper the corpus should learn from, [open an
+issue](https://github.com/jamesmbaazam/modelling-paper-writer/issues). The most useful issues
+include:
 
 - **For bad output:** the prompt you gave, what the skill returned, and what you expected instead.
   Name the rule it broke if you can.
 - **For a rule you disagree with:** the rule, and a paper or reporting guideline that contradicts
   it.
-- **For a paper suggestion:** the DOI, its archetype if you know it, and what it does with prose,
+- **For a paper suggestion:** the DOI, its type if you know it, and what it does with prose,
   structure or uncertainty that is worth copying. Writing quality is the criterion, not citation
-  count.
+  count. The maintainer adds papers to the corpus; you do not need to.
 
-## Setup
+## Pull requests
 
-There is nothing to install. The tooling is Python 3.9+, standard library only.
+Small pull requests are welcome: a wording fix, a corrected rule, or a new eval case.
+
+- **Every rule needs a source.** A rule either cites the corpus paper that demonstrates it, with
+  the quotation in `references/evidence.md`, or is marked ◆ and names the journal instruction,
+  reporting guideline or practice it comes from.
+- **Do not paste corpus sentences** into the rules or the worked examples.
+- **Keep `SKILL.md` short.** It loads on every use; detail belongs in `references/`.
+- **Add an eval case for a behaviour you fix.** Each case in `evals/` is a `prompt.md` plus
+  graders (see [`evals/README.md`](evals/README.md)). A case that fails before your change and
+  passes after is the most persuasive thing you can put in a pull request.
+
+Before opening the pull request, run the consistency check (Python 3.9+, nothing to install):
 
 ```sh
-python3 tools/corpus.py check     # must pass before every commit; CI runs it on every push
-python3 tools/corpus.py index     # regenerate the generated files after editing papers.csv
-python3 tools/verify_quotes.py    # check every quotation against the published paper (network)
-claude plugin eval .              # run the eval suite in evals/
-python3 tools/candidates.py       # find open-access candidates in Europe PMC, by archetype
-python3 tools/candidates.py --venue "PloS one"   # infectious disease modelling papers in one journal
-python3 tools/fulltext.py PMC123  # pull a paper's open-access full text into tools/.cache/
-python3 tools/package.py          # build the claude.ai upload zip into dist/
+python3 tools/corpus.py check
 ```
 
-`corpus.py check` is the gate. It verifies that the generated files are current, that each corpus
-file carries the canonical headings `SKILL.md` greps for, that `papers.csv` agrees with the
-`SKILL.md` archetype table and preamble counts, that the paper count, archetype count and size of
-`SKILL.md` stated in the README, `CITATION.cff`, `plugin.json` and the changelog are current,
-that every `Author YEAR` citation names a real corpus paper, that exemplars of the same archetype
-link each other from `Related files`, that no file cites a `SKILL.md` subsection (`SKILL.md`
-numbers only its top-level sections; cite `SKILL.md` §N for a rule and `evidence.md` §N.M for its
-evidence), that the frontmatter and plugin manifests are valid, that the three version strings
-agree with the changelog, and that no markdown link is broken. Its `note:` lines are
-informational — they list sections a paper's analysis genuinely lacks.
-
-## Two files are generated — do not edit them by hand
-
-- `references/corpus-index.md`
-- the block in `README.md` between `<!-- corpus:begin -->` and `<!-- corpus:end -->`
-
-Both come from `references/corpus/papers.csv` via `python3 tools/corpus.py index`.
-`docs/quote-verification.md` is generated too, by `tools/verify_quotes.py`.
-
-## Adding a paper to the corpus
-
-Start from `python3 tools/candidates.py`, which searches Europe PMC by archetype and venue
-(`--venue` with the Europe PMC journal title lists infectious disease modelling papers in one
-journal, for filling a venue gap) and prints real records — label, year, venue, citations, DOI,
-PMCID — so a paper can never enter the corpus from memory. It cannot judge writing quality, which
-is the actual criterion: the output is a shortlist to read, not a ranking to copy. Then `python3
-tools/fulltext.py <PMCID>` puts the full text in `tools/.cache/` so the analysis is written from
-the paper.
-
-The corpus is chosen for **writing quality**, not for citation count or importance. A paper earns
-a place if it does something with prose, structure or the handling of uncertainty that is worth
-copying. Prefer papers with reachable open-access full text: their quotations are re-checked on
-every run, while a paywalled paper's can only be checked once, by whoever holds the PDF.
-
-1. **Write the style analysis** as `references/corpus/NN-firstauthor-year-slug.md`, following an
-   existing file. Use the canonical `##` headings, which match the `SKILL.md` rule sections:
-
-   `Structure` · `Opening move` · `Methods` · `Results` · `Literature` · `Voice` ·
-   `Discussion and limitations` · `Data, code and funding` · `Distinctive moves to borrow` ·
-   `Related files`
-
-   `Structure`, `Opening move`, `Methods`, `Results` and `Distinctive moves to borrow` are
-   required; the rest only where the paper has something to show. Add a trailing gloss when the
-   section deserves a name of its own (`## Methods — screening as evidence`), and add topical
-   sections of your own freely — the canonical prefix is what the skill's procedure greps for.
-   Quote verbatim wherever you can, and link related files with relative markdown links.
-
-   **Link every exemplar of the same archetype, in both directions.** The new file's
-   `Related files` gets a clause for each sibling, and each sibling's `Related files` gets a
-   clause for the new paper, opening *Other \*archetype\* exemplars: see …* and saying for each
-   link what that paper contributes, not just its title. `check` fails on
-   any missing link, so a reader who lands on one exemplar can always reach the rest.
-
-2. **Add a row to `references/corpus/papers.csv`.** The columns are `id`, `label`, `year`,
-   `venue`, `archetype`, `role`, `full_text`, `method_type`, `title`, `authors`, `doi`, `url`,
-   `file`. `label` is the `Author YEAR` form used throughout the rule files and must be unique;
-   `archetype` must be one of the `SKILL.md` §0 categories (semicolon-separated if more than
-   one); `full_text` is `yes` when the full text is openly reachable, or `publisher pdf` when it
-   is paywalled and the analysis was written from the publisher's PDF.
-
-   A `publisher pdf` paper cannot be re-checked automatically, because
-   `tools/verify_quotes.py` can only reach its abstract. Check its quotations **before you lose
-   access to the PDF**: extract the text to `tools/.cache/local_<id>.txt`
-   (`pdftotext paper.pdf tools/.cache/local_07.txt`) and run
-   `python3 tools/verify_quotes.py --local-text <id>`. Every quotation must come back
-   *verified*; anything *not found* is a transcription error to fix. Afterwards the paper's
-   quotations are reported as *reviewed* on normal runs. Pre-Unicode PDFs mangle ligatures,
-   Greek letters and minus signs, and running heads land inside sentences that span a page
-   break — the tool compensates for the common cases, and the handful it cannot are listed with
-   their reasons in `REVIEWED` in that script.
-
-3. **Regenerate** with `python3 tools/corpus.py index`.
-
-4. **If the paper introduces a new archetype**, add a row to the `SKILL.md` §0 table with its
-   headline-claim shape. Every archetype needs at least one full-text exemplar; `check` enforces
-   this.
-
-5. **Fold any genuinely new convention into `SKILL.md`** as a one-line imperative, with the
-   supporting quotation in `references/evidence.md` under the same section number. A rule nobody
-   can trace to a quotation does not belong in the skill.
-
-6. **Run `python3 tools/corpus.py check`, `python3 tools/verify_quotes.py` and
-   `claude plugin eval .`** before opening the pull request.
-
-## Changing or adding a rule
-
-- **Every rule is attributable.** Either a corpus paper demonstrates it — cite the paper on the
-  same line and put the quotation in `evidence.md` — or it comes from outside the corpus, in
-  which case mark it ◆ and name the source. Journal instructions, reporting guidelines and
-  general practice are all ◆.
-- **Do not state a claim about the corpus you have not checked.** Several early rules asserted
-  patterns the corpus contradicts: a title-length band that excluded half the titles, and a claim
-  that no corpus paper opens by naming a method when one does. Where a claim is countable from
-  `papers.csv`, count it.
-- **Keep `SKILL.md` under 500 lines** (`check` enforces it). It loads on every invocation, so
-  detail belongs in `references/`, which loads on demand.
-- **Never paste a corpus sentence into a template.** The worked passages in `examples.md` are
-  written from scratch, with illustrative numbers, and say so.
-
-## Evals
-
-`evals/` holds one directory per case, each with a `prompt.md` and graders. Add a case whenever
-you fix a behaviour, so it cannot come back. A case that fails before your change and passes
-after is the most persuasive thing you can put in a pull request.
-
-## Versioning
-
-`SKILL.md` (`metadata.version`), `.claude-plugin/plugin.json` and `CITATION.cff` must agree, and
-the version needs a section in `CHANGELOG.md`; `check` enforces both. Bump the **major** version
-when the file layout or the instructions change in a way that breaks an existing install or eval,
-the **minor** version when rules, corpus papers or reference files are added, and the **patch**
-version for corrections that leave the instructions intact.
+It must pass; CI runs it too. How the corpus is built and maintained is documented in
+[`docs/reproducibility.md`](docs/reproducibility.md).
 
 ## Licence
 
-Contributions are accepted under the MIT licence (see [LICENSE](LICENSE)). The style analyses are
-original summaries containing short verbatim quotations used for commentary and criticism;
-copyright in the underlying papers rests with their authors and publishers. Do not add a corpus
-file that reproduces substantial portions of a paper.
+Contributions are accepted under the MIT licence (see [LICENSE](LICENSE)).

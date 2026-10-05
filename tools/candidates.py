@@ -8,7 +8,7 @@
 
 Prints real records — label, year, venue, citations, DOI, PMCID — so a paper can never be
 added from memory. It cannot judge writing quality, which is the actual selection criterion:
-treat the output as a shortlist to read, not a ranking to copy. See CONTRIBUTING.md.
+treat the output as a shortlist to read, not a ranking to copy. See docs/reproducibility.md.
 
 Standard library only. Responses are cached in tools/.cache/ (gitignored).
 """

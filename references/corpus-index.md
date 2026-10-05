@@ -88,7 +88,7 @@ The 81 papers in `references/corpus/`, keyed by the Author YEAR label used throu
 | Simmons 2013 | `references/corpus/80-simmons-2013-norovirus-immunity.md` | *Emerg Infect Dis* | Parameter estimation | Immunity duration re-estimated across model structures | open access |
 | Kucharski 2016 | `references/corpus/81-kucharski-2016-ebola-ring-vaccination.md` | *Emerg Infect Dis* | Feasibility / threshold | Threshold for ring vaccination to contain an outbreak | open access |
 
-Every paper is analysed from its full text. For 5 of them the full text is paywalled: the analysis was written from the publisher's PDF and its quotations were checked against it at the time of writing, so `tools/verify_quotes.py` reports them as *reviewed* rather than re-checking them on every run (see CONTRIBUTING.md).
+Every paper is analysed from its full text. For 5 of them the full text is paywalled: the analysis was written from the publisher's PDF and its quotations were checked against it at the time of writing, so `tools/verify_quotes.py` reports them as *reviewed* rather than re-checking them on every run (see docs/reproducibility.md).
 
 ## Methodological type
 

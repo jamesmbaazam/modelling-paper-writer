@@ -20,7 +20,7 @@ jobs:
           python-version: "3.11"
 
       # Standard library only, so there is nothing to install.
-      # Checks the generated index and README block are current, the corpus files carry the
+      # Checks the generated index and corpus block are current, the corpus files carry the
       # canonical headings SKILL.md greps for, papers.csv agrees with the SKILL.md archetype
       # table and preamble counts, every Author YEAR citation names a real corpus paper, the
       # frontmatter and plugin manifests are valid, the three version strings agree with the

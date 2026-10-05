@@ -357,3 +357,18 @@ and *Emerging Infectious Diseases*, with `candidates.py` updated to find them.
 - [x] Every new paper is linked both ways with its archetype siblings (enforced by G2's
       check); the back-link script now merges into an existing *Other … exemplars* sentence in
       publication order rather than adding a second one.
+
+## 9. Documentation reorganised (2026-10-05)
+
+- [x] README cut to purpose, coverage, key files, installation, contributing, author and licence.
+      The corpus details (venues, diseases, selection basis, the generated summary of
+      methodological types and quotation coverage) moved to `docs/reproducibility.md`, which also
+      records how the skill was built — from the brief, both critiques and the corpus expansions
+      — the method, the maintainer workflow, and how to build a similar skill.
+- [x] CONTRIBUTING cut to issues and small pull requests; adding papers, generated files,
+      versioning and the check's full scope moved to `docs/reproducibility.md`, since
+      contributors are not expected to add papers.
+- [x] `corpus.py index` now writes the corpus block into `docs/reproducibility.md`, and `check`
+      verifies it there; the README count checks follow the new wording, and the new document's
+      archetype count is checked too. Verified by breaking four claims.
+
