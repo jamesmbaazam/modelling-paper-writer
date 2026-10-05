@@ -29,18 +29,20 @@ python3 tools/corpus.py index     # regenerate the generated files after editing
 python3 tools/verify_quotes.py    # check every quotation against the published paper (network)
 claude plugin eval .              # run the eval suite in evals/
 python3 tools/candidates.py       # find open-access candidates in Europe PMC, by archetype
+python3 tools/candidates.py --venue "PloS one"   # infectious disease modelling papers in one journal
 python3 tools/fulltext.py PMC123  # pull a paper's open-access full text into tools/.cache/
 python3 tools/package.py          # build the claude.ai upload zip into dist/
 ```
 
 `corpus.py check` is the gate. It verifies that the generated files are current, that each corpus
 file carries the canonical headings `SKILL.md` greps for, that `papers.csv` agrees with the
-`SKILL.md` archetype table and preamble counts, that every `Author YEAR` citation names a real
-corpus paper, that exemplars of the same archetype link each other from `Related files`, that
-no file cites a `SKILL.md` subsection (`SKILL.md` numbers only its top-level sections; cite
-`SKILL.md` §N for a rule and `evidence.md` §N.M for its evidence), that the frontmatter and
-plugin manifests are valid, that the three version strings agree with the changelog, and that no
-markdown link is broken. Its `note:` lines are
+`SKILL.md` archetype table and preamble counts, that the paper count, archetype count and size of
+`SKILL.md` stated in the README, `CITATION.cff`, `plugin.json` and the changelog are current,
+that every `Author YEAR` citation names a real corpus paper, that exemplars of the same archetype
+link each other from `Related files`, that no file cites a `SKILL.md` subsection (`SKILL.md`
+numbers only its top-level sections; cite `SKILL.md` §N for a rule and `evidence.md` §N.M for its
+evidence), that the frontmatter and plugin manifests are valid, that the three version strings
+agree with the changelog, and that no markdown link is broken. Its `note:` lines are
 informational — they list sections a paper's analysis genuinely lacks.
 
 ## Two files are generated — do not edit them by hand
@@ -53,11 +55,13 @@ Both come from `references/corpus/papers.csv` via `python3 tools/corpus.py index
 
 ## Adding a paper to the corpus
 
-Start from `python3 tools/candidates.py`, which searches Europe PMC by archetype and venue and
-prints real records — label, year, venue, citations, DOI, PMCID — so a paper can never enter the
-corpus from memory. It cannot judge writing quality, which is the actual criterion: the output is
-a shortlist to read, not a ranking to copy. Then `python3 tools/fulltext.py <PMCID>` puts the
-full text in `tools/.cache/` so the analysis is written from the paper.
+Start from `python3 tools/candidates.py`, which searches Europe PMC by archetype and venue
+(`--venue` with the Europe PMC journal title lists infectious disease modelling papers in one
+journal, for filling a venue gap) and prints real records — label, year, venue, citations, DOI,
+PMCID — so a paper can never enter the corpus from memory. It cannot judge writing quality, which
+is the actual criterion: the output is a shortlist to read, not a ranking to copy. Then `python3
+tools/fulltext.py <PMCID>` puts the full text in `tools/.cache/` so the analysis is written from
+the paper.
 
 The corpus is chosen for **writing quality**, not for citation count or importance. A paper earns
 a place if it does something with prose, structure or the handling of uncertainty that is worth

@@ -56,4 +56,4 @@ Two categories again: **scope of scenarios** and **contested parameters**, with 
 4. State null findings as intervals that span both directions, and say so in words.
 
 ## Related files
-Other *competing hypotheses* exemplars: see [57-yakob-2015-cdifficile-displacement](57-yakob-2015-cdifficile-displacement.md) for three mechanisms, one parameter each, ranked by whether they can reproduce the data; [56-lavine-2021-endemicity](56-lavine-2021-endemicity.md) for rival explanations framed as immunity components that wane at different rates.
+Other *competing hypotheses* exemplars: see [74-lopman-2012-rotavirus-vaccine-efficacy](74-lopman-2012-rotavirus-vaccine-efficacy.md) for an efficacy gradient across income settings decomposed into the share each hypothesis explains, with one ruled out; [57-yakob-2015-cdifficile-displacement](57-yakob-2015-cdifficile-displacement.md) for three mechanisms, one parameter each, ranked by whether they can reproduce the data; [56-lavine-2021-endemicity](56-lavine-2021-endemicity.md) for rival explanations framed as immunity components that wane at different rates.

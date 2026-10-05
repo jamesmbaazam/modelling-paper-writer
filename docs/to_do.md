@@ -319,3 +319,41 @@ Sebastian Funk work on forecast evaluation. 24 papers in six phases.
       from residual spread, no baseline, no code). Günther and Camacho also sit under
       *Real-time transmission analysis*, Wolffram under *Forecast evaluation*. With this phase
       the second expansion is complete: every archetype that had one exemplar now has three.
+
+## 8. Third expansion (2026-10-05): two papers each from four venues
+
+Requested: two papers each from *PLoS ONE*, *PLoS Biology*, *Infectious Diseases of Poverty*
+and *Emerging Infectious Diseases*, with `candidates.py` updated to find them.
+
+- [x] `candidates.py` gains the four journals and a `--venue "<Europe PMC title>"` mode. The
+      existing venue-breadth query proved useless for general journals (*PLoS ONE* returned
+      protein force fields and exoskeletons) and too narrow for short abstracts (EID's 150
+      words rarely say "mathematical model"), so `--venue` widens the modelling terms and adds
+      an infectious-disease filter. Documented in CONTRIBUTING.
+- [x] *PLoS ONE*: Lopman 2012 (competing hypotheses — an efficacy gradient decomposed across
+      three hypotheses, one ruled out) and Jackson 2014 (review — a systematic review of
+      simulation studies that explains their spread by contact assumptions; carries a *what to
+      avoid* section on single-reviewer screening and no model appraisal).
+- [x] *PLoS Biology*: Famulare 2018 (feasibility / threshold — settings sorted into three
+      categories by a local reproduction number, checked against history, with a dated
+      prediction) and Hay 2024 (serological inference — lifetime infection histories, a
+      null-comparison validation, and the estimand renamed seroincidence).
+- [x] *Infectious Diseases of Poverty*: Rock 2022 (scenario projection and policy
+      counterfactual — a model update that audits its own earlier projections, separating
+      method improvements from new data) and Golumbeanu 2022 (feasibility / threshold —
+      minimum intervention profiles from an emulated simulation model; *what to avoid*: a
+      first-study claim). Buonfrate 2021 was read and rejected on writing quality: a static
+      Excel model whose ranges never reach the results, no uncertainty, "adverted" throughout.
+- [x] *Emerging Infectious Diseases*: Simmons 2013 (parameter estimation — a textbook
+      immunity duration overturned by arithmetic before any model; *what to avoid*: text and
+      table disagree) and Kucharski 2016 (feasibility / threshold, in the Dispatch format).
+- [x] Related files: `evidence.md` §1.2 gains ◆ rows for the four journals, checked against
+      the PLOS ONE, PLOS Biology and EID author guidelines on 2026-10-05; the *Infectious
+      Diseases of Poverty* guidelines sit behind a Springer login, so its row gives the
+      observed structure and leaves the budget to the current guidelines. New template
+      paragraphs for EID (Research and Dispatch) and the BMC family. README venue and disease
+      lists rebuilt from `papers.csv`, which also caught two stale lists and a venue spelled
+      two ways (Néant 2021 is now *PNAS*, like the other five).
+- [x] Every new paper is linked both ways with its archetype siblings (enforced by G2's
+      check); the back-link script now merges into an existing *Other … exemplars* sentence in
+      publication order rather than adding a second one.

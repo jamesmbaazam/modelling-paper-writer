@@ -56,4 +56,4 @@ No repository, but the model is shipped as a usable artefact:
 4. Grade your modals to your evidence.
 
 ## Related files
-Other *policy counterfactual* exemplars: see [01-grais-2008-measles-orv-niamey](01-grais-2008-measles-orv-niamey.md) for a stochastic model fitted to one outbreak and re-run under alternative response scenarios; [49-verguet-2015-measles-sia](49-verguet-2015-measles-sia.md) for a model used to compute a campaign schedule rather than project a scenario, delivered as a per-country table.
+Other *policy counterfactual* exemplars: see [01-grais-2008-measles-orv-niamey](01-grais-2008-measles-orv-niamey.md) for a stochastic model fitted to one outbreak and re-run under alternative response scenarios; [49-verguet-2015-measles-sia](49-verguet-2015-measles-sia.md) for a model used to compute a campaign schedule rather than project a scenario, delivered as a per-country table; [78-rock-2022-hat-mandoul-update](78-rock-2022-hat-mandoul-update.md) for a model update that audits its own earlier projections against the data that followed.

@@ -206,6 +206,10 @@ uncertainty statements first, which is the wrong thing to lose.
 | *Epidemics* | ≤250 words | Unstructured | No firm limit | Highlights (3–5 bullets, ≤85 chars each) |
 | *Eurosurveillance* | ≤250 words | Background / Aim / Methods / Results / Conclusion | 3,500 words | Rapid communications: ≤1,500 words, ≤150-word abstract |
 | *Wellcome Open Research* | ≤300 words | Optional structure | No limit | Versioning; separate Data and Software availability |
+| *PLoS ONE* | ≤300 words, no citations | Unstructured | No limit | No Author Summary; data deposited in a public repository |
+| *PLoS Biology* | No stated limit; one paragraph | Unstructured, but written as Background → Methodology/Principal Findings → Conclusions/Significance | No limit | Materials and Methods after the Discussion |
+| *Emerging Infectious Diseases* | Research ≤150 words; Dispatch ≤50 | Unstructured | Research 3,500 words, ≤50 refs; Dispatch 1,200 words, ≤15 refs, ≤4 figures + tables | Subheadings required; first-author biographical sketch; model in a technical appendix |
+| *Infectious Diseases of Poverty* | Check the current guidelines | Background / Methods / Results / Conclusions | Check the current guidelines | Graphical abstract and keywords; BMC declarations block |
 
 Field budgets inside a 300-word Lancet-style abstract, from Kucharski 2020, Hellewell 2020, Davies 2020: **Background**
 50–70 words (moves 1–2 of §1.1), **Methods** 70–90 (move 3, plus data, period, scenarios),
@@ -240,13 +244,29 @@ discipline the whole manuscript. It is scaffolding for your own drafting: return
 user only when the target journal requires the panel or the user asks for it.
 
 **PLoS / methods journals.** Numbered sections and subsections (`2.1`, `2.2`) are appropriate
-and normal when the contribution is methodological. PLoS also wants an **Author Summary**
-written for the practitioner alongside the technical abstract.
-→ Bracher 2021a
+and normal when the contribution is methodological. *PLoS Computational Biology* also wants an
+**Author Summary** written for the practitioner alongside the technical abstract; *PLoS ONE*
+does not, and *PLoS Biology* puts Materials and Methods after the Discussion.
+→ Bracher 2021a, Hay 2024
 
 **Royal Society journals (*J R Soc Interface*, *Proc B*).** Conventional IMRaD with
 unnumbered subsections; the Methods can carry the full model specification in the main text.
 → Grais 2008
+
+**Emerging Infectious Diseases.** A Research article is a short unheaded introduction,
+`Methods`, `Results` and `Discussion`, with the model in a technical appendix and a
+biographical sketch of the first author at the end. A Dispatch compresses the whole paper into
+about 1,200 words under `The Study` and `Conclusions`: with no Methods or Discussion heading,
+each paragraph does one job, and the abstract is two sentences carrying the finding and its
+condition.
+→ Simmons 2013, Kucharski 2016
+
+**BMC family (*BMC Medicine*, *BMC Infectious Diseases*, *Infectious Diseases of Poverty*).**
+Structured abstract (Background / Methods / Results / Conclusions), keywords, IMRaD, and a
+closing block of declarations — availability of data and materials, competing interests,
+funding, authors' contributions. *Infectious Diseases of Poverty* adds a graphical abstract;
+Rock 2022 also completes the PRIME-NTD reporting checklist for neglected tropical disease models.
+→ Finger 2019, Ajelli 2010, Rock 2022, Golumbeanu 2022
 
 **Clinical journals (Annals, etc.).** Fully labelled abstract including a mandated
 single-sentence **`Limitation:`** field, plus a **Reproducible Research Statement**.

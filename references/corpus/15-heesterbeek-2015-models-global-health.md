@@ -55,4 +55,4 @@ Reproducibility is argued as an obligation, not a checkbox:
 4. Turn the literature review into a table when the field is fifty years old.
 
 ## Related files
-Other *review* exemplars: see [05-altizer-2006-seasonality-review](05-altizer-2006-seasonality-review.md) for a review that inventories the distinct mechanisms through which one driver, seasonality, acts; [14-baker-2021-infectious-disease-global-change](14-baker-2021-infectious-disease-global-change.md) for a synthesis review whose contribution is a framework for a scattered literature.
+Other *review* exemplars: see [05-altizer-2006-seasonality-review](05-altizer-2006-seasonality-review.md) for a review that inventories the distinct mechanisms through which one driver, seasonality, acts; [75-jackson-2014-school-closure-models-review](75-jackson-2014-school-closure-models-review.md) for a systematic review of simulation studies that explains the spread of their predictions by the contact assumptions behind them; [14-baker-2021-infectious-disease-global-change](14-baker-2021-infectious-disease-global-change.md) for a synthesis review whose contribution is a framework for a scattered literature.

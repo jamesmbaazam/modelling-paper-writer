@@ -19,12 +19,12 @@ later change gets an entry.
 ## [1.0.0] — unreleased
 
 First release. A skill for writing, revising and critiquing infectious disease modelling papers,
-distilled from 73 well-written mathematical, statistical and machine learning papers published
+distilled from 81 well-written mathematical, statistical and machine learning papers published
 between 2000 and 2024.
 
 ### Added
 
-- **`SKILL.md`**, ~350 lines, loaded on every invocation. A six-step procedure — determine the
+- **`SKILL.md`**, ~370 lines, loaded on every invocation. A six-step procedure — determine the
   mode (draft, revise or critique), establish the archetype, read one corpus exemplar, draft or
   edit only what was asked, self-review, report placeholders and assumptions — then the
   conventions as one-line imperatives that point into `references/`.
@@ -39,8 +39,8 @@ between 2000 and 2024.
 - **Twenty-two paper archetypes**, each with its exemplars and the shape its headline claim must
   take — estimation, real-time analysis, scenario projection, feasibility threshold, policy
   counterfactual, competing hypotheses, forecast evaluation, dynamical systems, methods
-  benchmark, review, best-practice guidance, risk mapping, nowcasting, clinical prediction and
-  critique, vaccine impact and economic evaluation, phylodynamics and genomic epidemiology,
+  benchmark, review, best-practice guidance, risk mapping, digital surveillance, clinical
+  prediction and critique, vaccine impact and economic evaluation, phylodynamics and genomic epidemiology,
   serological inference, within-host dynamics, agent-based model documentation, nowcasting and
   reporting delays, and rapid-response outbreak analysis.
 - **Rules for every section**: four title shapes; the abstract's six-move spine with per-venue
@@ -59,7 +59,7 @@ between 2000 and 2024.
 - **`references/corpus/`** — one style analysis per paper, with verbatim quotations, under a
   canonical heading set matching the rule sections (`Structure`, `Opening move`, `Methods`,
   `Results`, `Literature`, `Voice`, `Discussion and limitations`, `Data, code and funding`,
-  `Distinctive moves to borrow`), so the procedure's grep for a section is deterministic. All 37
+  `Distinctive moves to borrow`), so the procedure's grep for a section is deterministic. All 81
   papers are analysed from their full text; for the five that are paywalled (Keeling 2001,
   Altizer 2006, Keeling & Rohani 2002, Grenfell 2001, Bjørnstad 2002) the analysis was written
   from the publisher's PDF and its quotations checked against it at the time of writing, since
@@ -71,18 +71,20 @@ between 2000 and 2024.
   sentences and limitations, methods paragraphs for a Bayesian fit and for a supervised model, a
   bias check, availability statements, and parameter and scenario tables.
 - **`tools/candidates.py`** and **`tools/fulltext.py`** — search Europe PMC for open-access
-  candidates by archetype and venue, and pull a paper's full text, so a corpus addition is
-  always written from the paper and never from memory.
+  candidates by archetype and venue (`--venue` lists infectious disease modelling papers in one
+  journal), and pull a paper's full text, so a corpus addition is always written from the
+  paper and never from memory.
 - **`tools/corpus.py`** — regenerates the corpus index and checks the repo for drift: stale
   index, corpus files missing from `papers.csv`, missing canonical headings, archetype and
   full-text flags disagreeing with the §0 table, frontmatter breaking the Agent Skills spec,
   version strings disagreeing or missing a changelog section, exemplars of one archetype not
-  linking each other, references to `SKILL.md` subsections that do not exist, and broken links.
+  linking each other, corpus counts in the README, citation file, manifest or changelog going
+  stale, references to `SKILL.md` subsections that do not exist, and broken links.
 - **`tools/verify_quotes.py`** and `docs/quote-verification.md` — every quotation of 30 or more
   characters checked against the paper's abstract and, where PubMed Central holds it, the full
   text; `--local-text` checks a paywalled paper against a local PDF extraction instead,
   compensating for the ligature, Greek-letter and running-head damage that pre-Unicode journal
-  PDFs introduce. 1,384 verified, 0 not found, 152 unreachable, 218 checked by hand.
+  PDFs introduce. 1,548 verified, 0 not found, 152 unreachable, 218 checked by hand.
 - **`evals/`** — 14 cases with graders, covering drafting, revision, critique, the hard rules and
   the negative trigger, for `claude plugin eval`.
 - **`.claude-plugin/plugin.json` and `marketplace.json`**, so the skill installs as a plugin.

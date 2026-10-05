@@ -177,6 +177,22 @@ def archetype_table(skill_body):
     return table
 
 
+NUMBER_WORDS = ("zero one two three four five six seven eight nine ten eleven twelve thirteen "
+                "fourteen fifteen sixteen seventeen eighteen nineteen").split()
+TENS = {"twenty": 20, "thirty": 30, "forty": 40, "fifty": 50}
+
+
+def number(text):
+    """An integer from digits ("1,548") or an English number word ("twenty-two")."""
+    text = text.lower().replace(",", "")
+    if text.isdigit():
+        return int(text)
+    if text in NUMBER_WORDS:
+        return NUMBER_WORDS.index(text)
+    tens, _, unit = text.partition("-")
+    return TENS.get(tens, -1000) + (NUMBER_WORDS.index(unit) if unit in NUMBER_WORDS else 0)
+
+
 def check():
     errors, notes = [], []
     rows = load_rows()
@@ -258,6 +274,39 @@ def check():
         elif m.group(1) != expected:
             errors.append(f"SKILL.md preamble says {what} is {m.group(1)}, "
                           f"papers.csv says {expected}")
+
+    # The same corpus facts stated elsewhere agree with papers.csv and SKILL.md: the paper count,
+    # the number of archetypes (written as a word) and the approximate size of SKILL.md.
+    n_arch = len(re.findall(r"^\| \*\*", skill.split("## 0.", 1)[1].split("\n---", 1)[0], re.M))
+    skill_lines, skill_words = len(skill.splitlines()), len(skill.split())
+    doc_claims = [
+        ("README.md", r"style of (\d+) well-written papers", len(rows), "paper count"),
+        ("README.md", r"One style analysis per paper \((\d+) files\)", len(rows), "corpus file count"),
+        ("CITATION.cff", r"writing style of (\d+) well-written papers", len(rows), "paper count"),
+        (".claude-plugin/plugin.json", r"from an? (\d+)-paper corpus", len(rows), "paper count"),
+        ("CHANGELOG.md", r"distilled from (\d+) well-written", len(rows), "paper count"),
+        ("CHANGELOG.md", r"All (\d+)\s+papers are analysed", len(rows), "paper count"),
+        ("README.md", r"— ([a-z-]+) paper types", n_arch, "archetype count"),
+        ("CHANGELOG.md", r"\*\*([A-Za-z-]+) paper archetypes\*\*", n_arch, "archetype count"),
+    ]
+    for name, pattern, expected, what in doc_claims:
+        m = re.search(pattern, (ROOT / name).read_text(encoding="utf-8"))
+        if not m:
+            errors.append(f"{name}: cannot find the {what} (expected it to match /{pattern}/)")
+        elif number(m.group(1)) != expected:
+            errors.append(f"{name} says the {what} is {m.group(1)}; the corpus has {expected}")
+    size_claims = [
+        ("README.md", r"~([\d,]+) lines / ~([\d,]+) words"),
+        ("CHANGELOG.md", r"\*\*`SKILL.md`\*\*, ~(\d+) lines"),
+    ]
+    for name, pattern in size_claims:
+        m = re.search(pattern, (ROOT / name).read_text(encoding="utf-8"))
+        if not m:
+            errors.append(f"{name}: cannot find the size of SKILL.md (expected /{pattern}/)")
+            continue
+        for claimed, actual, unit in zip(m.groups(), (skill_lines, skill_words), ("lines", "words")):
+            if abs(number(claimed) - actual) > 0.1 * actual:
+                errors.append(f"{name} says SKILL.md is ~{claimed} {unit}; it is {actual}")
 
     # Every "Author YEAR" citation in the rule files names a corpus paper
     labels = {r["label"] for r in rows}

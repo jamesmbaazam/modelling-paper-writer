@@ -2,7 +2,7 @@
   "name": "modelling-paper-writer",
   "displayName": "Modelling Paper Writer",
   "version": "1.0.0",
-  "description": "Write, revise and critique infectious disease modelling papers in the style of the field's best-written work, distilled from a 37-paper corpus.",
+  "description": "Write, revise and critique infectious disease modelling papers in the style of the field's best-written work, distilled from an 81-paper corpus.",
   "author": {
     "name": "James Azam",
     "url": "https://github.com/jamesmbaazam"

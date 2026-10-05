@@ -4,6 +4,7 @@
     python3 tools/candidates.py                  # every search below
     python3 tools/candidates.py nowcasting       # one search by name
     python3 tools/candidates.py --venues         # per-venue counts, to retune a search
+    python3 tools/candidates.py --venue "PloS one"   # modelling papers in one journal
 
 Prints real records — label, year, venue, citations, DOI, PMCID — so a paper can never be
 added from memory. It cannot judge writing quality, which is the actual selection criterion:
@@ -37,6 +38,7 @@ VENUES = [
     "The Lancet. Global health", "The Lancet. Infectious diseases", "PLoS medicine",
     "Science translational medicine", "Statistics in medicine", "Biostatistics",
     "International journal of epidemiology", "American journal of epidemiology",
+    "PloS one", "PLoS biology", "Infectious diseases of poverty", "Emerging infectious diseases",
 ]
 
 # One search per archetype the corpus is missing.
@@ -59,6 +61,16 @@ SEARCHES = {
     "venue-breadth": 'ABSTRACT:"transmission model" OR ABSTRACT:"mathematical model" '
                      'OR ABSTRACT:"modelling study" OR ABSTRACT:"modeling study"',
 }
+
+# For --venue: a wider net than venue-breadth (short abstracts, such as Emerging Infectious
+# Diseases' 150 words, rarely say "mathematical model"), narrowed to infectious disease so a
+# general journal such as PLoS ONE does not return protein folding and exoskeletons.
+VENUE_MODELLING = (SEARCHES["venue-breadth"] + ' OR ABSTRACT:"reproduction number" '
+                   'OR ABSTRACT:"compartmental model" OR ABSTRACT:"stochastic model" '
+                   'OR ABSTRACT:"simulation model" OR ABSTRACT:"agent-based" '
+                   'OR ABSTRACT:"we modeled" OR ABSTRACT:"we modelled" OR ABSTRACT:"force of infection"')
+INFECTIOUS = ('ABSTRACT:"infectious" OR ABSTRACT:"epidemic" OR ABSTRACT:"outbreak" '
+              'OR ABSTRACT:"pathogen" OR ABSTRACT:"vaccination" OR ABSTRACT:"incidence"')
 
 VENUE_CLAUSE = "(" + " OR ".join(f'JOURNAL:"{j}"' for j in VENUES) + ")"
 WINDOW = "FIRST_PDATE:[2012 TO 2025]"
@@ -87,6 +99,10 @@ def search(name, clause, page_size=25):
     query = f"{VENUE_CLAUSE} AND OPEN_ACCESS:Y AND {WINDOW} AND ({clause})"
     data = fetch({"query": query, "format": "json", "pageSize": page_size,
                   "resultType": "core", "sort": "CITED desc"}, name)
+    show(name, data)
+
+
+def show(name, data):
     hits = data.get("hitCount", 0)
     rows = data.get("resultList", {}).get("result", [])
     print(f"\n=== {name}  ({hits} open-access hits, showing {len(rows)})")
@@ -107,10 +123,27 @@ def venue_counts():
         print(f"{journal:44} {data.get('hitCount', 0):5}")
 
 
+def venue_search(journal, page_size=40):
+    """Infectious disease modelling papers in one journal, most cited first."""
+    if journal not in VENUES:
+        sys.exit(f"unknown venue {journal!r}; use the Europe PMC title, one of: {', '.join(VENUES)}")
+    clause = (f'JOURNAL:"{journal}" AND OPEN_ACCESS:Y AND {WINDOW} '
+              f'AND ({VENUE_MODELLING}) AND ({INFECTIOUS})')
+    data = fetch({"query": clause, "format": "json", "pageSize": page_size,
+                  "resultType": "core", "sort": "CITED desc"},
+                 "venue_id_" + re.sub(r"\W+", "_", journal))
+    show(journal, data)
+
+
 def main():
     args = [a for a in sys.argv[1:] if not a.startswith("-")]
     if "--venues" in sys.argv:
         return venue_counts()
+    if "--venue" in sys.argv:
+        i = sys.argv.index("--venue")
+        if i + 1 >= len(sys.argv):
+            sys.exit('usage: candidates.py --venue "Europe PMC journal title"')
+        return venue_search(sys.argv[i + 1])
     for name in (args or SEARCHES):
         if name not in SEARCHES:
             sys.exit(f"unknown search {name!r}; choose from {', '.join(SEARCHES)}")

@@ -55,4 +55,4 @@ Note that the review **argues against its own thesis** before closing. That is w
 4. Verbs of association, not causation: "have altered", never "caused".
 
 ## Related files
-Other *review* exemplars: see [05-altizer-2006-seasonality-review](05-altizer-2006-seasonality-review.md) for a review that inventories the distinct mechanisms through which one driver, seasonality, acts; [15-heesterbeek-2015-models-global-health](15-heesterbeek-2015-models-global-health.md) for the field-defining review of what modelling can and cannot do for global health.
+Other *review* exemplars: see [05-altizer-2006-seasonality-review](05-altizer-2006-seasonality-review.md) for a review that inventories the distinct mechanisms through which one driver, seasonality, acts; [75-jackson-2014-school-closure-models-review](75-jackson-2014-school-closure-models-review.md) for a systematic review of simulation studies that explains the spread of their predictions by the contact assumptions behind them; [15-heesterbeek-2015-models-global-health](15-heesterbeek-2015-models-global-health.md) for the field-defining review of what modelling can and cannot do for global health.

@@ -55,4 +55,4 @@ GitHub link **plus** a Zenodo release DOI pinned to the submission, plus an inte
 - Ship a tool, not just an estimate.
 
 ## Related files
-Other *parameter estimation* exemplars: see [54-ganyani-2020-generation-interval](54-ganyani-2020-generation-interval.md) for an interval between two unobserved events recovered from symptom-onset data; [55-stopard-2021-malaria-eip](55-stopard-2021-malaria-eip.md) for a parameter estimated mechanistically, by modelling every scale that generates the data.
+Other *parameter estimation* exemplars: see [80-simmons-2013-norovirus-immunity](80-simmons-2013-norovirus-immunity.md) for a textbook immunity duration overturned by arithmetic and then re-estimated across six model structures; [54-ganyani-2020-generation-interval](54-ganyani-2020-generation-interval.md) for an interval between two unobserved events recovered from symptom-onset data; [55-stopard-2021-malaria-eip](55-stopard-2021-malaria-eip.md) for a parameter estimated mechanistically, by modelling every scale that generates the data.
