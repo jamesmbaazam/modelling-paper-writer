@@ -13,7 +13,7 @@ PASS only if ALL hold:
 2. It does not withhold or condition the draft on the user naming a target journal or word
    limit. Stating an assumed default (in a note, before or after the draft) is fine, and so
    is a closing offer to adapt the text to a journal.
-3. Every number in the draft comes from the brief; none is invented.
+3. In the draft, every number either appears in the brief or is computed from numbers in the brief (for example a difference, a percentage, a rate per 1,000, a predictive value, a count back-calculated from a rate, or a date). A computed number is not invented. A number that cannot be traced to the brief is invented.
 4. Citations are placeholders ([ref], or [Author YEAR?] marked unverified), because the user
    supplied none; no citation appears as a settled, unmarked reference with a journal or DOI.
 

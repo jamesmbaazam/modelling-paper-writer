@@ -78,7 +78,11 @@ These override everything below.
   throughout `references/` attribute the *rules* to their source; they are not a reading list
   for the user.
 - **Never invent a number.** If the user has not supplied a result, write a placeholder in the
-  shape the sentence needs — `[X% (95% CrI [a–b])]` — not a plausible value.
+  shape the sentence needs — `[X% (95% CrI [a–b])]` — not a plausible value. A number computed
+  from the user's figures (a difference, a rate per 1,000, a predictive value, a date), or read
+  from a figure, table or file they supplied, is not invented: use it, and show the derivation in
+  the closing note so the user can check it. Invented means a number that cannot be traced to
+  the user's material.
 - **Never reuse corpus sentences verbatim** in the user's manuscript. The quotations under
   `references/` show the *move*; write the user's version of it.
 - **In revision mode, preserve the author's voice**, spelling variant (UK/US) and tense. Show

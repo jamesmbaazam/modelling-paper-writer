@@ -16,7 +16,8 @@ PASS only if ALL hold:
   ones.
 - Start date and duration are in the table or its caption.
 - A caption states what the numbers are relative to.
-- No numbers beyond those derivable from the brief are invented (e.g. no invented
+- No numbers beyond those derivable from the brief are invented — values computed from the
+  brief, such as combined-scenario percentages or an end date, are derivable (e.g. no invented
   coverage or efficacy).
 
 FAIL if the table lacks a baseline row, lacks stable labels, or the combined scenario

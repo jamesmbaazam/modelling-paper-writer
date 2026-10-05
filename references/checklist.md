@@ -44,7 +44,7 @@ section. Only the blocks relevant to the section and archetype apply. Section nu
 - [ ] Every `[Author YEAR]` citation is one the user supplied. Everything else — including any
       corpus paper — is `[ref]` or `[Author YEAR?]` and appears on the verify list, never in the
       text as though it were settled. No journal, volume, page or DOI written from memory.
-- [ ] No invented numbers or DOIs; every placeholder listed for the user, with what is needed
+- [ ] No invented numbers or DOIs (a number computed from, or read from, the user's material is not invented, but its derivation is in the closing note); every placeholder listed for the user, with what is needed
       to fill it.
 - [ ] No corpus sentence reused verbatim.
 - [ ] Revision mode: voice, spelling and tense preserved; edits shown; scope not expanded.

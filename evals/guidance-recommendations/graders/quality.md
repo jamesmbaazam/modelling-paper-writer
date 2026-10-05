@@ -12,6 +12,6 @@ PASS only if ALL hold:
    equivalent), with a reason.
 3. The section ends with, or contains, a bulleted summary of the recommendations that is
    usable on its own.
-4. Every number comes from the brief; none is invented.
+4. Every number either appears in the brief or is computed from numbers in the brief (for example a difference, a percentage, a rate per 1,000, a predictive value, a count back-calculated from a rate, or a date). A computed number is not invented. A number that cannot be traced to the brief is invented.
 
 FAIL if any condition is violated.

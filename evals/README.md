@@ -82,7 +82,9 @@ and got lucky.
   visible edits), so the phrase is present for the right reason. The first smoke test of
   `gap-statement-rewrite` failed exactly this way; those checks now live in the LLM rubric.
 - Every prompt supplies the numbers the response needs, so "no invented numbers" is
-  checkable: anything not in the brief is a fabrication.
+  checkable: a number that cannot be traced to the brief is a fabrication. A number computed
+  from the brief (a difference, a rate per 1,000, a predictive value, a date) or read from a
+  supplied figure or file is not, and rubrics must not treat it as one.
 
 ## Adding a case
 
