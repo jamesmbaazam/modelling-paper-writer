@@ -138,6 +138,27 @@ Sections 1–6 are the 2026-09-13 critique, kept as a record; line references th
       and `.claude-plugin/`. It refuses to build if `corpus.py check` fails, and `--list`
       prints the contents without building. `dist/` is gitignored.
 
+**Cross-references** — found 2026-10-05 during Phase 5, left for a separate pass
+- [ ] G1. Six corpus files cite `SKILL.md` subsections that the §1 restructure removed:
+      `SKILL.md` now numbers only its top-level rule sections, and the §N.M numbering lives on
+      in `evidence.md`. Stale: §2.1 (Ximenes 2014, Verguet 2015), §2.3 (Ganyani 2020), §3.4
+      (Thompson 2019, Ngonghala 2020), §6.2 (McGough 2020). Point each to `SKILL.md` §N with
+      its evidence in `evidence.md` §N.M, as files 66 and 67 now do, after checking that the
+      §N.M in `evidence.md` holds the rule the file means. Then have `corpus.py check` reject
+      any `SKILL.md` §N.M reference, so the drift cannot recur.
+- [ ] G2. Back-links between exemplars of the same archetype. The expansion phases linked
+      each new file to its older siblings but never the reverse, and some original files
+      never linked each other: after Phase 6, 43 files lack a link to at least one later file
+      in the same archetype (38 before it; the 34 first recorded here counted only the files
+      up to id 44). Phase 5's share is Pawelek 2012 (→ Néant 2021, Clapham 2014) and Kerr
+      2021a (→ Ajelli 2010, Kerr 2021b); Phase 6 added McGough 2020 (→ Günther 2021, Wolffram
+      2023), Finger 2019 (→ Camacho 2015, Shi 2016), Bracher 2021b and Funk 2019 (→ Wolffram
+      2023) and Zhao 2020 (→ Günther 2021, Camacho 2015). The worst cases are forecast
+      evaluation (Cramer 2022 links none of its seven siblings), methods / simulation
+      benchmark and real-time transmission analysis. Add a sentence to each `Related files`
+      saying what the sibling adds, not a bare link; consider a `corpus.py check` note listing
+      unlinked same-archetype pairs. Phase 6 is done, so this can now be done in one pass.
+
 ## 1. Restructure: procedure first, progressive disclosure for the rest
 
 SKILL.md is ~1,420 lines / ~13,700 words (~22k tokens), loaded in full on every invocation.
@@ -205,7 +226,7 @@ All five are now in the *Hard rules* block of `SKILL.md`.
 - [x] Add missing archetypes — all seven done 2026-10-03: Chen 2019 (vaccine impact and
       economic evaluation, the first exemplar behind the ◆ CHEERS rule), Geoghegan 2020
       (phylodynamics / genomic epidemiology), Prayitno 2017 (serological inference), Pawelek
-      2012 (within-host), Kerr 2021 (agent-based model documentation, behind the ◆ ODD rule),
+      2012 (within-host), Kerr 2021a (agent-based model documentation, behind the ◆ ODD rule),
       McGough 2020 (nowcasting / reporting delays) and Finger 2019 (rapid-response outbreak
       analysis). `SKILL.md` §0 now has 22 archetype rows; the corpus is 49 papers.
 - [x] Consider replacing the 5 abstract-only files (`03`, `05`, `06`, `17`, `18`) with
@@ -271,7 +292,30 @@ Sebastian Funk work on forecast evaluation. 24 papers in six phases.
       outpace mutation. Ximenes compares three mixing structures rather than fitting one;
       Golden validates the serological marker before modelling it, and reads a two-phase
       force of infection as a record of the control programme.
-- [ ] Phase 5 — within-host (Néant 2021, Clapham 2014); agent-based model documentation
-      (Ajelli 2010, Kerr 2021 *Nat Commun*).
-- [ ] Phase 6 — nowcasting (Günther 2021, Wolffram 2023); rapid response (Camacho 2015,
-      Shi 2016).
+- [x] Phase 5 — within-host: Néant 2021 (*PNAS*), Clapham 2014 (*J R Soc Interface*);
+      agent-based model documentation: Ajelli 2010 (*BMC Infect Dis*), Kerr 2021b (*Nat
+      Commun*). The new Kerr paper collided with the Covasim label, which became Kerr 2021a.
+      Néant joins a viral-kinetic model to a survival endpoint and restates its conclusion so
+      it survives a disputed R₀; Clapham tests antibody-dependent enhancement by which
+      parameter must differ, and discriminates two equally good fits on the biological
+      plausibility of their estimates. Ajelli supplies the synchronised head-to-head
+      comparison that justifies choosing an agent-based model at all; Kerr 2021b is the
+      application paper Covasim's documentation makes possible, cited in one sentence and
+      validated against the months that followed. Ajelli and Kerr 2021b also sit under
+      *Methods / simulation benchmark* and *Scenario projection for policy* respectively.
+- [x] Phase 6 — nowcasting: Günther 2021 (*Biom J*), Wolffram 2023 (*PLoS Comput Biol*);
+      rapid response: Camacho 2015 (*PLoS Curr*), Shi 2016 (*Environ Health Perspect*).
+      Günther runs a nowcast daily for a health authority, names the missing-at-random
+      assumption behind its onset imputation and builds the sensitivity analysis to break it,
+      and says which outputs survive constant under-ascertainment. Wolffram is the
+      pre-registered real-time comparison of eight nowcasting systems: it keeps the
+      pre-registered target as primary, then shows with numbers why it was the wrong one, and
+      decomposes the winner's success into two errors that cancelled. Camacho converts a
+      district-level transmission model into beds needed against beds available, tests its
+      forecast on two weeks of data that arrived during review, and gives each bias's
+      direction separately for each output. Shi supplies the criteria an operational
+      forecast must meet and a dated warning that moved a national campaign two months
+      earlier; like Yadaw 2020 its file carries a *what to avoid* section (MAPE only, intervals
+      from residual spread, no baseline, no code). Günther and Camacho also sit under
+      *Real-time transmission analysis*, Wolffram under *Forecast evaluation*. With this phase
+      the second expansion is complete: every archetype that had one exemplar now has three.
