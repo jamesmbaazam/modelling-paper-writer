@@ -4,6 +4,21 @@ Thanks for considering a contribution. The most useful ones are a new paper in t
 correction to a rule the corpus does not actually support, and a failing eval case that shows the
 skill behaving badly.
 
+## Raising an issue
+
+You do not need to write code to contribute. If the skill gave you bad advice, broke one of its
+own rules, cited a paper that does not exist, or failed to install, or if you know a well-written
+paper the corpus should learn from, [open an issue](https://github.com/jamesmbaazam/modelling-paper-writer/issues).
+The most useful issues include:
+
+- **For bad output:** the prompt you gave, what the skill returned, and what you expected instead.
+  Name the rule it broke if you can.
+- **For a rule you disagree with:** the rule, and a paper or reporting guideline that contradicts
+  it.
+- **For a paper suggestion:** the DOI, its archetype if you know it, and what it does with prose,
+  structure or uncertainty that is worth copying. Writing quality is the criterion, not citation
+  count.
+
 ## Setup
 
 There is nothing to install. The tooling is Python 3.9+, standard library only.
